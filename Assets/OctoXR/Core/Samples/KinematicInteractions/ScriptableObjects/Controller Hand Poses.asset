@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008310c9f6a4267bdd2a7b9c9e70c5d, type: 3}
+  m_Name: Controller Hand Poses
+  m_EditorClassIdentifier: 
+  IdlePose: {fileID: 11400000, guid: 6147d75963f89f140a994f4b3630510b, type: 2}
+  GripPose: {fileID: 11400000, guid: be78cade0c644d94c9a3f115b71e2a96, type: 2}
+  TriggerPose: {fileID: 11400000, guid: b9967cc638a40134595c8bae6b0dc948, type: 2}

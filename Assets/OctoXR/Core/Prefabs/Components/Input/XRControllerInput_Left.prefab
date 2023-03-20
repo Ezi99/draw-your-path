@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8357635625294632949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8357635625294632951}
+  - component: {fileID: 8357635625294632950}
+  m_Layer: 0
+  m_Name: XRControllerInput_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8357635625294632951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357635625294632949}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8357635625294632950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357635625294632949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbad3eca4bcafb64fa707c03c4a333ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1
+  boneRelativePosesNeedUpdate: 0
+  boneRelativePoses:
+    items:
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0.01049652, y: 0.020069301, z: 0.0115541}
+      rotation: {x: -0.0052590524, y: -0.6271987, z: -0.3771802, w: 0.68141717}
+    - position: {x: -0.0027830184, y: 0.05655096, z: -0.005663651}
+      rotation: {x: -0.08406229, y: 0.08270369, z: 0.07696169, w: 0.99003565}
+    - position: {x: 0, y: 0.03379309, z: 0}
+      rotation: {x: -0.058274187, y: -0.083505996, z: -0.06501585, w: 0.9926751}
+    - position: {x: 0.023550678, y: 0.09599624, z: 0.0073164552}
+      rotation: {x: 0.043281455, y: -0.030683083, z: 0.018855589, w: 0.9984136}
+    - position: {x: 0, y: 0.037927296, z: 0}
+      rotation: {x: 0.0032929422, y: 0.025852412, z: 0.0071160584, w: 0.99963504}
+    - position: {x: 0, y: 0.024303643, z: 0}
+      rotation: {x: -0.072033994, y: 0.016055994, z: 0.02714872, w: 0.99690336}
+    - position: {x: 0.0017259056, y: 0.09564661, z: 0.0025431549}
+      rotation: {x: 0.051835753, y: 0.009066328, z: 0.05146558, w: 0.99728745}
+    - position: {x: -0, y: 0.04292699, z: 0}
+      rotation: {x: -0.0019781606, y: 0.01122824, z: 0.0043788785, w: 0.99992543}
+    - position: {x: 0, y: 0.027549583, z: 0}
+      rotation: {x: -0.09300723, y: 0.034319565, z: 0.004611846, w: 0.9950631}
+    - position: {x: -0.017465245, y: 0.0886938, z: 0.006529308}
+      rotation: {x: 0.04981351, y: 0.053159375, z: 0.12310342, w: 0.9897163}
+    - position: {x: 0, y: 0.0389961, z: 0}
+      rotation: {x: 0.005676029, y: 0.033632513, z: 0.0027898496, w: 0.99941427}
+    - position: {x: -0, y: 0.026573397, z: 0}
+      rotation: {x: -0.025028516, y: 0.0034774526, z: -0.029179571, w: 0.99925476}
+    - position: {x: -0.035056394, y: 0.07789521, z: 0.013691139}
+      rotation: {x: 0.05740251, y: 0.121911824, z: 0.12826872, w: 0.98254246}
+    - position: {x: 0, y: 0.030720407, z: 0}
+      rotation: {x: -0.0132862795, y: 0.037616663, z: 0.042937696, w: 0.99828094}
+    - position: {x: 0, y: 0.020311384, z: 0}
+      rotation: {x: -0.02401897, y: -0.0006447675, z: -0.049170636, w: 0.99850136}
+    - position: {x: -0.0006703722, y: 0.024590766, z: -0.0010269715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - position: {x: -0.0002956079, y: 0.022363367, z: -0.0010250708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - position: {x: -0.00030865276, y: 0.02496492, z: -0.0011372991}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - position: {x: -0.0002579043, y: 0.024326129, z: -0.0016081713}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+    - position: {x: 0.00024648113, y: 0.021922385, z: -0.0012160853}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+    count: 21
+  boneAbsolutePosesNeedUpdate: 0
+  boneAbsolutePoses:
+    items:
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0.01049652, y: 0.020069301, z: 0.0115541}
+      rotation: {x: -0.0052590524, y: -0.6271987, z: -0.3771802, w: 0.68141717}
+    - position: {x: 0.044955734, y: 0.059218653, z: 0.03430766}
+      rotation: {x: -0.079564214, y: -0.53248197, z: -0.37413752, w: 0.7550853}
+    - position: {x: 0.06691261, y: 0.08312325, z: 0.043711852}
+      rotation: {x: -0.11960635, y: -0.5750061, z: -0.4448754, w: 0.67612755}
+    - position: {x: 0.023550678, y: 0.09599624, z: 0.0073164552}
+      rotation: {x: 0.043281455, y: -0.030683083, z: 0.018855589, w: 0.9984136}
+    - position: {x: 0.022021929, y: 0.13375446, z: 0.010550459}
+      rotation: {x: 0.045847572, y: -0.005106388, z: 0.027173445, w: 0.9985658}
+    - position: {x: 0.020691616, y: 0.15792003, z: 0.012769044}
+      rotation: {x: -0.026800012, y: 0.007740276, z: 0.054567374, w: 0.9981204}
+    - position: {x: 0.0017259056, y: 0.09564661, z: 0.0025431549}
+      rotation: {x: 0.051835753, y: 0.009066328, z: 0.05146558, w: 0.99728745}
+    - position: {x: -0.002640286, y: 0.13811551, z: 0.0070214486}
+      rotation: {x: 0.049320925, y: 0.019934645, z: 0.0564287, w: 0.9969885}
+    - position: {x: -0.0056859236, y: 0.16535562, z: 0.009792787}
+      rotation: {x: -0.045494374, y: 0.0485767, z: 0.064294815, w: 0.9957093}
+    - position: {x: -0.017465245, y: 0.0886938, z: 0.006529308}
+      rotation: {x: 0.04981351, y: 0.053159375, z: 0.12310342, w: 0.9897163}
+    - position: {x: -0.026761089, y: 0.12631443, z: 0.010884808}
+      rotation: {x: 0.05141002, y: 0.08697465, z: 0.12716609, w: 0.9867225}
+    - position: {x: -0.033192184, y: 0.15188791, z: 0.014168624}
+      rotation: {x: 0.02369541, y: 0.08865846, z: 0.100634806, w: 0.9906821}
+    - position: {x: -0.035056394, y: 0.07789521, z: 0.013691139}
+      rotation: {x: 0.05740251, y: 0.121911824, z: 0.12826872, w: 0.98254246}
+    - position: {x: -0.04236978, y: 0.10740229, z: 0.018117204}
+      rotation: {x: 0.04465907, y: 0.15449327, z: 0.17401537, w: 0.97152257}
+    - position: {x: -0.04895718, y: 0.12640254, z: 0.020971827}
+      rotation: {x: 0.013772839, y: 0.15165158, z: 0.12966618, w: 0.97979534}
+    - position: {x: 0.08581598, y: 0.09689629, z: 0.05140444}
+      rotation: {x: -0.11960635, y: -0.5750061, z: -0.4448754, w: 0.67612755}
+    - position: {x: 0.017939653, y: 0.18003032, z: 0.010573468}
+      rotation: {x: -0.026800012, y: 0.007740276, z: 0.054567374, w: 0.9981204}
+    - position: {x: -0.009400732, y: 0.1898625, z: 0.006591389}
+      rotation: {x: -0.045494374, y: 0.0485767, z: 0.064294815, w: 0.9957093}
+    - position: {x: -0.03847926, y: 0.1756883, z: 0.01420779}
+      rotation: {x: 0.02369541, y: 0.08865846, z: 0.100634806, w: 0.9906821}
+    - position: {x: -0.0545748, y: 0.14762808, z: 0.021193605}
+      rotation: {x: 0.013772839, y: 0.15165158, z: 0.12966618, w: 0.97979534}
+    count: 21
+  boneAbsoluteScaledPosesNeedUpdate: 1
+  boneAbsoluteScaledPoses:
+    items:
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    - position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    count: 21
+  onPoseDataUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  inputRoot: {fileID: 0}
+  rootPoseOffset: {fileID: 0}
+  isTracking: 0
+  onTrackingStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTrackingLost:
+    m_PersistentCalls:
+      m_Calls: []
+  isOnTrackingStartSent: 0
+  confidence: 0
+  handType: 0
+  runInFixedUpdate: 0
+  buttons:
+    items:
+    - id: 0
+    - id: 1
+    - id: 2
+    - id: 3
+    - id: 4
+    - id: 5
+    count: 6
+    primary:
+      id: 0
+    secondary:
+      id: 1
+    trigger:
+      id: 2
+    grip:
+      id: 3
+    primary2DAxis:
+      id: 4
+    secondary2DAxis:
+      id: 5
+  bindPose: {fileID: 11400000, guid: a7a8fda979aff0c45af9e22953b34913, type: 2}
+  provideBindPoseWhenNotTracking: 1
+  maxBoneVelocity: 10
+  maxBoneAngularVelocity: 720
+  poseTriggers:
+  - enabled: 1
+    conditionType: 0
+    condition:
+      id: 6
+    targetPose: {fileID: 11400000, guid: 980877a7796295a42942643b357567b9, type: 2}
+    targetBones: 65534
+    targetPoseComponents: 2
+    interpolateTargetPose: 1
+  - enabled: 1
+    conditionType: 2
+    condition:
+      id: 7
+    targetPose: {fileID: 11400000, guid: ce21672dbcb6ee6449b98629e7fcbf46, type: 2}
+    targetBones: 65534
+    targetPoseComponents: 2
+    interpolateTargetPose: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: XRControllerBinaryButton, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 0
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+    00000001:
+      type: {class: XRControllerBinaryButton, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 1
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+    00000002:
+      type: {class: XRControllerLerpButton, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 2
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+        value: 0
+        minValueToTouch: 0.01
+        minValueToPress: 0.5
+    00000003:
+      type: {class: XRControllerLerpButton, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 3
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+        value: 0
+        minValueToTouch: 0.01
+        minValueToPress: 0.5
+    00000004:
+      type: {class: XRController2DAxis, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 4
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+        x: 0
+        y: 0
+    00000005:
+      type: {class: XRController2DAxis, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        button: 5
+        isTouched: 0
+        isPressed: 0
+        isOnTouchEventSent: 0
+        isOnPressedEventSent: 0
+        onTouch:
+          m_PersistentCalls:
+            m_Calls: []
+        onPressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onDepressed:
+          m_PersistentCalls:
+            m_Calls: []
+        onUntouch:
+          m_PersistentCalls:
+            m_Calls: []
+        x: 0
+        y: 0
+    00000006:
+      type: {class: ButtonActionXRControllerCondition, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        invert: 0
+        button: 3
+        action: 1
+    00000007:
+      type: {class: ConstantXRControllerCondition, ns: OctoXR.Input, asm: Assembly-CSharp}
+      data:
+        invert: 0

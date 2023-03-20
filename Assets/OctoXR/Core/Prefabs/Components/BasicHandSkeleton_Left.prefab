@@ -1,0 +1,1208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1030129136224442160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2170398165213529588}
+  - component: {fileID: 6667909256339393200}
+  m_Layer: 0
+  m_Name: Bone_MiddleFingerProximalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2170398165213529588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030129136224442160}
+  m_LocalRotation: {x: 0.051835753, y: 0.009066327, z: 0.05146559, w: 0.99728745}
+  m_LocalPosition: {x: 0.0017259056, y: 0.09564661, z: 0.0025431549}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1281682115339793139}
+  m_Father: {fileID: 853572685643715334}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6667909256339393200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030129136224442160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 7
+  transform: {fileID: 2170398165213529588}
+  parentBone: {fileID: 7046671643316630252}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.0017259056, y: 0.09564661, z: 0.0025431549}
+    rotation: {x: 0.051835753, y: 0.009066327, z: 0.05146559, w: 0.99728745}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &1154011382033923296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2341224849639733680}
+  - component: {fileID: 4604555583520204417}
+  m_Layer: 0
+  m_Name: Bone_RingFingerProximalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2341224849639733680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154011382033923296}
+  m_LocalRotation: {x: 0.049813494, y: 0.053159367, z: 0.12310341, w: 0.9897163}
+  m_LocalPosition: {x: -0.017465245, y: 0.0886938, z: 0.006529308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1940685227898809782}
+  m_Father: {fileID: 853572685643715334}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4604555583520204417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154011382033923296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 10
+  transform: {fileID: 2341224849639733680}
+  parentBone: {fileID: 7046671643316630252}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.017465245, y: 0.0886938, z: 0.006529308}
+    rotation: {x: 0.049813494, y: 0.053159367, z: 0.12310341, w: 0.9897163}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &1203792290488435962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3049674385111934648}
+  - component: {fileID: 1847660753259006278}
+  m_Layer: 0
+  m_Name: Bone_PinkyFingerProximalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3049674385111934648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203792290488435962}
+  m_LocalRotation: {x: 0.05740261, y: 0.12191191, z: 0.12826872, w: 0.9825424}
+  m_LocalPosition: {x: -0.035056394, y: 0.07789521, z: 0.013691139}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4600387517195539258}
+  m_Father: {fileID: 853572685643715334}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847660753259006278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203792290488435962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 13
+  transform: {fileID: 3049674385111934648}
+  parentBone: {fileID: 7046671643316630252}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.035056394, y: 0.07789521, z: 0.013691139}
+    rotation: {x: 0.05740261, y: 0.12191191, z: 0.12826872, w: 0.9825424}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &1284301869895594016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123121876511700796}
+  - component: {fileID: 4949988820919973949}
+  m_Layer: 0
+  m_Name: Bone_MiddleFingerTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &123121876511700796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284301869895594016}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00030865145, y: 0.024964932, z: -0.0011373092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1709254936820036269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4949988820919973949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284301869895594016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 18
+  transform: {fileID: 123121876511700796}
+  parentBone: {fileID: 2624275472687702292}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.00030865145, y: 0.024964932, z: -0.0011373092}
+    rotation: {x: 0, y: 0, z: 0, w: 1.0000001}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &1972422606800615079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211060125235505399}
+  - component: {fileID: 3507798863529929434}
+  m_Layer: 0
+  m_Name: Bone_ThumbFingerDistalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1211060125235505399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972422606800615079}
+  m_LocalRotation: {x: -0.058274064, y: -0.083505936, z: -0.06501573, w: 0.9926751}
+  m_LocalPosition: {x: 0.00000005727634, y: 0.033793077, z: -0.000000006519259}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_Children:
+  - {fileID: 4233955591484172958}
+  m_Father: {fileID: 1619393830690729480}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3507798863529929434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972422606800615079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 3
+  transform: {fileID: 1211060125235505399}
+  parentBone: {fileID: 4322088774136405345}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.000000063795596, y: 0.033793077, z: -0.0000000037252907}
+    rotation: {x: -0.014760709, y: -0.064799875, z: -0.100892305, w: 0.99267524}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &2635567236787848456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956652268650455516}
+  - component: {fileID: 8576900730649789130}
+  m_Layer: 0
+  m_Name: Bone_RingFingerDistalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956652268650455516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635567236787848456}
+  m_LocalRotation: {x: -0.025028542, y: 0.0034774616, z: -0.029179454, w: 0.99925476}
+  m_LocalPosition: {x: 0.0000000034633558, y: 0.026573392, z: 4.3655746e-10}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 4063651642073355582}
+  m_Father: {fileID: 1940685227898809782}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8576900730649789130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635567236787848456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 12
+  transform: {fileID: 1956652268650455516}
+  parentBone: {fileID: 801015311225327968}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.0000000034633558, y: 0.026573392, z: 4.3655746e-10}
+    rotation: {x: -0.030071873, y: -0.000843333, z: -0.024185399, w: 0.9992548}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &3759689108665397592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709254936820036269}
+  - component: {fileID: 2624275472687702292}
+  m_Layer: 0
+  m_Name: Bone_MiddleFingerDistalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1709254936820036269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759689108665397592}
+  m_LocalRotation: {x: -0.09300701, y: 0.034319546, z: 0.0046118386, w: 0.9950631}
+  m_LocalPosition: {x: -0.0000000022846507, y: 0.02754957, z: -0.0000000059299046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 123121876511700796}
+  m_Father: {fileID: 1281682115339793139}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2624275472687702292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759689108665397592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 9
+  transform: {fileID: 1709254936820036269}
+  parentBone: {fileID: 3729861495313827462}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.0000000022846507, y: 0.02754957, z: -0.0000000059299046}
+    rotation: {x: -0.095925875, y: 0.022843039, z: 0.011217338, w: 0.9950632}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &4243112408672457215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5275507593668456591}
+  - component: {fileID: 7872727761328689126}
+  m_Layer: 0
+  m_Name: Bone_IndexFingerMiddlePhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5275507593668456591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243112408672457215}
+  m_LocalRotation: {x: 0.0032929443, y: 0.02585241, z: 0.0071160607, w: 0.99963504}
+  m_LocalPosition: {x: 0.0000000030267984, y: 0.037927315, z: -0.0000000020954758}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 1.0000001}
+  m_Children:
+  - {fileID: 4568141256072594275}
+  m_Father: {fileID: 6435168657127838765}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7872727761328689126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243112408672457215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 5
+  transform: {fileID: 5275507593668456591}
+  parentBone: {fileID: 8455706450898022140}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.0000000030267984, y: 0.037927315, z: -0.0000000020954758}
+    rotation: {x: 0.0018179832, y: 0.025229165, z: 0.009487528, w: 0.9996351}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &4295446187081541041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5449357953733917370}
+  - component: {fileID: 7447895796009220734}
+  m_Layer: 0
+  m_Name: Bone_ThumbFingerMetacarpal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5449357953733917370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295446187081541041}
+  m_LocalRotation: {x: -0.0052589765, y: -0.6271986, z: -0.37717992, w: 0.68141735}
+  m_LocalPosition: {x: 0.01049652, y: 0.020069301, z: 0.0115541}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1619393830690729480}
+  m_Father: {fileID: 853572685643715334}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7447895796009220734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295446187081541041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 1
+  transform: {fileID: 5449357953733917370}
+  parentBone: {fileID: 7046671643316630252}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.01049652, y: 0.020069301, z: 0.0115541}
+    rotation: {x: -0.0052589765, y: -0.6271986, z: -0.37717992, w: 0.68141735}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &4551607612392594424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6556598542777781512}
+  - component: {fileID: 2289778723575362073}
+  m_Layer: 0
+  m_Name: Bone_PinkyFingerDistalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6556598542777781512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551607612392594424}
+  m_LocalRotation: {x: -0.024018828, y: -0.00064474344, z: -0.049170665, w: 0.99850136}
+  m_LocalPosition: {x: -0.0000000067520887, y: 0.020311363, z: 0.0000000021536835}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1.0000001}
+  m_Children:
+  - {fileID: 8972533537653153711}
+  m_Father: {fileID: 4600387517195539258}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2289778723575362073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551607612392594424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 15
+  transform: {fileID: 6556598542777781512}
+  parentBone: {fileID: 8123433840031536575}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.0000000067520887, y: 0.020311363, z: 0.0000000021536835}
+    rotation: {x: -0.03673318, y: -0.0074328487, z: -0.039881077, w: 0.99850124}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &4627883315198303225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4233955591484172958}
+  - component: {fileID: 6198972985485054754}
+  m_Layer: 0
+  m_Name: Bone_ThumbFingerTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4233955591484172958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627883315198303225}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00067034556, y: 0.024590706, z: -0.0010270268}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1211060125235505399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6198972985485054754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627883315198303225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 16
+  transform: {fileID: 4233955591484172958}
+  parentBone: {fileID: 3507798863529929434}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.0006703495, y: 0.024590706, z: -0.0010270273}
+    rotation: {x: 0, y: 0, z: 0, w: 1.0000002}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &5407237689549500032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435168657127838765}
+  - component: {fileID: 8455706450898022140}
+  m_Layer: 0
+  m_Name: Bone_IndexFingerProximalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435168657127838765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407237689549500032}
+  m_LocalRotation: {x: 0.043281443, y: -0.03068309, z: 0.018855589, w: 0.9984136}
+  m_LocalPosition: {x: 0.023550678, y: 0.09599624, z: 0.0073164552}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 5275507593668456591}
+  m_Father: {fileID: 853572685643715334}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8455706450898022140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407237689549500032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 4
+  transform: {fileID: 6435168657127838765}
+  parentBone: {fileID: 7046671643316630252}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.023550678, y: 0.09599624, z: 0.0073164552}
+    rotation: {x: 0.043281443, y: -0.03068309, z: 0.018855589, w: 0.9984136}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &5547923193932994100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281682115339793139}
+  - component: {fileID: 3729861495313827462}
+  m_Layer: 0
+  m_Name: Bone_MiddleFingerMiddlePhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281682115339793139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547923193932994100}
+  m_LocalRotation: {x: -0.001978267, y: 0.011228234, z: 0.004378874, w: 0.99992543}
+  m_LocalPosition: {x: 0, y: 0.042927, z: -4.656613e-10}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 1709254936820036269}
+  m_Father: {fileID: 2170398165213529588}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3729861495313827462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547923193932994100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 8
+  transform: {fileID: 1281682115339793139}
+  parentBone: {fileID: 6667909256339393200}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0, y: 0.042927, z: -4.656613e-10}
+    rotation: {x: -0.0030069598, y: 0.010454836, z: 0.005551214, w: 0.9999255}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &5818116716879143571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619393830690729480}
+  - component: {fileID: 4322088774136405345}
+  m_Layer: 0
+  m_Name: Bone_ThumbFingerProximalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619393830690729480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818116716879143571}
+  m_LocalRotation: {x: -0.08406223, y: 0.08270377, z: 0.076961696, w: 0.99003565}
+  m_LocalPosition: {x: -0.002783019, y: 0.056550942, z: -0.005663654}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 1211060125235505399}
+  m_Father: {fileID: 5449357953733917370}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4322088774136405345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818116716879143571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 2
+  transform: {fileID: 1619393830690729480}
+  parentBone: {fileID: 7447895796009220734}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.002783019, y: 0.056550942, z: -0.005663654}
+    rotation: {x: -0.016428534, y: 0.13878857, z: -0.017242683, w: 0.99003565}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &6372816130765436320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8972533537653153711}
+  - component: {fileID: 1853754038713610143}
+  m_Layer: 0
+  m_Name: Bone_PinkyFingerTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8972533537653153711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372816130765436320}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00024647595, y: 0.02192226, z: -0.001216071}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 6556598542777781512}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853754038713610143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372816130765436320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 20
+  transform: {fileID: 8972533537653153711}
+  parentBone: {fileID: 2289778723575362073}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.00024647595, y: 0.02192226, z: -0.001216071}
+    rotation: {x: 0, y: 0, z: 0, w: 0.99999994}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &6548527075925254504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4568141256072594275}
+  - component: {fileID: 5409849781762430118}
+  m_Layer: 0
+  m_Name: Bone_IndexFingerDistalPhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4568141256072594275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548527075925254504}
+  m_LocalRotation: {x: -0.072034, y: 0.016056001, z: 0.027148718, w: 0.99690336}
+  m_LocalPosition: {x: 0.0000000016589183, y: 0.024303664, z: -8.2945906e-10}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 9001632947647285968}
+  m_Father: {fileID: 5275507593668456591}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5409849781762430118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548527075925254504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 6
+  transform: {fileID: 4568141256072594275}
+  parentBone: {fileID: 7872727761328689126}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.0000000016589183, y: 0.024303664, z: -8.2945906e-10}
+    rotation: {x: -0.07301194, y: 0.00959594, z: 0.027584765, w: 0.9969035}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &7364514650791766506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4600387517195539258}
+  - component: {fileID: 8123433840031536575}
+  m_Layer: 0
+  m_Name: Bone_PinkyFingerMiddlePhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4600387517195539258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364514650791766506}
+  m_LocalRotation: {x: -0.01328605, y: 0.037616648, z: 0.04293772, w: 0.99828094}
+  m_LocalPosition: {x: 0.0000000018626451, y: 0.030720413, z: -6.9849193e-10}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 6556598542777781512}
+  m_Father: {fileID: 3049674385111934648}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8123433840031536575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364514650791766506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 14
+  transform: {fileID: 4600387517195539258}
+  parentBone: {fileID: 1847660753259006278}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: 0.0000000018626451, y: 0.030720413, z: -6.9849193e-10}
+    rotation: {x: -0.010490286, y: 0.0290956, z: 0.04978535, w: 0.9982809}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &7844376550234630283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853572685643715334}
+  - component: {fileID: 7046671643316630252}
+  - component: {fileID: 6203017321408103635}
+  m_Layer: 0
+  m_Name: BasicHandSkeleton_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853572685643715334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844376550234630283}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5449357953733917370}
+  - {fileID: 6435168657127838765}
+  - {fileID: 2170398165213529588}
+  - {fileID: 2341224849639733680}
+  - {fileID: 3049674385111934648}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7046671643316630252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844376550234630283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 0
+  transform: {fileID: 853572685643715334}
+  parentBone: {fileID: 0}
+  isParentBoneClosestAncestor: 0
+  bindPoseInitiallySet: 0
+  bindPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  notifiedAddedToHandSkeleton: 1
+--- !u!114 &6203017321408103635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844376550234630283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74491646daefd2b4e8d6ee84a7d53cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handTrackingDataProvider: {fileID: 0}
+  poseProvider: {fileID: 0}
+  handType: 0
+  applyPoseProviderScale: 0
+  scale: 1
+  onPoseUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  transform: {fileID: 853572685643715334}
+  editorBoneCollection:
+    Bones:
+    - {fileID: 7844376550234630283}
+    - {fileID: 4295446187081541041}
+    - {fileID: 5818116716879143571}
+    - {fileID: 1972422606800615079}
+    - {fileID: 5407237689549500032}
+    - {fileID: 4243112408672457215}
+    - {fileID: 6548527075925254504}
+    - {fileID: 1030129136224442160}
+    - {fileID: 5547923193932994100}
+    - {fileID: 3759689108665397592}
+    - {fileID: 1154011382033923296}
+    - {fileID: 8518347339848890000}
+    - {fileID: 2635567236787848456}
+    - {fileID: 1203792290488435962}
+    - {fileID: 7364514650791766506}
+    - {fileID: 4551607612392594424}
+    - {fileID: 4627883315198303225}
+    - {fileID: 8120348020251968275}
+    - {fileID: 1284301869895594016}
+    - {fileID: 8427464475951576981}
+    - {fileID: 6372816130765436320}
+  bones:
+    items:
+      items:
+      - {fileID: 7046671643316630252}
+      - {fileID: 7447895796009220734}
+      - {fileID: 4322088774136405345}
+      - {fileID: 3507798863529929434}
+      - {fileID: 8455706450898022140}
+      - {fileID: 7872727761328689126}
+      - {fileID: 5409849781762430118}
+      - {fileID: 6667909256339393200}
+      - {fileID: 3729861495313827462}
+      - {fileID: 2624275472687702292}
+      - {fileID: 4604555583520204417}
+      - {fileID: 801015311225327968}
+      - {fileID: 8576900730649789130}
+      - {fileID: 1847660753259006278}
+      - {fileID: 8123433840031536575}
+      - {fileID: 2289778723575362073}
+      - {fileID: 6198972985485054754}
+      - {fileID: 2552793563651970764}
+      - {fileID: 4949988820919973949}
+      - {fileID: 5290257137115626378}
+      - {fileID: 1853754038713610143}
+      nonNullItemIndices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+      count: 21
+  parentBones: ffffffff000000000100000002000000000000000400000005000000000000000700000008000000000000000a0000000b000000000000000d0000000e0000000300000006000000090000000c0000000f000000
+  updateRun: 1
+--- !u!1 &8120348020251968275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9001632947647285968}
+  - component: {fileID: 2552793563651970764}
+  m_Layer: 0
+  m_Name: Bone_IndexFingerTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9001632947647285968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120348020251968275}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00029560563, y: 0.022363404, z: -0.0010250827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4568141256072594275}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2552793563651970764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120348020251968275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 17
+  transform: {fileID: 9001632947647285968}
+  parentBone: {fileID: 5409849781762430118}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.00029560563, y: 0.022363404, z: -0.0010250827}
+    rotation: {x: 0, y: 0, z: 0, w: 1.0000001}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &8427464475951576981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4063651642073355582}
+  - component: {fileID: 5290257137115626378}
+  m_Layer: 0
+  m_Name: Bone_RingFingerTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4063651642073355582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427464475951576981}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0002579085, y: 0.024326125, z: -0.0016081731}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1956652268650455516}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5290257137115626378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427464475951576981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 19
+  transform: {fileID: 4063651642073355582}
+  parentBone: {fileID: 8576900730649789130}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.0002579085, y: 0.024326125, z: -0.0016081731}
+    rotation: {x: 0, y: 0, z: 0, w: 1.0000001}
+  notifiedAddedToHandSkeleton: 1
+--- !u!1 &8518347339848890000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940685227898809782}
+  - component: {fileID: 801015311225327968}
+  m_Layer: 0
+  m_Name: Bone_RingFingerMiddlePhalanx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1940685227898809782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518347339848890000}
+  m_LocalRotation: {x: 0.00567602, y: 0.03363252, z: 0.00278984, w: 0.99941427}
+  m_LocalPosition: {x: -0.0000000027939677, y: 0.038996093, z: 0.0000000011641532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1956652268650455516}
+  m_Father: {fileID: 2341224849639733680}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &801015311225327968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518347339848890000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec74f524834a94fb22ff7dd5c7f8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSkeleton: {fileID: 6203017321408103635}
+  boneId: 11
+  transform: {fileID: 1940685227898809782}
+  parentBone: {fileID: 4604555583520204417}
+  isParentBoneClosestAncestor: 1
+  bindPoseInitiallySet: 1
+  bindPose:
+    position: {x: -0.0000000027939677, y: 0.038996093, z: 0.0000000011641532}
+    rotation: {x: -0.00221759, y: 0.033620846, z: 0.0059890263, w: 0.9994143}
+  notifiedAddedToHandSkeleton: 1

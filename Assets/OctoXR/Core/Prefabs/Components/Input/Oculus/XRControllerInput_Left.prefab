@@ -1,0 +1,962 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1671226879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671226880}
+  m_Layer: 0
+  m_Name: OculusTouchControllerOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671226880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671226879}
+  m_LocalRotation: {x: -0.55706775, y: -0.513838, z: -0.47630093, w: -0.44585145}
+  m_LocalPosition: {x: -0.05481171, y: -0.016238708, z: -0.116813384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2362667547118138485}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5995884088937407362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8357635625294632949, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_Name
+      value: XRControllerInput_Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: isTracking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: rootPoseOffset
+      value: 
+      objectReference: {fileID: 1671226880}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: isOnTrackingStartSent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].position.x
+      value: -0.05481171
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].position.y
+      value: -0.016238708
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].position.z
+      value: -0.116813384
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].rotation.w
+      value: -0.44585145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].rotation.x
+      value: -0.55706775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].rotation.y
+      value: -0.513838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[0].rotation.z
+      value: -0.47630093
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].position.x
+      value: -0.040229615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].position.y
+      value: -0.0073480066
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].position.z
+      value: -0.09797807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].rotation.w
+      value: -0.8086703
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].rotation.x
+      value: -0.48217657
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].rotation.y
+      value: -0.27811062
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[1].rotation.z
+      value: 0.19029658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].position.x
+      value: -0.011316992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].position.y
+      value: 0.023938062
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].position.z
+      value: -0.060254388
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].rotation.w
+      value: -0.8327901
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].rotation.x
+      value: -0.4465354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].rotation.y
+      value: -0.3211071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[2].rotation.z
+      value: 0.06290737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].position.x
+      value: 0.0019146465
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].position.y
+      value: 0.043987423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].position.z
+      value: -0.036486335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].rotation.w
+      value: -0.8754359
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].rotation.x
+      value: -0.36860424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].rotation.y
+      value: -0.28190982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[3].rotation.z
+      value: 0.13516727
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].position.x
+      value: -0.0329628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].position.y
+      value: 0.000053402036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].position.z
+      value: -0.021521017
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].rotation.w
+      value: -0.42781866
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].rotation.x
+      value: -0.59978426
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].rotation.y
+      value: -0.5094539
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[4].rotation.z
+      value: -0.44461992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].position.x
+      value: -0.024213295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].position.y
+      value: -0.004302778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].position.z
+      value: 0.015125267
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].rotation.w
+      value: -0.4093529
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].rotation.x
+      value: -0.59310496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].rotation.y
+      value: -0.5175241
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[5].rotation.z
+      value: -0.4613303
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].position.x
+      value: -0.018472811
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].position.y
+      value: -0.007442767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].position.z
+      value: 0.03853156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].rotation.w
+      value: -0.42997512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].rotation.x
+      value: -0.568424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].rotation.y
+      value: -0.4731606
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[6].rotation.z
+      value: -0.5178173
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].position.x
+      value: -0.03813212
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].position.y
+      value: -0.021649713
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].position.z
+      value: -0.022737704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].rotation.w
+      value: -0.3865943
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].rotation.x
+      value: -0.6007944
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].rotation.y
+      value: -0.512506
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[7].rotation.z
+      value: -0.4763703
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].position.x
+      value: -0.0275078
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].position.y
+      value: -0.029194778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].position.z
+      value: 0.018163674
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].rotation.w
+      value: -0.37991342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].rotation.x
+      value: -0.59688026
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].rotation.y
+      value: -0.51323545
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[8].rotation.z
+      value: -0.4857873
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].position.x
+      value: -0.020797659
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].position.y
+      value: -0.03427797
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].position.z
+      value: 0.04439562
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].rotation.w
+      value: -0.41369763
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].rotation.x
+      value: -0.5442938
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].rotation.y
+      value: -0.47580567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[9].rotation.z
+      value: -0.5533604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].position.x
+      value: -0.05481171
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].position.y
+      value: -0.016238708
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].position.z
+      value: -0.116813384
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].rotation.w
+      value: -0.44585145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].rotation.x
+      value: -0.55706775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].rotation.y
+      value: -0.513838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[0].rotation.z
+      value: -0.47630093
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[1].rotation.w
+      value: 0.68141717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[1].rotation.x
+      value: -0.0052590524
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[1].rotation.y
+      value: -0.6271987
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[1].rotation.z
+      value: -0.3771802
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[2].rotation.w
+      value: 0.99003565
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[2].rotation.x
+      value: -0.08406229
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[2].rotation.y
+      value: 0.08270369
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[2].rotation.z
+      value: 0.07696169
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[3].rotation.w
+      value: 0.9926751
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[3].rotation.x
+      value: -0.058274187
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[3].rotation.y
+      value: -0.083505996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[3].rotation.z
+      value: -0.06501585
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[4].rotation.w
+      value: 0.9984136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[4].rotation.x
+      value: 0.043281455
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[4].rotation.y
+      value: -0.030683083
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[4].rotation.z
+      value: 0.018855589
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[5].rotation.w
+      value: 0.99963504
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[5].rotation.x
+      value: 0.0032929422
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[5].rotation.y
+      value: 0.025852412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[5].rotation.z
+      value: 0.0071160584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[6].rotation.w
+      value: 0.99690336
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[6].rotation.x
+      value: -0.072033994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[6].rotation.y
+      value: 0.016055994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[6].rotation.z
+      value: 0.02714872
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[7].rotation.w
+      value: 0.99728745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[7].rotation.x
+      value: 0.051835753
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[7].rotation.y
+      value: 0.009066328
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[7].rotation.z
+      value: 0.05146558
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[8].rotation.w
+      value: 0.99992543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[8].rotation.x
+      value: -0.0019781606
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[8].rotation.y
+      value: 0.01122824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[8].rotation.z
+      value: 0.0043788785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[9].rotation.w
+      value: 0.9950631
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[9].rotation.x
+      value: -0.09300723
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[9].rotation.y
+      value: 0.034319565
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[9].rotation.z
+      value: 0.004611846
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].position.x
+      value: -0.03556737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].position.y
+      value: -0.04029902
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].position.z
+      value: -0.031578332
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].rotation.w
+      value: -0.32756737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].rotation.x
+      value: -0.6114838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].rotation.y
+      value: -0.4874043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[10].rotation.z
+      value: -0.5303059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].position.x
+      value: -0.025870685
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].position.y
+      value: -0.052398484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].position.z
+      value: 0.004202578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].rotation.w
+      value: -0.3060326
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].rotation.x
+      value: -0.5965092
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].rotation.y
+      value: -0.4994398
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[11].rotation.z
+      value: -0.5487084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].position.x
+      value: -0.018961718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].position.y
+      value: -0.060737435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].position.z
+      value: 0.028469302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].rotation.w
+      value: -0.33500856
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].rotation.x
+      value: -0.5719236
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].rotation.y
+      value: -0.5038043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[12].rotation.z
+      value: -0.5539441
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].position.x
+      value: -0.030401465
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].position.y
+      value: -0.057089813
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].position.z
+      value: -0.04456804
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].rotation.w
+      value: -0.28235346
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].rotation.x
+      value: -0.58077836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].rotation.y
+      value: -0.5151087
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[13].rotation.z
+      value: -0.56359226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].position.x
+      value: -0.021797799
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].position.y
+      value: -0.066609435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].position.z
+      value: -0.01665572
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].rotation.w
+      value: -0.24600844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].rotation.x
+      value: -0.57694566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].rotation.y
+      value: -0.49241906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[14].rotation.z
+      value: -0.60343784
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].position.x
+      value: -0.016287392
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].position.y
+      value: -0.07461226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].position.z
+      value: 0.0011808351
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].rotation.w
+      value: -0.28948632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].rotation.x
+      value: -0.5463487
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].rotation.y
+      value: -0.5053973
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[15].rotation.z
+      value: -0.60189253
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].position.x
+      value: 0.011901029
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].position.y
+      value: 0.061757766
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].position.z
+      value: -0.022677021
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].rotation.w
+      value: -0.8754359
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].rotation.x
+      value: -0.36860424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].rotation.y
+      value: -0.28190982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[16].rotation.z
+      value: 0.13516727
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].position.x
+      value: -0.017426893
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].position.y
+      value: -0.0118155405
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].position.z
+      value: 0.060464263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].rotation.w
+      value: -0.42997512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].rotation.x
+      value: -0.568424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].rotation.y
+      value: -0.4731606
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[17].rotation.z
+      value: -0.5178173
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].position.x
+      value: -0.020409752
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].position.y
+      value: -0.03978185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].position.z
+      value: 0.0687717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].rotation.w
+      value: -0.41369763
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].rotation.x
+      value: -0.5442938
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].rotation.y
+      value: -0.47580567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[18].rotation.z
+      value: -0.5533604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].position.x
+      value: -0.015502403
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].position.y
+      value: -0.06778015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].position.z
+      value: 0.05155278
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].rotation.w
+      value: -0.33500856
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].rotation.x
+      value: -0.5719236
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].rotation.y
+      value: -0.5038043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[19].rotation.z
+      value: -0.5539441
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].position.x
+      value: -0.013033997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].position.y
+      value: -0.08179442
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].position.z
+      value: 0.021673834
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].rotation.w
+      value: -0.28948632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].rotation.x
+      value: -0.5463487
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].rotation.y
+      value: -0.5053973
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneAbsolutePoses.items.Array.data[20].rotation.z
+      value: -0.60189253
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[10].rotation.w
+      value: 0.9897163
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[10].rotation.x
+      value: 0.04981351
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[10].rotation.y
+      value: 0.053159375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[10].rotation.z
+      value: 0.12310342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[11].rotation.w
+      value: 0.99941427
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[11].rotation.x
+      value: 0.005676029
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[11].rotation.y
+      value: 0.033632513
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[11].rotation.z
+      value: 0.0027898496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[12].rotation.w
+      value: 0.99925476
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[12].rotation.x
+      value: -0.025028516
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[12].rotation.y
+      value: 0.0034774526
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[12].rotation.z
+      value: -0.029179571
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[13].rotation.w
+      value: 0.98254246
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[13].rotation.x
+      value: 0.05740251
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[13].rotation.y
+      value: 0.121911824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[13].rotation.z
+      value: 0.12826872
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[14].rotation.w
+      value: 0.99828094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[14].rotation.x
+      value: -0.0132862795
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[14].rotation.y
+      value: 0.037616663
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[14].rotation.z
+      value: 0.042937696
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[15].rotation.w
+      value: 0.99850136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[15].rotation.x
+      value: -0.02401897
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[15].rotation.y
+      value: -0.0006447675
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632950, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: boneRelativePoses.items.Array.data[15].rotation.z
+      value: -0.049170636
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+--- !u!4 &2362667547118138485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8357635625294632951, guid: 6131b1fa164ccd74e97dea88151f685b, type: 3}
+  m_PrefabInstance: {fileID: 5995884088937407362}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31965cce324c5c14db00f055fed5656c, type: 3}
+  m_Name: OK
+  m_EditorClassIdentifier: 
+  threshold: 0.005
+  shapeDatas:
+  - name: ThumbFingerMetacarpal
+    handBoneId: 1
+    relativeBonePosition: {x: 0.0104965335, y: 0.020069275, z: 0.011554099}
+  - name: ThumbFingerProximalPhalanx
+    handBoneId: 2
+    relativeBonePosition: {x: 0.03413562, y: 0.05304724, z: 0.051447473}
+  - name: ThumbFingerDistalPhalanx
+    handBoneId: 3
+    relativeBonePosition: {x: 0.035896838, y: 0.07822157, z: 0.07392249}
+  - name: IndexFingerProximalPhalanx
+    handBoneId: 4
+    relativeBonePosition: {x: 0.02355066, y: 0.09599628, z: 0.007316446}
+  - name: IndexFingerMiddlePhalanx
+    handBoneId: 5
+    relativeBonePosition: {x: 0.020473149, y: 0.117854096, z: 0.038158715}
+  - name: IndexFingerDistalPhalanx
+    handBoneId: 6
+    relativeBonePosition: {x: 0.01941919, y: 0.110341325, z: 0.06124798}
+  - name: MiddleFingerProximalPhalanx
+    handBoneId: 7
+    relativeBonePosition: {x: 0.0017259102, y: 0.095646635, z: 0.0025431383}
+  - name: MiddleFingerMiddlePhalanx
+    handBoneId: 8
+    relativeBonePosition: {x: -0.0007532835, y: 0.13686232, z: 0.014284112}
+  - name: MiddleFingerDistalPhalanx
+    handBoneId: 9
+    relativeBonePosition: {x: -0.0018452033, y: 0.15812966, z: 0.03176227}
+  - name: RingFingerProximalPhalanx
+    handBoneId: 10
+    relativeBonePosition: {x: -0.017465252, y: 0.088693835, z: 0.0065293014}
+  - name: RingFingerMiddlePhalanx
+    handBoneId: 11
+    relativeBonePosition: {x: -0.023720983, y: 0.12708788, z: 0.0037984103}
+  - name: RingFingerDistalPhalanx
+    handBoneId: 12
+    relativeBonePosition: {x: -0.025751114, y: 0.151556, z: 0.013963729}
+  - name: PinkyFingerProximalPhalanx
+    handBoneId: 13
+    relativeBonePosition: {x: -0.035056394, y: 0.07789523, z: 0.013691114}
+  - name: PinkyFingerMiddlePhalanx
+    handBoneId: 14
+    relativeBonePosition: {x: -0.046591885, y: 0.10544013, z: 0.006483324}
+  - name: PinkyFingerDistalPhalanx
+    handBoneId: 15
+    relativeBonePosition: {x: -0.054173797, y: 0.12419218, z: 0.008334596}
+  - name: ThumbFingerTip
+    handBoneId: 16
+    relativeBonePosition: {x: 0.022143207, y: 0.09453954, z: 0.0862014}
+  - name: IndexFingerTip
+    handBoneId: 17
+    relativeBonePosition: {x: 0.017589685, y: 0.09904276, z: 0.08048989}
+  - name: MiddleFingerTip
+    handBoneId: 18
+    relativeBonePosition: {x: -0.0037273616, y: 0.17944658, z: 0.04467292}
+  - name: RingFingerTip
+    handBoneId: 19
+    relativeBonePosition: {x: -0.026329882, y: 0.17392494, z: 0.023644067}
+  - name: PinkyFingerTip
+    handBoneId: 20
+    relativeBonePosition: {x: -0.06043593, y: 0.14522867, z: 0.008952823}

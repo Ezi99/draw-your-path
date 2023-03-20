@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31965cce324c5c14db00f055fed5656c, type: 3}
+  m_Name: Index Flexion
+  m_EditorClassIdentifier: 
+  bonePositionDeltaThreshold: 0.005
+  shapeDatas:
+  - name: IndexFingerProximalPhalanx
+    handBoneId: 4
+    relativeBonePosition: {x: 0.023550691, y: 0.095996246, z: 0.0073164655}
+  - name: IndexFingerMiddlePhalanx
+    handBoneId: 5
+    relativeBonePosition: {x: 0.020173216, y: 0.114509694, z: 0.0402455}
+  - name: IndexFingerDistalPhalanx
+    handBoneId: 6
+    relativeBonePosition: {x: 0.021607904, y: 0.0907223, z: 0.045017246}
+  - name: IndexFingerTip
+    handBoneId: 17
+    relativeBonePosition: {x: 0.02357445, y: 0.07941865, z: 0.025791714}

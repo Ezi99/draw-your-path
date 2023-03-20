@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31965cce324c5c14db00f055fed5656c, type: 3}
+  m_Name: Middle Extension
+  m_EditorClassIdentifier: 
+  bonePositionDeltaThreshold: 0.005
+  shapeDatas:
+  - name: MiddleFingerProximalPhalanx
+    handBoneId: 7
+    relativeBonePosition: {x: 0.0017259116, y: 0.09564661, z: 0.0025431688}
+  - name: MiddleFingerMiddlePhalanx
+    handBoneId: 8
+    relativeBonePosition: {x: -0.0007767828, y: 0.13842559, z: 0.0050778515}
+  - name: MiddleFingerDistalPhalanx
+    handBoneId: 9
+    relativeBonePosition: {x: -0.0025806034, y: 0.16579062, z: 0.0077009443}
+  - name: MiddleFingerTip
+    handBoneId: 18
+    relativeBonePosition: {x: -0.005113565, y: 0.19052818, z: 0.005196595}

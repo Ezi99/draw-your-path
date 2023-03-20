@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31965cce324c5c14db00f055fed5656c, type: 3}
+  m_Name: Pinky Extension
+  m_EditorClassIdentifier: 
+  bonePositionDeltaThreshold: 0.005
+  shapeDatas:
+  - name: PinkyFingerProximalPhalanx
+    handBoneId: 13
+    relativeBonePosition: {x: -0.03505639, y: 0.07789516, z: 0.013691135}
+  - name: PinkyFingerMiddlePhalanx
+    handBoneId: 14
+    relativeBonePosition: {x: -0.040451016, y: 0.10791856, z: 0.010053127}
+  - name: PinkyFingerDistalPhalanx
+    handBoneId: 15
+    relativeBonePosition: {x: -0.04497192, y: 0.12771879, z: 0.01030546}
+  - name: PinkyFingerTip
+    handBoneId: 20
+    relativeBonePosition: {x: -0.047959596, y: 0.14941461, z: 0.008725143}
