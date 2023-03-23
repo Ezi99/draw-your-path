@@ -718,11 +718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -0.984
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.88
+      value: 2.963
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1658,6 +1658,7 @@ GameObject:
   - component: {fileID: 548058522}
   - component: {fileID: 548058528}
   - component: {fileID: 548058527}
+  - component: {fileID: 548058529}
   m_Layer: 6
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1706,7 +1707,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3621981467535291324, guid: 6c2509c76b281144cb0099fc45f17a09, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1912,10 +1913,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 548058529}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: HideHandOnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 548058529}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: HideHandOnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -1966,6 +1991,21 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &548058529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548058520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a39e381b2c1ffd479b012c94a3be24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handPrefab: {fileID: 7072478885645355679, guid: a543ce027c5ec3a4788c4f633673c3de, type: 3}
+  inputDeviceCharacteristics: 320
+  hideHandOnSelect: 1
 --- !u!1 &589061832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.401
+      value: -0.598
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2571,7 +2611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.959
+      value: 1.563
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3106,6 +3146,7 @@ GameObject:
   - component: {fileID: 1239590217}
   - component: {fileID: 1239590223}
   - component: {fileID: 1239590222}
+  - component: {fileID: 1239590224}
   m_Layer: 6
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -3154,7 +3195,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3621981467535291324, guid: ddc38db09f9124241b4b4e9b2b9831eb, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -3360,10 +3401,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1239590224}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: HideHandOnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1239590224}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: HideHandOnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -3379,7 +3444,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 0
-  m_HideControllerOnSelect: 1
+  m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
   m_TargetPriorityMode: 0
   m_PlayAudioClipOnSelectEntered: 0
@@ -3414,6 +3479,21 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &1239590224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239590215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a39e381b2c1ffd479b012c94a3be24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handPrefab: {fileID: 3240524871627034548, guid: 534053b397750e74588f25f926e8da72, type: 3}
+  inputDeviceCharacteristics: 576
+  hideHandOnSelect: 1
 --- !u!1001 &1243862645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3937,7 +4017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.925
+      value: 1.548
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4364,7 +4444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.163
+      value: 0.127
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4372,7 +4452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.974
+      value: 1.575
       objectReference: {fileID: 0}
     - target: {fileID: 5036977337781995756, guid: 82b9b09049c5c134fb3435f779330abc, type: 3}
       propertyPath: m_LocalRotation.w
