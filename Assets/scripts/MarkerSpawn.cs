@@ -1,7 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -14,7 +11,7 @@ public class MarkerSpawn : MonoBehaviour
     public GameObject RightHandDrawCanvas;
     public GameObject RightHand;
     public GameObject LeftHand;
-    public eraser _eraser;
+    public eraser Eraser;
 
     private InputDevice RtargetDevice, LtargetDevice;
     private int counter = 0;
@@ -90,7 +87,7 @@ public class MarkerSpawn : MonoBehaviour
     private void BringHandsBack()
     {
         counter = 0;
-        _eraser.erase();
+        Eraser.erase();
         Lmarker.SetActive(false);
         RightHandDrawCanvas.SetActive(false);
         Rmarker.SetActive(false);
