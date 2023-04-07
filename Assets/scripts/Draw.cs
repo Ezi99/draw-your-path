@@ -20,7 +20,7 @@ public class Draw : MonoBehaviour
     void Start()
     {
         m_Renderer = m_Tip.GetComponent<Renderer>();
-        m_Colors = Enumerable.Repeat(m_Renderer.material.color, m_PenSize * m_PenSize).ToArray();
+        m_Colors = Enumerable.Repeat(Color.black, m_PenSize * m_PenSize).ToArray();
         m_TipHeight = m_Tip.localScale.y;
     }
 
@@ -44,7 +44,7 @@ public class Draw : MonoBehaviour
                 var x = (int)(m_TouchedSurfacePos.x * m_Canvas.textureSize.x - (m_PenSize / 2));
                 var y = (int)(m_TouchedSurfacePos.y * m_Canvas.textureSize.y - (m_PenSize / 2));
 
-                if (y < 0 || y > m_Canvas.textureSize.y || x < 0 || x  > m_Canvas.textureSize.x)
+                if (y < 0 || y > m_Canvas.textureSize.y || x < 0 || x > m_Canvas.textureSize.x)
                 {
                     return;
                 }
