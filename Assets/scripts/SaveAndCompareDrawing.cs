@@ -2,9 +2,13 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 using UnityEngine.Timeline;
+using System.Linq.Expressions;
 
 public class SaveAndCompareDrawing : MonoBehaviour
 {
+    public SwordManagement SwordManage;
+    public ShieldManagement ShieldManage;
+    public BridgeManagement BridgeManage;
     public DrawCanvas LeftDrawCanvas;
     public DrawCanvas RightDrawCanvas;
     public Draw RightMarker;
@@ -19,7 +23,6 @@ public class SaveAndCompareDrawing : MonoBehaviour
     private int numOfDrawnPixels;
     private int maxItemPixelHits = 0;
     private int accuracyLimit;
-    //private Texture2D test_image;
 
     void Start()
     {
@@ -99,10 +102,24 @@ public class SaveAndCompareDrawing : MonoBehaviour
         string result = "nothing";
         int shieldPixelHits = checkIfShield(ref drawCanvas);
         int swordPixelHits = checkIfSword(ref drawCanvas);
+        int bridgePixelHits = checkIfBridge(ref drawCanvas);
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
-        Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
+        comparePixelHits(bridgePixelHits, "bridge", ref result);
+        if (result == "sword")
+        {
+            SwordManage.SpawnSword(swordPixelHits, numOfDrawnPixels);
+        }
+        else if (result == "shield")
+        {
+            ShieldManage.SpawnShield(shieldPixelHits, numOfDrawnPixels);
+        }
+        else if (result == "bridge")
+        {
+            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+        }
 
+        Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
     }
 
     private void resetCanvas(ref DrawCanvas drawCanvas)
@@ -141,6 +158,45 @@ public class SaveAndCompareDrawing : MonoBehaviour
         return pixelHits;
     }
 
+    private int checkIfBridge(ref DrawCanvas drawCanvas)
+    {
+        Texture2D Bridge;
+        int pixelHits = 0;
+        Bridge = drawBridge(ref drawCanvas.texture, ref pixelHits);
+        Debug.Log("THERE WAS " + pixelHits + " BRIDGE HITS");
+        encodeDrawing2PNG("Bridge.png", ref Bridge);
+        return pixelHits;
+    }
+
+    private Texture2D drawBridge(ref Texture2D drawCanvas, ref int pixelHits)
+    {
+        int bridgeWidth = lowestCoord.x - highestCoord.x;
+        Texture2D Bridge = new Texture2D(textureSize, textureSize);
+
+        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize - 30; x += 15)
+        {
+            for (int y = 0; y < textureSize - 30; y += 15)
+            {
+                if (x >= highestCoord.x && x <= highestCoord.x + 30 || x >= lowestCoord.x - 30)
+                {
+                    if (y >= highestCoord.y - bridgeWidth && y <= highestCoord.y + bridgeWidth)
+                    {
+                        Bridge.SetPixels(x, y, 30, 30, colors);
+                        isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                    }
+                }
+                else if(y >= highestCoord.y - bridgeWidth  && y <= highestCoord.y - bridgeWidth + 30 || y <= highestCoord.y + bridgeWidth && y >= highestCoord.y + bridgeWidth - 30)
+                {
+                    Bridge.SetPixels(x, y, 30, 30, colors);
+                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                }
+            }
+        }
+
+        Bridge.Apply();
+        return Bridge;
+    }
+
     private Texture2D drawShield(ref Texture2D drawCanvas, ref int pixelHits)
     {
         Texture2D shield = new Texture2D(textureSize, textureSize);
@@ -148,9 +204,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
         float centerY = highestCoord.y;
         float centerX = highestCoord.x + radius + 30;// added 30 to improve player's chances 
 
-        for (int x = highestCoord.x; x <= lowestCoord.x + 30 && x < textureSize; x += 15)
+        for (int x = highestCoord.x; x <= lowestCoord.x + 30 && x < textureSize - 30; x += 15)
         {
-            for (int y = 0; y < textureSize; y += 10)
+            for (int y = 0; y < textureSize - 30; y += 15)
             {
                 float distanceToCenter = Mathf.Sqrt(Mathf.Pow(y - centerY, 2) + Mathf.Pow(x - centerX, 2));
                 if (distanceToCenter <= radius && distanceToCenter >= radius - 30)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
@@ -171,9 +227,10 @@ public class SaveAndCompareDrawing : MonoBehaviour
         int swordWidth = (lowestCoord.x - highestCoord.x) / 9;
         int handleLocation = (lowestCoord.x - highestCoord.x) / 8;
         int handleSize = (lowestCoord.x - highestCoord.x) / 3;
-        for (int x = highestCoord.x; x <= lowestCoord.x; x += 15)
+
+        for (int x = highestCoord.x; x <= lowestCoord.x && x < textureSize - 30; x += 15)
         {
-            for (int y = 0; y < textureSize; y += 10)
+            for (int y = 0; y < textureSize - 30; y += 15)
             {
                 if (x <= lowestCoord.x - handleLocation && x >= lowestCoord.x - 2 * handleLocation)// check if it's time to draw handle
                 {

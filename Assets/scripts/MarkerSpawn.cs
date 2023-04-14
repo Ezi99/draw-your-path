@@ -84,10 +84,10 @@ public class MarkerSpawn : MonoBehaviour
             }
         }
     }
+
     private void BringHandsBack()
     {
         counter = 0;
-        Eraser.erase();
         Lmarker.SetActive(false);
         RightHandDrawCanvas.SetActive(false);
         Rmarker.SetActive(false);
@@ -95,9 +95,11 @@ public class MarkerSpawn : MonoBehaviour
         RightHand.SetActive(true);
         LeftHand.SetActive(true);
     }
+
     private void PullMarkerAndCanvas(GameObject marker, GameObject canvas)
     {
         counter = 1;
+        Eraser.erase();
         RightHand.SetActive(false);
         LeftHand.SetActive(false);
         marker.SetActive(true);
