@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5847517178294488336}
   - component: {fileID: 6937590008739311585}
   - component: {fileID: 815826084165335928}
+  - component: {fileID: 7666444764791070751}
   m_Layer: 10
   m_Name: BridgeCover
   m_TagString: Untagged
@@ -241,6 +242,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &7666444764791070751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549825549552990108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce7026d8c80c3046bddca9ec6cc9082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8987712484252463839
 GameObject:
   m_ObjectHideFlags: 0

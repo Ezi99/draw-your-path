@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class DrawCanvas : MonoBehaviour
@@ -10,5 +11,13 @@ public class DrawCanvas : MonoBehaviour
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
         r.material.mainTexture = texture;
     }
+
+    public void ResetCanvas()
+    {
+        Color[] emptyColors = Enumerable.Repeat(new Color(0, 0, 0, 0), 1024 * 1024).ToArray();
+        texture.SetPixels(emptyColors);
+        texture.Apply();
+    }
+
 
 }
