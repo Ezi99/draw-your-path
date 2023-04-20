@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swordAttack : MonoBehaviour
+public class EnemySwordAttack : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
