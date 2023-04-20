@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class ShieldManagement : ItemManagement
+public class ShieldManagement : ObjectManagement
 {
-    private int textureSize = 1024;
-
     public void SpawnShield(int pixelHits, int numOfDrawnPixels)
     {
         int Durability;
@@ -18,21 +17,21 @@ public class ShieldManagement : ItemManagement
             Durability = (int)accuracy * 100;
             if (accuracy <= 0.75)
             {
-                cloneShield = Instantiate(WeakItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+                cloneShield = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
             }
             else
             {
-                cloneShield = Instantiate(RegularItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+                cloneShield = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
             }
         }
         else
         {
             Durability = 100;
-            cloneShield = Instantiate(StrongItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+            cloneShield = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
         }
 
         cloneShield.GetComponent<Shield>().SetStats(Durability);
-        ItemList.Add(cloneShield);
+        ObjectList.Add(cloneShield);
     }
 
     public int CheckIfShield(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
@@ -57,7 +56,7 @@ public class ShieldManagement : ItemManagement
             for (int y = 0; y < textureSize - 30; y += 15)
             {
                 float distanceToCenter = Mathf.Sqrt(Mathf.Pow(y - centerY, 2) + Mathf.Pow(x - centerX, 2));
-                if (distanceToCenter <= radius && distanceToCenter >= radius - 30)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
+                if (distanceToCenter <= radius && distanceToCenter >= radius - 45)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
                 {
                     shield.SetPixels(x, y, 30, 30, colors);
                     isPixelSet(x, y, ref pixelHits, ref drawCanvas);

@@ -4,20 +4,21 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-public class ItemManagement : MonoBehaviour
+public class ObjectManagement : MonoBehaviour
 {
-    public GameObject WeakItem;
-    public GameObject RegularItem;
-    public GameObject StrongItem;
-    public Transform ItemSpawn;
-    protected List<GameObject> ItemList = new List<GameObject>();
+    public GameObject Weak;
+    public GameObject Regular;
+    public GameObject Strong;
+    public Transform SpawnLocation;
+    protected int textureSize = 1024;
+    protected List<GameObject> ObjectList = new List<GameObject>();
 
     protected void checkNumOfItems(int limit = 2)
     {
-        if (ItemList.Count >= limit)
+        if (ObjectList.Count >= limit)
         {
-            Destroy(ItemList.First());
-            ItemList.RemoveAt(0);
+            Destroy(ObjectList.First());
+            ObjectList.RemoveAt(0);
         }
     }
 

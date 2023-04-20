@@ -4,10 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class SwordManagement : ItemManagement
+public class SwordManagement : ObjectManagement
 {
-    private int textureSize = 1024;
-
     public void SpawnSword(int pixelHits, int numOfDrawnPixels)
     {
         int damage;
@@ -22,23 +20,23 @@ public class SwordManagement : ItemManagement
             if (accuracy <= 0.75)
             {
                 damage = 25;
-                cloneSword = Instantiate(WeakItem, ItemSpawn.position, Quaternion.Euler(180, 0, 0));
+                cloneSword = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
             }
             else
             {
                 damage = 35;
-                cloneSword = Instantiate(RegularItem, ItemSpawn.position, Quaternion.Euler(180, 0, 0));
+                cloneSword = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
             }
         }
         else
         {
             Durability = 100;
             damage = 50;
-            cloneSword = Instantiate(StrongItem, ItemSpawn.position, Quaternion.Euler(180, 0, 0));
+            cloneSword = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
         }
 
         cloneSword.GetComponent<Sword>().SetStats(damage, Durability);
-        ItemList.Add(cloneSword);
+        ObjectList.Add(cloneSword);
     }
 
     public int CheckIfSword(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)

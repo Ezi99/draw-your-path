@@ -66,7 +66,7 @@ public class Draw : MonoBehaviour
                         {
                             return;
                         }
-               
+
                         canvas.texture.SetPixels(lerpX, lerpY, penSize, penSize, colors);
                         updateHighLowCoords(lerpX, lerpY);
                     }

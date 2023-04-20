@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BridgeManagement : ItemManagement // no need for Bridge class
+public class BridgeManagement : ObjectManagement // no need for Bridge class
 {
     private int lifeSpan;
-    private int textureSize = 1024;
 
     public void SpawnBridge(int pixelHits, int numOfDrawnPixels)
     {
@@ -17,23 +16,23 @@ public class BridgeManagement : ItemManagement // no need for Bridge class
         {
             if (accuracy <= 0.75)
             {
-                bridgeClone = Instantiate(WeakItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+                bridgeClone = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
                 lifeSpan = 10;
             }
             else
             {
-                bridgeClone = Instantiate(RegularItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+                bridgeClone = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
                 lifeSpan = 15;
             }
         }
         else
         {
-            bridgeClone = Instantiate(StrongItem, ItemSpawn.position, Quaternion.Euler(90, 90, 90));
+            bridgeClone = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
             lifeSpan = 20;
         }
 
         bridgeClone.GetComponent<Bridge>().DespawnCountDown(lifeSpan);
-        ItemList.Add(bridgeClone);
+        ObjectList.Add(bridgeClone);
     }
 
     public int CheckIfBridge(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)

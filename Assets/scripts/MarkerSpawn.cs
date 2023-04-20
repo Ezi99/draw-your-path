@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class MarkerSpawn : MonoBehaviour
 {
     public InputDeviceCharacteristics RinputDeviceCharacteristics, LinputDeviceCharacteristics;
-    public GameObject Rmarker;
-    public GameObject Lmarker;
+    public UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousMoveProvider playerMovement;
+    public GameObject RightItemMarker;
+    public GameObject RightSpellMarker;
+    public GameObject LeftItemMarker;
+    public GameObject LeftSpellMarker;
     public GameObject LeftHandDrawCanvas;
     public GameObject RightHandDrawCanvas;
     public GameObject RightHand;
@@ -14,7 +18,8 @@ public class MarkerSpawn : MonoBehaviour
     public eraser Eraser;
 
     private InputDevice RtargetDevice, LtargetDevice;
-    private int counter = 0;
+    private bool drewItem = false;
+    private bool drewSpell = false;
     void Start()
     {
         InitializeHand();
@@ -47,50 +52,58 @@ public class MarkerSpawn : MonoBehaviour
 
     private void UpdateHand()
     {
-        RtargetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool Rres);
-        LtargetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool Lres);
-        if (Lres == false)
+        RtargetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool RightPrimaryRes);
+        LtargetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool LeftPrimaryRes);
+        RtargetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool RightSecondaryRes);
+        LtargetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool LeftSecondaryRes);
+
+        if (RightPrimaryRes == true && RightSecondaryRes == false && LeftPrimaryRes == false && LeftSecondaryRes == false)
         {
-            if (Rres)
+            if (drewItem == false)
             {
-                if (counter == 0) //Spawn the draw canvas and marker
-                {
-                    PullMarkerAndCanvas(Rmarker, LeftHandDrawCanvas);
-                }
-            }
-            else
-            {
-                if (counter == 1)//DeSpawn the draw canvas and marker
-                {
-                    BringHandsBack();
-                }
+                PullMarkerAndCanvas(RightItemMarker, LeftHandDrawCanvas);
             }
         }
-        if (Rres == false)
+        else if (LeftPrimaryRes == true && LeftSecondaryRes == false && RightPrimaryRes == false && RightSecondaryRes == false)
         {
-            if (Lres)
+            if (drewItem == false)
             {
-                if (counter == 0) //Spawn the draw canvas and marker
-                {
-                    PullMarkerAndCanvas(Lmarker, RightHandDrawCanvas);
-                }
+                PullMarkerAndCanvas(LeftItemMarker, RightHandDrawCanvas);
             }
-            else
+        }
+        else if (RightSecondaryRes == true && RightPrimaryRes == false && LeftSecondaryRes == false && LeftPrimaryRes == false)
+        {
+            if (drewSpell == false)
             {
-                if (counter == 1)//DeSpawn the draw canvas and marker
-                {
-                    BringHandsBack();
-                }
+                PullMarkerAndCanvas(RightSpellMarker, LeftHandDrawCanvas);
+            }
+        }
+        else if (LeftSecondaryRes == true && LeftPrimaryRes == false && RightPrimaryRes == false && RightSecondaryRes == false)
+        {
+            if (drewSpell == false)
+            {
+                PullMarkerAndCanvas(LeftSpellMarker, RightHandDrawCanvas);
+            }
+        }
+        else if (LeftSecondaryRes == false && RightSecondaryRes == false && LeftPrimaryRes == false && RightPrimaryRes == false)
+        {
+            if (drewItem == true || drewSpell == true)
+            {
+                BringHandsBack();
             }
         }
     }
 
     private void BringHandsBack()
     {
-        counter = 0;
-        Lmarker.SetActive(false);
+        playerMovement.moveSpeed = 1;
+        drewItem = false;
+        drewSpell = false;
+        LeftItemMarker.SetActive(false);
+        LeftSpellMarker.SetActive(false);
         RightHandDrawCanvas.SetActive(false);
-        Rmarker.SetActive(false);
+        RightItemMarker.SetActive(false);
+        RightSpellMarker.SetActive(false);
         LeftHandDrawCanvas.SetActive(false);
         RightHand.SetActive(true);
         LeftHand.SetActive(true);
@@ -98,7 +111,15 @@ public class MarkerSpawn : MonoBehaviour
 
     private void PullMarkerAndCanvas(GameObject marker, GameObject canvas)
     {
-        counter = 1;
+        playerMovement.moveSpeed = 0;
+        if (marker == LeftItemMarker || marker == RightItemMarker)
+        {
+            drewItem = true;
+        }
+        else
+        {
+            drewSpell = true;
+        }
         Eraser.erase();
         RightHand.SetActive(false);
         LeftHand.SetActive(false);
