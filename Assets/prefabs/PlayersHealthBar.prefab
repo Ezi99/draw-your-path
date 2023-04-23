@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 5108264822932124371}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000025033949}
   m_LocalPosition: {x: 0, y: 0, z: -0.00029056822}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.76136, y: 0.76136, z: 0.76136}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5108264823368858856}
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -714, y: 540}
+  m_AnchoredPosition: {x: -212.7, y: 106}
   m_SizeDelta: {x: 250.8858, y: 63.1388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5108264822932124382
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 5108264823866753172}
   - component: {fileID: 5108264823866753163}
   m_Layer: 5
-  m_Name: Boarder
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 5108264823682495338}
   - component: {fileID: 5108264823682495337}
   m_Layer: 5
-  m_Name: UI
+  m_Name: PlayersHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

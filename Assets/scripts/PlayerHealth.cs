@@ -26,4 +26,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth-=dmg;
         healthbar.SetHealth(currentHealth);
     }
+
+    public void GainHealth(int amountOfHeal)
+    {
+        currentHealth += amountOfHeal;
+        healthbar.SetHealth(currentHealth);
+    }
 }

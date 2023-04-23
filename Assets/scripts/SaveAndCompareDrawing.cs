@@ -70,7 +70,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void analyseDrawing(string fileName, ref DrawCanvas drawCanvas, ref Draw marker)
     {
-        if (numOfDrawnPixels > 50) // small drawings will bring unexpected results so we put this limit
+        if (numOfDrawnPixels > 40) // small drawings will bring unexpected results so we put this limit
         {
             if (marker == LeftItemMarker || marker == RightItemMarker)
             {
@@ -103,6 +103,11 @@ public class SaveAndCompareDrawing : MonoBehaviour
         {
             FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, ref marker, rightSpellDrew);
         }
+        if (result == "Health")
+        {
+            HealthManage.SpawnHealth(HealthPixelHits, numOfDrawnPixels);
+        }
+
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
 
     }
@@ -143,7 +148,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void comparePixelHits(int itemPixelHits, string itemName, ref string result)
     {
-        if (itemPixelHits > accuracyLimit && itemPixelHits > maxItemPixelHits)
+        if (itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
         {
             maxItemPixelHits = itemPixelHits;
             result = itemName;

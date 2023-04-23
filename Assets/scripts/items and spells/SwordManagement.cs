@@ -20,19 +20,19 @@ public class SwordManagement : ObjectManagement
             if (accuracy <= 0.75)
             {
                 damage = 25;
-                cloneSword = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
+                cloneSword = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
             }
             else
             {
                 damage = 35;
-                cloneSword = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
+                cloneSword = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
             }
         }
         else
         {
             Durability = 100;
             damage = 50;
-            cloneSword = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(180, 0, 0));
+            cloneSword = Instantiate(Strong, SpawnLocation.position, SpawnLocation.rotation);
         }
 
         cloneSword.GetComponent<Sword>().SetStats(damage, Durability);

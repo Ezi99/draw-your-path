@@ -48,7 +48,7 @@ public class FireBallManagement : ObjectManagement
 
         rigidBody = cloneFireBall.GetComponent<Rigidbody>();
         cloneFireBall.GetComponent<FireBall>().SetStats(damage);
-        rigidBody.AddForce(SpawnLocation.forward * 5000);
+        rigidBody.AddForce(SpawnLocation.forward * 3000);
         ObjectList.Add(cloneFireBall);
     }
 

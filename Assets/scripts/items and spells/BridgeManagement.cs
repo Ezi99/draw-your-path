@@ -50,9 +50,9 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
         float bridgeWidth = (float)(lowestCoord.x - highestCoord.x) / 1.5f;
         Texture2D Bridge = new Texture2D(textureSize, textureSize);
 
-        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize - 30; x += 30)
+        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize - 30; x += 10)
         {
-            for (int y = 0; y < textureSize - 30; y += 10)
+            for (int y = 0; y < textureSize - 30; y += 15)
             {
                 if (x >= highestCoord.x && x <= highestCoord.x + 30 || x >= lowestCoord.x - 30)
                 {
