@@ -7,6 +7,7 @@ public class MarkerSpawn : MonoBehaviour
 {
     public InputDeviceCharacteristics RinputDeviceCharacteristics, LinputDeviceCharacteristics;
     public UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousMoveProvider playerMovement;
+    private float saveSpeed;
     public GameObject RightItemMarker;
     public GameObject RightSpellMarker;
     public GameObject LeftItemMarker;
@@ -23,6 +24,7 @@ public class MarkerSpawn : MonoBehaviour
     void Start()
     {
         InitializeHand();
+        saveSpeed = playerMovement.moveSpeed;
     }
 
     private void InitializeHand()
@@ -96,7 +98,7 @@ public class MarkerSpawn : MonoBehaviour
 
     private void BringHandsBack()
     {
-        playerMovement.moveSpeed = 1;
+        playerMovement.moveSpeed = saveSpeed;
         drewItem = false;
         drewSpell = false;
         LeftItemMarker.SetActive(false);
