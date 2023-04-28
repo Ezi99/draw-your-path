@@ -50,7 +50,7 @@ public class ShieldManagement : ObjectManagement
         float radius = (lowestCoord.x - highestCoord.x) / 2f;
         float centerY = highestCoord.y;
         float centerX = highestCoord.x + radius + 30;// added 30 to improve player's chances
-        int circleWidth = (lowestCoord.x - highestCoord.x) / 10;
+        int circleWidth = (lowestCoord.x - highestCoord.x) / 12;
 
         for (int x = highestCoord.x; x <= lowestCoord.x + 30 && x < textureSize - 30; x += 15)
         {
