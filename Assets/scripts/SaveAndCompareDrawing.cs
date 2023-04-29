@@ -11,6 +11,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public BridgeManagement BridgeManage;
     public FireBallManagement FireBallManage;
     public RegenerateHealth HealthManage;
+    public HammerManagement HammerManage;
     public DrawCanvas LeftDrawCanvas;
     public DrawCanvas RightDrawCanvas;
     public Draw RightItemMarker;
@@ -123,14 +124,16 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int shieldPixelHits = ShieldManage.CheckIfShield(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        /*int shieldPixelHits = ShieldManage.CheckIfShield(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
         int swordPixelHits = SwordManage.CheckIfSword(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);*/
+        int HammerPixelHits = HammerManage.CheckIfHammer(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
 
-        comparePixelHits(shieldPixelHits, "shield", ref result);
+        /*comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
-        comparePixelHits(bridgePixelHits, "bridge", ref result);
-        if (result == "sword")
+        comparePixelHits(bridgePixelHits, "bridge", ref result);*/
+        comparePixelHits(HammerPixelHits, "hammer", ref result);
+        /*if (result == "sword")
         {
             SwordManage.SpawnSword(swordPixelHits, numOfDrawnPixels);
         }
@@ -141,6 +144,10 @@ public class SaveAndCompareDrawing : MonoBehaviour
         else if (result == "bridge")
         {
             BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+        }*/
+        if (result == "hammer")
+        {
+            //BridgeManage.SpawnBridge(HammerPixelHits, numOfDrawnPixels);
         }
 
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
