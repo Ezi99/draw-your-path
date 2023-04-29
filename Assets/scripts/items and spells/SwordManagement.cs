@@ -55,6 +55,10 @@ public class SwordManagement : ObjectManagement
         int swordWidth = (lowestCoord.x - highestCoord.x) / 9;
         int handleLocation = (lowestCoord.x - highestCoord.x) / 8;
         int handleSize = (lowestCoord.x - highestCoord.x) / 3;
+        bool importantPoint1 = false;
+        bool importantPoint2 = false;
+        bool importantPoint3 = false;
+
 
         for (int x = highestCoord.x; x <= lowestCoord.x && x < textureSize - 30; x += 15)
         {
@@ -67,7 +71,10 @@ public class SwordManagement : ObjectManagement
                         if (y <= highestCoord.y - handleSize + handleSize / 2 || y >= highestCoord.y + handleSize - handleSize / 2)
                         {
                             Sword.SetPixels(x, y, 30, 30, colors);
-                            isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                            if(isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                            {
+                                importantPoint1 = true;
+                            }
                         }
                     }
                 }
@@ -76,15 +83,27 @@ public class SwordManagement : ObjectManagement
                     if (x >= highestCoord.x && x <= highestCoord.x + 30 || x >= lowestCoord.x - 30)
                     {
                         Sword.SetPixels(x, y, 30, 30, colors);
-                        isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                        if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                        {
+                            importantPoint2 = true;
+                        }
                     }
                     else if (y <= highestCoord.y - swordWidth + swordWidth / 2 || y >= highestCoord.y + swordWidth - swordWidth / 2)
                     {
                         Sword.SetPixels(x, y, 30, 30, colors);
-                        isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                        if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                        {
+                            importantPoint3 = true;
+                        }
                     }
                 }
             }
+        }
+
+        if (importantPoint1 == false || importantPoint2 == false || importantPoint3 == false)
+        {
+            pixelHits = 0;
+            Debug.Log("can't finesse us with sword");
         }
 
         Sword.Apply();

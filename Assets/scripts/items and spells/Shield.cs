@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     private int m_Durability;
-    public DestructibleWall Wall;
 
     void Update()
     {
@@ -16,13 +15,4 @@ public class Shield : MonoBehaviour
     {
         m_Durability = Durability;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("destructible wall") == true)
-        {
-            Wall.DestoryWall();
-        }
-    }
-
 }
