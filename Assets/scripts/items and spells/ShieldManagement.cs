@@ -50,14 +50,14 @@ public class ShieldManagement : ObjectManagement
         float radius = (lowestCoord.x - highestCoord.x) / 2f;
         float centerY = highestCoord.y;
         float centerX = highestCoord.x + radius + 30;// added 30 to improve player's chances
-        int circleWidth = (lowestCoord.x - highestCoord.x) / 12;
+        int circleThickess = (lowestCoord.x - highestCoord.x) / 12;
 
         for (int x = highestCoord.x; x <= lowestCoord.x + 30 && x < textureSize - 30; x += 15)
         {
             for (int y = 0; y < textureSize - 30; y += 15)
             {
                 float distanceToCenter = Mathf.Sqrt(Mathf.Pow(y - centerY, 2) + Mathf.Pow(x - centerX, 2));
-                if (distanceToCenter <= radius && distanceToCenter >= radius - circleWidth)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
+                if (distanceToCenter <= radius && distanceToCenter >= radius - circleThickess)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
                 {
                     shield.SetPixels(x, y, 30, 30, colors);
                     isPixelSet(x, y, ref pixelHits, ref drawCanvas);

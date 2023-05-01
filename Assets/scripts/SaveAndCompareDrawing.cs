@@ -18,6 +18,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public Draw RightSpellMarker;
     public Draw LeftItemMarker;
     public Draw LeftSpellMarker;
+
     private string playersDrawingName = "PlayersDrawing.png";
     private bool leftItemDrew = false;
     private bool leftSpellDrew = false;
@@ -95,19 +96,26 @@ public class SaveAndCompareDrawing : MonoBehaviour
         string result = "nothing";
         int FireBallPixelHits = FireBallManage.CheckIfFireBall(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
         int HealthPixelHits = HealthManage.CheckIfHealth(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
 
 
         comparePixelHits(FireBallPixelHits, "FireBall", ref result);
         comparePixelHits(HealthPixelHits, "Health", ref result);
+        comparePixelHits(bridgePixelHits, "bridge", ref result);
 
-        if(result == "FireBall")
+        if (result == "FireBall")
         {
             FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, ref marker, rightSpellDrew);
         }
-        if (result == "Health")
+        else if (result == "Health")
         {
             HealthManage.SpawnHealth(HealthPixelHits, numOfDrawnPixels);
         }
+        else if (result == "bridge")
+        {
+            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+        }
+
 
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
 
@@ -126,13 +134,12 @@ public class SaveAndCompareDrawing : MonoBehaviour
         string result = "nothing";
         int shieldPixelHits = ShieldManage.CheckIfShield(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
         int swordPixelHits = SwordManage.CheckIfSword(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
         int HammerPixelHits = HammerManage.CheckIfHammer(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
-        comparePixelHits(bridgePixelHits, "bridge", ref result);
         comparePixelHits(HammerPixelHits, "hammer", ref result);
+
         if (result == "sword")
         {
             SwordManage.SpawnSword(swordPixelHits, numOfDrawnPixels);
@@ -140,10 +147,6 @@ public class SaveAndCompareDrawing : MonoBehaviour
         else if (result == "shield")
         {
             ShieldManage.SpawnShield(shieldPixelHits, numOfDrawnPixels);
-        }
-        else if (result == "bridge")
-        {
-            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
         }
         else if (result == "hammer")
         {

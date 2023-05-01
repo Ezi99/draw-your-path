@@ -74,27 +74,13 @@ public class RegenerateHealth : ObjectManagement
                     secondLine++;
                 }
             }
-            /*
-            for (int y = 0; y < textureSize; y += 15)
-            {
-                if (y >= highestCoord.y - 30 && y <= highestCoord.y + 30)
-                {
-                    Health.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
-                }
-                else if (x <= highestCoord.x + healthLength / 2 + 20 && x >= highestCoord.x + healthLength / 2 - 20 && y >= highestCoord.y - healthLength / 2 && y <= highestCoord.y + healthLength / 2)
-                {
-                    Health.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
-                }
-            }*/
         }
-        Debug.Log($"first is {firstLine} second is {secondLine}");
+
         int absDifference = Mathf.Abs(firstLine - secondLine);
         if (absDifference > firstLine  || absDifference > secondLine)//make sure player drew a decent plus and not just 1 straight line
         {
             pixelHits = 0;
-            Debug.Log($"can't finesse us with {absDifference}");
+            Debug.Log($"can't finesse us {absDifference} with health");
         }
 
         Health.Apply();

@@ -17,18 +17,18 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
             if (accuracy <= 0.75)
             {
                 bridgeClone = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-                lifeSpan = 10;
+                lifeSpan = 20;
             }
             else
             {
                 bridgeClone = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-                lifeSpan = 15;
+                lifeSpan = 30;
             }
         }
         else
         {
             bridgeClone = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-            lifeSpan = 20;
+            lifeSpan = 40;
         }
 
         bridgeClone.GetComponent<Bridge>().DespawnCountDown(lifeSpan);
@@ -39,30 +39,37 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
     {
         Texture2D Bridge;
         int pixelHits = 0;
-        Bridge = drawBridge(ref drawCanvas.texture,ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        Bridge = drawBridge(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
         Debug.Log("THERE WAS " + pixelHits + " BRIDGE HITS");
         encodeDrawing2PNG("Bridge.png", ref Bridge);
         return pixelHits;
     }
 
-    private Texture2D drawBridge(ref Texture2D drawCanvas,ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawBridge(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
     {
-        float bridgeWidth = (float)(lowestCoord.x - highestCoord.x) / 1.5f;
+        int drawingLength = lowestCoord.x - highestCoord.x;
+        int bridgeWidth = (int)(drawingLength / 1.5f);
+        int bridgeThickness = drawingLength / 10;
         Texture2D Bridge = new Texture2D(textureSize, textureSize);
 
-        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize - 30; x += 10)
+        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize; x += 10)
         {
-            for (int y = 0; y < textureSize - 30; y += 15)
+            if (x >= highestCoord.x && x <= highestCoord.x + bridgeThickness || x >= lowestCoord.x - bridgeThickness)
             {
-                if (x >= highestCoord.x && x <= highestCoord.x + 30 || x >= lowestCoord.x - 30)
+                for (int y = highestCoord.y - bridgeWidth; y < textureSize && y <= highestCoord.y + bridgeWidth; y += 15)
                 {
-                    if (y >= highestCoord.y - bridgeWidth && y <= highestCoord.y + bridgeWidth)
-                    {
-                        Bridge.SetPixels(x, y, 30, 30, colors);
-                        isPixelSet(x, y, ref pixelHits, ref drawCanvas);
-                    }
+                    Bridge.SetPixels(x, y, 30, 30, colors);
+                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
                 }
-                else if (y >= highestCoord.y - bridgeWidth && y <= highestCoord.y - bridgeWidth + 30 || y <= highestCoord.y + bridgeWidth && y >= highestCoord.y + bridgeWidth - 30)
+            }
+            else
+            {
+                for (int y = highestCoord.y - bridgeWidth; y < textureSize && y <= highestCoord.y - bridgeWidth + bridgeThickness; y += 10)
+                {
+                    Bridge.SetPixels(x, y, 30, 30, colors);
+                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                }
+                for (int y = highestCoord.y + bridgeWidth - bridgeThickness; y < textureSize && y <= highestCoord.y + bridgeWidth; y += 10)
                 {
                     Bridge.SetPixels(x, y, 30, 30, colors);
                     isPixelSet(x, y, ref pixelHits, ref drawCanvas);
