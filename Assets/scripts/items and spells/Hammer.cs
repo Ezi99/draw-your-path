@@ -41,5 +41,14 @@ public class Hammer : MonoBehaviour
                 wall.TakeDamage(m_Damage, (int)velocity.magnitude);
             }
         }
+        else if(other.CompareTag("Gate") == true)
+        {
+            VillageGate gate = other.GetComponent<VillageGate>();
+            if (gate != null)
+            {
+                gate.TakeDamage((int)velocity.magnitude);
+            }
+        }
+
     }
 }

@@ -84,10 +84,12 @@ public class Draw : MonoBehaviour
         touchedSurfaceLastFrame = false;
     }
 
-    public void GetCoordinates(ref Coordinates highCoord, ref Coordinates lowCoord)
+    public void GetCoordinates(Coordinates highCoord, Coordinates lowCoord)
     {
-        highCoord = highestCoord;
-        lowCoord = lowestCoord;
+        highCoord.x = highestCoord.x;
+        highCoord.y = highestCoord.y;
+        lowCoord.x = lowestCoord.x;
+        lowCoord.y = lowestCoord.y;
     }
 
     private void updateHighLowCoords(int x, int y)
@@ -109,7 +111,7 @@ public class Draw : MonoBehaviour
         return numOfPixels;
     }
 
-    public void ResetCoords(ref Coordinates highCoord, ref Coordinates lowCoord)
+    public void ResetCoords( Coordinates highCoord,  Coordinates lowCoord)
     {
         lowCoord.x = lowestCoord.x = 0;
         lowCoord.y = lowestCoord.y = 0;

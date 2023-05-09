@@ -43,18 +43,18 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void checkIfStartedDrawing()
     {
-        checkIfMarkerStartedDrawing(ref RightItemMarker, ref LeftDrawCanvas, ref rightItemDrew);
-        checkIfMarkerStartedDrawing(ref LeftItemMarker, ref RightDrawCanvas, ref leftItemDrew);
-        checkIfMarkerStartedDrawing(ref RightSpellMarker, ref LeftDrawCanvas, ref rightSpellDrew);
-        checkIfMarkerStartedDrawing(ref LeftSpellMarker, ref RightDrawCanvas, ref leftSpellDrew);
+        checkIfMarkerStartedDrawing(RightItemMarker, LeftDrawCanvas, ref rightItemDrew);
+        checkIfMarkerStartedDrawing(LeftItemMarker, RightDrawCanvas, ref leftItemDrew);
+        checkIfMarkerStartedDrawing(RightSpellMarker, LeftDrawCanvas, ref rightSpellDrew);
+        checkIfMarkerStartedDrawing(LeftSpellMarker, RightDrawCanvas, ref leftSpellDrew);
     }
 
-    private void checkIfMarkerStartedDrawing(ref Draw marker, ref DrawCanvas drawCanvas, ref bool Drew)
+    private void checkIfMarkerStartedDrawing(Draw marker, DrawCanvas drawCanvas, ref bool Drew)
     {
         if (marker.isActiveAndEnabled == true)
         {
             numOfDrawnPixels = marker.GetNumOfDrawnPixels();
-            marker.GetCoordinates(ref highestCoord, ref lowestCoord);
+            marker.GetCoordinates(highestCoord, lowestCoord);
             Drew = true;
         }
         else
@@ -62,41 +62,41 @@ public class SaveAndCompareDrawing : MonoBehaviour
             if (Drew == true)
             {
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
-                analyseDrawing(playersDrawingName, ref drawCanvas, ref marker);
-                resetStats(ref marker);
+                analyseDrawing(playersDrawingName, drawCanvas, marker);
+                resetStats(marker);
                 Drew = false;
             }
         }
 
     }
 
-    private void analyseDrawing(string fileName, ref DrawCanvas drawCanvas, ref Draw marker)
+    private void analyseDrawing(string fileName, DrawCanvas drawCanvas, Draw marker)
     {
         if (numOfDrawnPixels > 40) // small drawings will bring unexpected results so we put this limit
         {
             if (marker == LeftItemMarker || marker == RightItemMarker)
             {
-                compareItemDrawing(ref drawCanvas);
+                compareItemDrawing(drawCanvas);
             }
             else
             {
-                compareSpellDrawing(ref drawCanvas, ref marker);
+                compareSpellDrawing(drawCanvas, marker);
             }
         }
-        encodeDrawing2PNG(fileName, ref drawCanvas.texture);
+        encodeDrawing2PNG(fileName, drawCanvas.texture);
         if (numOfDrawnPixels != 0)
         {
             drawCanvas.ResetCanvas();
         }
     }
 
-    private void compareSpellDrawing(ref DrawCanvas drawCanvas, ref Draw marker)
+    private void compareSpellDrawing(DrawCanvas drawCanvas, Draw marker)
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int FireBallPixelHits = FireBallManage.CheckIfFireBall(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int HealthPixelHits = HealthManage.CheckIfHealth(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestCoord, lowestCoord, colors);
+        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestCoord, lowestCoord, colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestCoord, lowestCoord, colors);
 
 
         comparePixelHits(FireBallPixelHits, "FireBall", ref result);
@@ -105,7 +105,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
         if (result == "FireBall")
         {
-            FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, ref marker, rightSpellDrew);
+            FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, marker, rightSpellDrew);
         }
         else if (result == "Health")
         {
@@ -121,20 +121,20 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     }
 
-    private void resetStats(ref Draw marker)
+    private void resetStats(Draw marker)
     {
-        marker.ResetCoords(ref highestCoord, ref lowestCoord);
+        marker.ResetCoords(highestCoord, lowestCoord);
         marker.ResetNumOfPixels();
         maxItemPixelHits = 0;
     }
 
-    private void compareItemDrawing(ref DrawCanvas drawCanvas)
+    private void compareItemDrawing(DrawCanvas drawCanvas)
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int shieldPixelHits = ShieldManage.CheckIfShield(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int swordPixelHits = SwordManage.CheckIfSword(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int HammerPixelHits = HammerManage.CheckIfHammer(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestCoord, lowestCoord, colors);
+        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestCoord, lowestCoord, colors);
+        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestCoord, lowestCoord, colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
@@ -165,7 +165,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         }
     }
 
-    private void encodeDrawing2PNG(string fileName, ref Texture2D drawing)
+    private void encodeDrawing2PNG(string fileName, Texture2D drawing)
     {
         byte[] encodedImage = drawing.EncodeToPNG();
         string filePath = Application.dataPath + "/" + fileName;

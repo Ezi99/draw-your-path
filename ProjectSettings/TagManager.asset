@@ -10,6 +10,7 @@ TagManager:
   - destructible wall
   - sword
   - shield
+  - Gate
   layers:
   - Default
   - TransparentFX

@@ -34,17 +34,17 @@ public class ShieldManagement : ObjectManagement
         ObjectList.Add(cloneShield);
     }
 
-    public int CheckIfShield(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    public int CheckIfShield(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Shield;
         int pixelHits = 0;
-        Shield = drawShield(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        Shield = drawShield(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " SHIELD HITS");
         encodeDrawing2PNG("Circle.png", ref Shield);
         return pixelHits;
     }
 
-    private Texture2D drawShield(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawShield(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D shield = new Texture2D(textureSize, textureSize);
         float radius = (lowestCoord.x - highestCoord.x) / 2f;
@@ -60,7 +60,7 @@ public class ShieldManagement : ObjectManagement
                 if (distanceToCenter <= radius && distanceToCenter >= radius - circleThickess)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
                 {
                     shield.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                    isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
             }
         }

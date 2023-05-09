@@ -38,17 +38,17 @@ public class HammerManagement : ObjectManagement
         ObjectList.Add(cloneHammer);
     }
 
-    public int CheckIfHammer(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    public int CheckIfHammer(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D hammer;
         int pixelHits = 0;
-        hammer = drawHammer(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        hammer = drawHammer(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HAMMER HITS");
         encodeDrawing2PNG("Hammer.png", ref hammer);
         return pixelHits;
     }
 
-    private Texture2D drawHammer(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawHammer(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         int drawingLength = (lowestCoord.x - highestCoord.x);
         int HeadWidth = drawingLength / 3;
@@ -66,7 +66,7 @@ public class HammerManagement : ObjectManagement
                 for (int y = highestCoord.y - HeadWidth; y < textureSize && y <= highestCoord.y + HeadWidth; y += 15)
                 {
                     hammer.SetPixels(x, y, 30, 30, colors);
-                    if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                    if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
                         importantPoints[0] = true;
                     }
@@ -77,7 +77,7 @@ public class HammerManagement : ObjectManagement
                 for (int y = highestCoord.y - HeadWidth; y < textureSize && y <= highestCoord.y - HeadWidth + headThickness; y += 15)
                 {
                     hammer.SetPixels(x, y, 30, 30, colors);
-                    if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                    if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
                         importantPoints[1] = true;
                     }
@@ -85,7 +85,7 @@ public class HammerManagement : ObjectManagement
                 for (int y = highestCoord.y + HeadWidth - headThickness; y < textureSize && y <= highestCoord.y + HeadWidth; y += 15)
                 {
                     hammer.SetPixels(x, y, 30, 30, colors);
-                    if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                    if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
                         importantPoints[2] = true;
                     }
@@ -94,7 +94,7 @@ public class HammerManagement : ObjectManagement
             for (int y = highestCoord.y - handleThickness; y < textureSize && y <= highestCoord.y + handleThickness && x >= highestCoord.x + HeadLength && x <= lowestCoord.x; y += 15)
             {
                 hammer.SetPixels(x, y, 30, 30, colors);
-                if (isPixelSet(x, y, ref pixelHits, ref drawCanvas) == true)
+                if (isPixelSet(x, y,ref pixelHits, drawCanvas) == true)
                 {
                     importantPoints[3] = true;
                 }

@@ -30,17 +30,17 @@ public class RegenerateHealth : ObjectManagement
         m_PlayerHealth.GainHealth(gain);
     }
 
-    public int CheckIfHealth(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    public int CheckIfHealth(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Health;
         int pixelHits = 0;
-        Health = drawHealth(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        Health = drawHealth(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HEALTH HITS");
         encodeDrawing2PNG("Health.png", ref Health);
         return pixelHits;
     }
 
-    private Texture2D drawHealth(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawHealth(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Health = new Texture2D(textureSize, textureSize);
         int healthLength = lowestCoord.x - highestCoord.x;
@@ -60,7 +60,7 @@ public class RegenerateHealth : ObjectManagement
             for (int y = highestCoord.y - healthLength / 2; y < textureSize && x <= highestCoord.x + healthLength / 2 + healthWidth * 2 && x >= highestCoord.x + healthLength / 2 - healthWidth * 2 && y <= highestCoord.y + healthLength / 2; y += 15)
             {
                 Health.SetPixels(x, y, 30, 30, colors);
-                if (isPixelSet(x, y, ref pixelHits, ref drawCanvas))
+                if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                 {
                     firstLine++;
                 }
@@ -69,7 +69,7 @@ public class RegenerateHealth : ObjectManagement
             for (int y = highestCoord.y - healthWidth; enteredFirstLoop == false && y < textureSize && y <= highestCoord.y + healthWidth; y += 15)
             {
                 Health.SetPixels(x, y, 30, 30, colors);
-                if (isPixelSet(x, y, ref pixelHits, ref drawCanvas))
+                if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                 {
                     secondLine++;
                 }
@@ -77,7 +77,7 @@ public class RegenerateHealth : ObjectManagement
         }
 
         int absDifference = Mathf.Abs(firstLine - secondLine);
-        if (absDifference > firstLine  || absDifference > secondLine)//make sure player drew a decent plus and not just 1 straight line
+        if (absDifference > firstLine || absDifference > secondLine)//make sure player drew a decent plus and not just 1 straight line
         {
             pixelHits = 0;
             Debug.Log($"can't finesse us {absDifference} with health");

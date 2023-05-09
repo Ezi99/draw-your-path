@@ -35,17 +35,17 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
         ObjectList.Add(bridgeClone);
     }
 
-    public int CheckIfBridge(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    public int CheckIfBridge(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Bridge;
         int pixelHits = 0;
-        Bridge = drawBridge(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        Bridge = drawBridge(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " BRIDGE HITS");
         encodeDrawing2PNG("Bridge.png", ref Bridge);
         return pixelHits;
     }
 
-    private Texture2D drawBridge(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawBridge(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         int drawingLength = lowestCoord.x - highestCoord.x;
         int bridgeWidth = (int)(drawingLength / 1.5f);
@@ -59,7 +59,7 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
                 for (int y = highestCoord.y - bridgeWidth; y < textureSize && y <= highestCoord.y + bridgeWidth; y += 15)
                 {
                     Bridge.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                    isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
             }
             else
@@ -67,12 +67,12 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
                 for (int y = highestCoord.y - bridgeWidth; y < textureSize && y <= highestCoord.y - bridgeWidth + bridgeThickness; y += 10)
                 {
                     Bridge.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                    isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
                 for (int y = highestCoord.y + bridgeWidth - bridgeThickness; y < textureSize && y <= highestCoord.y + bridgeWidth; y += 10)
                 {
                     Bridge.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
+                    isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
             }
         }
@@ -80,5 +80,4 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
         Bridge.Apply();
         return Bridge;
     }
-
 }
