@@ -53,10 +53,10 @@ public class FireBallManagement : ObjectManagement
         ObjectList.Add(cloneFireBall);
     }
 
-    public int CheckIfFireBall(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
+    public int CheckIfFireBall(DrawCanvas drawCanvas, Coordinates highestXCoord, Coordinates lowestXCoord, Coordinates highestYCoord, Coordinates lowestYCoord, Color[] colors)
     {
         int pixelHits;
-        pixelHits = circle.CheckIfShield(drawCanvas, highestCoord, lowestCoord, colors);
+        pixelHits = circle.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log($"THERE WAS {pixelHits} FIREBALL HITS");
         return pixelHits;
     }

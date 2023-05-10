@@ -15,16 +15,20 @@ public class Draw : MonoBehaviour
     private DrawCanvas canvas = null;
     private Vector2 touchedSurfacePos, lastTouchedSurfacePos;
     private bool touchedSurfaceLastFrame;
-    private Coordinates highestCoord = new Coordinates();
-    private Coordinates lowestCoord = new Coordinates();
+    private Coordinates highestXCoord = new Coordinates();
+    private Coordinates lowestXCoord = new Coordinates();
+    private Coordinates highestYCoord = new Coordinates();
+    private Coordinates lowestYCoord = new Coordinates();
     private int numOfPixels = 0;
     void Start()
     {
         colors = Enumerable.Repeat(Color.red, penSize * penSize).ToArray();
-        lowestCoord.x = 0;
-        lowestCoord.y = 0;
-        highestCoord.x = 1024;
-        highestCoord.y = 1024;
+        highestYCoord.y = 0;
+        lowestYCoord.y = 1024;
+        lowestXCoord.x = 0;
+        lowestXCoord.y = 0;
+        highestXCoord.x = 1024;
+        highestXCoord.y = 1024;
     }
 
     void Update()
@@ -84,25 +88,39 @@ public class Draw : MonoBehaviour
         touchedSurfaceLastFrame = false;
     }
 
-    public void GetCoordinates(Coordinates highCoord, Coordinates lowCoord)
+    public void GetCoordinates(Coordinates highXCoord, Coordinates lowXCoord, Coordinates highYCoord, Coordinates lowYCoord)
     {
-        highCoord.x = highestCoord.x;
-        highCoord.y = highestCoord.y;
-        lowCoord.x = lowestCoord.x;
-        lowCoord.y = lowestCoord.y;
+        highXCoord.x = highestXCoord.x;
+        highXCoord.y = highestXCoord.y;
+        lowXCoord.x = lowestXCoord.x;
+        lowXCoord.y = lowestXCoord.y;
+        lowYCoord.x = lowestYCoord.x;
+        lowYCoord.y = lowestYCoord.y;
+        highYCoord.x = highestYCoord.x;
+        highYCoord.y = highestYCoord.y;
     }
 
     private void updateHighLowCoords(int x, int y)
     {
-        if (x < highestCoord.x)
+        if (x < highestXCoord.x)
         {
-            highestCoord.y = y;
-            highestCoord.x = x;
+            highestXCoord.y = y;
+            highestXCoord.x = x;
         }
-        if (x > lowestCoord.x)
+        if (x > lowestXCoord.x)
         {
-            lowestCoord.y = y;
-            lowestCoord.x = x;
+            lowestXCoord.y = y;
+            lowestXCoord.x = x;
+        }
+        if(y > highestYCoord.y)
+        {
+            highestYCoord.x = x;
+            highestYCoord.y = y;
+        }
+        if(y < lowestYCoord.y)
+        {
+            lowestYCoord.x = x;
+            lowestYCoord.y = y;
         }
     }
 
@@ -111,12 +129,16 @@ public class Draw : MonoBehaviour
         return numOfPixels;
     }
 
-    public void ResetCoords( Coordinates highCoord,  Coordinates lowCoord)
+    public void ResetCoords( Coordinates highXCoord,  Coordinates lowXCoord, Coordinates highYCoord, Coordinates lowYCoord)
     {
-        lowCoord.x = lowestCoord.x = 0;
-        lowCoord.y = lowestCoord.y = 0;
-        highCoord.x = highestCoord.x = 1024;
-        highCoord.y = highestCoord.y = 1024;
+        lowXCoord.x = lowestXCoord.x = 0;
+        lowXCoord.y = lowestXCoord.y = 0;
+        highXCoord.x = highestXCoord.x = 1024;
+        highXCoord.y = highestXCoord.y = 1024;
+        lowYCoord.x = lowestYCoord.x = 1024;
+        lowYCoord.y = lowestYCoord.y = 1024;
+        highYCoord.x = highestYCoord.x = 0;
+        highYCoord.y = highestYCoord.y = 0;
     }
 
     public void ResetNumOfPixels()

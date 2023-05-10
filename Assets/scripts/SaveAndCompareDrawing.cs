@@ -25,8 +25,10 @@ public class SaveAndCompareDrawing : MonoBehaviour
     private bool rightItemDrew = false;
     private bool rightSpellDrew = false;
     private Color[] colors;
-    private Coordinates highestCoord = new Coordinates();
-    private Coordinates lowestCoord = new Coordinates();
+    private Coordinates highestXCoord = new Coordinates();
+    private Coordinates lowestXCoord = new Coordinates();
+    private Coordinates highestYCoord = new Coordinates();
+    private Coordinates lowestYCoord = new Coordinates();
     private int numOfDrawnPixels;
     private int maxItemPixelHits = 0;
     private int accuracyLimit;
@@ -54,13 +56,14 @@ public class SaveAndCompareDrawing : MonoBehaviour
         if (marker.isActiveAndEnabled == true)
         {
             numOfDrawnPixels = marker.GetNumOfDrawnPixels();
-            marker.GetCoordinates(highestCoord, lowestCoord);
+            marker.GetCoordinates(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
             Drew = true;
         }
         else
         {
             if (Drew == true)
             {
+                numOfDrawnPixels /= 4;
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
                 analyseDrawing(playersDrawingName, drawCanvas, marker);
                 resetStats(marker);
@@ -94,9 +97,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestCoord, lowestCoord, colors);
-        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestCoord, lowestCoord, colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestCoord, lowestCoord, colors);
+        int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestXCoord, lowestXCoord, colors);
 
 
         comparePixelHits(FireBallPixelHits, "FireBall", ref result);
@@ -123,7 +126,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void resetStats(Draw marker)
     {
-        marker.ResetCoords(highestCoord, lowestCoord);
+        marker.ResetCoords(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
         marker.ResetNumOfPixels();
         maxItemPixelHits = 0;
     }
@@ -132,9 +135,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestCoord, lowestCoord, colors);
-        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestCoord, lowestCoord, colors);
-        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestCoord, lowestCoord, colors);
+        int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestXCoord, lowestXCoord, colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
