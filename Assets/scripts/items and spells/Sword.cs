@@ -22,7 +22,7 @@ public class Sword : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") == true)
         {
-            // we can have an instance of enemy class to activate it's takeDamage function
+            //other.getObje
         }
     }
 }

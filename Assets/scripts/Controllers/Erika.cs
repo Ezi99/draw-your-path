@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Erika : MonoBehaviour
 {
+
     public GameObject arrowObj;
     public Transform arrowPoint;
+    public Transform playerTransform;
+    public int health=100;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,18 @@ public class Erika : MonoBehaviour
     }
     public void shoot()
     {
-        GameObject arrow= Instantiate(arrowObj,arrowPoint.position,transform.rotation);
-        arrow.GetComponent<Rigidbody>().AddForce(transform.forward*25,ForceMode.Impulse);
+        GameObject arrow = Instantiate(arrowObj, arrowPoint.position, Quaternion.identity);
+        Vector3 direction = playerTransform.position - arrowPoint.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        arrow.transform.rotation = rotation;
+        arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * 25, ForceMode.Impulse);
+    }
+    public void takeDamage(int dmg)
+    {
+        health-=dmg;
+        if(health<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
