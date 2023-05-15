@@ -15,5 +15,4 @@ public class Shield : MonoBehaviour
     {
         m_Durability = Durability;
     }
-
 }

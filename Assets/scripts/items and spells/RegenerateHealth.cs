@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
 
 public class RegenerateHealth : ObjectManagement
 {
@@ -30,24 +32,25 @@ public class RegenerateHealth : ObjectManagement
         m_PlayerHealth.GainHealth(gain);
     }
 
-    public int CheckIfHealth(ref DrawCanvas drawCanvas, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    public int CheckIfHealth(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Health;
         int pixelHits = 0;
-        Health = drawHealth(ref drawCanvas.texture, ref pixelHits, ref highestCoord, ref lowestCoord, ref colors);
+        Health = drawHealth(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HEALTH HITS");
         encodeDrawing2PNG("Health.png", ref Health);
         return pixelHits;
     }
 
-    private Texture2D drawHealth(ref Texture2D drawCanvas, ref int pixelHits, ref Coordinates highestCoord, ref Coordinates lowestCoord, ref Color[] colors)
+    private Texture2D drawHealth(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         Texture2D Health = new Texture2D(textureSize, textureSize);
+        Color[] yellow = Enumerable.Repeat(Color.yellow, 30 * 30).ToArray();
         int healthLength = lowestCoord.x - highestCoord.x;
         int healthWidth = healthLength / 15;
         int firstLine = 0, secondLine = 0;
-        Debug.Log("da width is " + healthWidth);
-        bool enteredFirstLoop = false;
+        bool middlePoint = false;
+        bool enteredFirstLoop;
 
         if (healthLength % 2 == 1)
         {
@@ -59,42 +62,41 @@ public class RegenerateHealth : ObjectManagement
             enteredFirstLoop = false;
             for (int y = highestCoord.y - healthLength / 2; y < textureSize && x <= highestCoord.x + healthLength / 2 + healthWidth * 2 && x >= highestCoord.x + healthLength / 2 - healthWidth * 2 && y <= highestCoord.y + healthLength / 2; y += 15)
             {
-                Health.SetPixels(x, y, 30, 30, colors);
-                if (isPixelSet(x, y, ref pixelHits, ref drawCanvas))
+                if (y >= highestCoord.y - healthLength / 8 && y <= highestCoord.y + healthLength / 8)
                 {
-                    firstLine++;
+                    Health.SetPixels(x, y, 30, 30, yellow);
+                    if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
+                    {
+                        firstLine++;
+                        middlePoint = true;
+                    }
                 }
+                else 
+                {
+                    Health.SetPixels(x, y, 30, 30, colors);
+                    if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
+                    {
+                        firstLine++;
+                    }
+                }
+
                 enteredFirstLoop = true;
             }
             for (int y = highestCoord.y - healthWidth; enteredFirstLoop == false && y < textureSize && y <= highestCoord.y + healthWidth; y += 15)
             {
                 Health.SetPixels(x, y, 30, 30, colors);
-                if (isPixelSet(x, y, ref pixelHits, ref drawCanvas))
+                if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                 {
                     secondLine++;
                 }
             }
-            /*
-            for (int y = 0; y < textureSize; y += 15)
-            {
-                if (y >= highestCoord.y - 30 && y <= highestCoord.y + 30)
-                {
-                    Health.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
-                }
-                else if (x <= highestCoord.x + healthLength / 2 + 20 && x >= highestCoord.x + healthLength / 2 - 20 && y >= highestCoord.y - healthLength / 2 && y <= highestCoord.y + healthLength / 2)
-                {
-                    Health.SetPixels(x, y, 30, 30, colors);
-                    isPixelSet(x, y, ref pixelHits, ref drawCanvas);
-                }
-            }*/
         }
-        Debug.Log($"first is {firstLine} second is {secondLine}");
+
         int absDifference = Mathf.Abs(firstLine - secondLine);
-        if (absDifference > firstLine  || absDifference > secondLine)//make sure player drew a decent plus and not just 1 straight line
+        if (absDifference > firstLine || absDifference > secondLine || middlePoint == false)//make sure player drew a decent plus and not just 1 straight line
         {
             pixelHits = 0;
-            Debug.Log($"can't finesse us with {absDifference}");
+            Debug.Log($"can't finesse us {absDifference} absDifference and middlePoint = {middlePoint} with health");
         }
 
         Health.Apply();

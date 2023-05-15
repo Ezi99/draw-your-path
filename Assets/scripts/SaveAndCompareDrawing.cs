@@ -11,20 +11,24 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public BridgeManagement BridgeManage;
     public FireBallManagement FireBallManage;
     public RegenerateHealth HealthManage;
+    public HammerManagement HammerManage;
     public DrawCanvas LeftDrawCanvas;
     public DrawCanvas RightDrawCanvas;
     public Draw RightItemMarker;
     public Draw RightSpellMarker;
     public Draw LeftItemMarker;
     public Draw LeftSpellMarker;
+
     private string playersDrawingName = "PlayersDrawing.png";
     private bool leftItemDrew = false;
     private bool leftSpellDrew = false;
     private bool rightItemDrew = false;
     private bool rightSpellDrew = false;
     private Color[] colors;
-    private Coordinates highestCoord = new Coordinates();
-    private Coordinates lowestCoord = new Coordinates();
+    private Coordinates highestXCoord = new Coordinates();
+    private Coordinates lowestXCoord = new Coordinates();
+    private Coordinates highestYCoord = new Coordinates();
+    private Coordinates lowestYCoord = new Coordinates();
     private int numOfDrawnPixels;
     private int maxItemPixelHits = 0;
     private int accuracyLimit;
@@ -41,95 +45,104 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void checkIfStartedDrawing()
     {
-        checkIfMarkerStartedDrawing(ref RightItemMarker, ref LeftDrawCanvas, ref rightItemDrew);
-        checkIfMarkerStartedDrawing(ref LeftItemMarker, ref RightDrawCanvas, ref leftItemDrew);
-        checkIfMarkerStartedDrawing(ref RightSpellMarker, ref LeftDrawCanvas, ref rightSpellDrew);
-        checkIfMarkerStartedDrawing(ref LeftSpellMarker, ref RightDrawCanvas, ref leftSpellDrew);
+        checkIfMarkerStartedDrawing(RightItemMarker, LeftDrawCanvas, ref rightItemDrew);
+        checkIfMarkerStartedDrawing(LeftItemMarker, RightDrawCanvas, ref leftItemDrew);
+        checkIfMarkerStartedDrawing(RightSpellMarker, LeftDrawCanvas, ref rightSpellDrew);
+        checkIfMarkerStartedDrawing(LeftSpellMarker, RightDrawCanvas, ref leftSpellDrew);
     }
 
-    private void checkIfMarkerStartedDrawing(ref Draw marker, ref DrawCanvas drawCanvas, ref bool Drew)
+    private void checkIfMarkerStartedDrawing(Draw marker, DrawCanvas drawCanvas, ref bool Drew)
     {
         if (marker.isActiveAndEnabled == true)
         {
             numOfDrawnPixels = marker.GetNumOfDrawnPixels();
-            marker.GetCoordinates(ref highestCoord, ref lowestCoord);
+            marker.GetCoordinates(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
             Drew = true;
         }
         else
         {
             if (Drew == true)
             {
+                numOfDrawnPixels /= 4;
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
-                analyseDrawing(playersDrawingName, ref drawCanvas, ref marker);
-                resetStats(ref marker);
+                analyseDrawing(playersDrawingName, drawCanvas, marker);
+                resetStats(marker);
                 Drew = false;
             }
         }
 
     }
 
-    private void analyseDrawing(string fileName, ref DrawCanvas drawCanvas, ref Draw marker)
+    private void analyseDrawing(string fileName, DrawCanvas drawCanvas, Draw marker)
     {
         if (numOfDrawnPixels > 40) // small drawings will bring unexpected results so we put this limit
         {
             if (marker == LeftItemMarker || marker == RightItemMarker)
             {
-                compareItemDrawing(ref drawCanvas);
+                compareItemDrawing(drawCanvas);
             }
             else
             {
-                compareSpellDrawing(ref drawCanvas, ref marker);
+                compareSpellDrawing(drawCanvas, marker);
             }
         }
-        encodeDrawing2PNG(fileName, ref drawCanvas.texture);
+        encodeDrawing2PNG(fileName, drawCanvas.texture);
         if (numOfDrawnPixels != 0)
         {
             drawCanvas.ResetCanvas();
         }
     }
 
-    private void compareSpellDrawing(ref DrawCanvas drawCanvas, ref Draw marker)
+    private void compareSpellDrawing(DrawCanvas drawCanvas, Draw marker)
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int FireBallPixelHits = FireBallManage.CheckIfFireBall(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int HealthPixelHits = HealthManage.CheckIfHealth(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestXCoord, lowestXCoord, colors);
 
 
         comparePixelHits(FireBallPixelHits, "FireBall", ref result);
         comparePixelHits(HealthPixelHits, "Health", ref result);
+        comparePixelHits(bridgePixelHits, "bridge", ref result);
 
-        if(result == "FireBall")
+        if (result == "FireBall")
         {
-            FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, ref marker, rightSpellDrew);
+            FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, marker, rightSpellDrew);
         }
-        if (result == "Health")
+        else if (result == "Health")
         {
             HealthManage.SpawnHealth(HealthPixelHits, numOfDrawnPixels);
         }
+        else if (result == "bridge")
+        {
+            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+        }
+
 
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
 
     }
 
-    private void resetStats(ref Draw marker)
+    private void resetStats(Draw marker)
     {
-        marker.ResetCoords(ref highestCoord, ref lowestCoord);
+        marker.ResetCoords(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
         marker.ResetNumOfPixels();
         maxItemPixelHits = 0;
     }
 
-    private void compareItemDrawing(ref DrawCanvas drawCanvas)
+    private void compareItemDrawing(DrawCanvas drawCanvas)
     {
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
-        int shieldPixelHits = ShieldManage.CheckIfShield(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int swordPixelHits = SwordManage.CheckIfSword(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(ref drawCanvas, ref highestCoord, ref lowestCoord, ref colors);
+        int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestXCoord, lowestXCoord, colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
-        comparePixelHits(bridgePixelHits, "bridge", ref result);
+        comparePixelHits(HammerPixelHits, "hammer", ref result);
+
         if (result == "sword")
         {
             SwordManage.SpawnSword(swordPixelHits, numOfDrawnPixels);
@@ -138,9 +151,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
         {
             ShieldManage.SpawnShield(shieldPixelHits, numOfDrawnPixels);
         }
-        else if (result == "bridge")
+        else if (result == "hammer")
         {
-            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+            HammerManage.SpawnHammer(HammerPixelHits, numOfDrawnPixels);
         }
 
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
@@ -155,7 +168,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         }
     }
 
-    private void encodeDrawing2PNG(string fileName, ref Texture2D drawing)
+    private void encodeDrawing2PNG(string fileName, Texture2D drawing)
     {
         byte[] encodedImage = drawing.EncodeToPNG();
         string filePath = Application.dataPath + "/" + fileName;

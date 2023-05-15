@@ -7,6 +7,10 @@ TagManager:
   - DrawCanvas
   - Enemy
   - Ground
+  - destructible wall
+  - sword
+  - shield
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -20,7 +24,7 @@ TagManager:
   - marker
   - bridge
   - fireball
-  - 
+  - bridge handle
   - 
   - 
   - 

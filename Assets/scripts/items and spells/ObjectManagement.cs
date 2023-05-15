@@ -33,7 +33,7 @@ public class ObjectManagement : MonoBehaviour
         }
     }
 
-    protected bool isPixelSet(int x, int y, ref int pixelHits, ref Texture2D drawCanvas)
+    protected bool isPixelSet(int x, int y, ref int pixelHits, Texture2D drawCanvas)
     {
         if (drawCanvas.GetPixel(x, y) == Color.red)
         {
@@ -42,5 +42,4 @@ public class ObjectManagement : MonoBehaviour
         }
         return false;
     }
-
 }
