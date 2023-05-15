@@ -26,7 +26,7 @@ public class Hammer : MonoBehaviour
     }
 
     public void SetStats(int damage, int Durability)
-    { 
+    {
         m_Damage = damage;
         m_Durability = Durability;
     }
@@ -38,10 +38,10 @@ public class Hammer : MonoBehaviour
             DestructibleWall wall = other.GetComponent<DestructibleWall>();
             if (wall != null)
             {
-                wall.TakeDamage(m_Damage, (int)velocity.magnitude);
+                wall.TakeDamage(25, (int)velocity.magnitude);
             }
         }
-        else if(other.CompareTag("Gate") == true)
+        else if (other.CompareTag("Gate") == true)
         {
             VillageGate gate = other.GetComponent<VillageGate>();
             if (gate != null)

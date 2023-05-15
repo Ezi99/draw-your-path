@@ -10,12 +10,12 @@ public class DestructibleWall : MonoBehaviour
 
     public void TakeDamage(int damage, int velocity)
     {
-        Debug.Log(velocity);
         if (velocity >= 5)
         {
             health -= damage;
             if (health <= 0)
             {
+                Debug.Log("WALL OUT");
                 Instantiate(BrokenWall, BrokenWallPos.position, BrokenWallPos.rotation);
                 Destroy(gameObject);
             }
