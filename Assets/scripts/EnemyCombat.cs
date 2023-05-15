@@ -6,7 +6,7 @@ public class EnemyCombat : MonoBehaviour
 {
   public Animator animator;
   private UnityEngine.AI.NavMeshAgent navMeshAgent;
-
+    int count=0;
     // Set stopping range to 1.5
     public float stoppingRange = 1.5f;
     public float attackCooldown = 2f;
@@ -38,11 +38,21 @@ public class EnemyCombat : MonoBehaviour
         // Check if enough time has passed since the last attack.
         if (Time.time - lastAttackTime > attackCooldown)
         {
+            
             // Apply damage to the player.
             //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             
-            
+            if(count<=2)
+            {
             animator.SetTrigger("Attack");
+            }
+            else
+            {
+            animator.SetTrigger("Kick");
+            count=0;
+            }
+
+            count++;
             // Update the time of the last attack.
             lastAttackTime = Time.time;
         }
