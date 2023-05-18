@@ -75,7 +75,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void analyseDrawing(string fileName, DrawCanvas drawCanvas, Draw marker)
     {
-        if (numOfDrawnPixels > 40) // small drawings will bring unexpected results so we put this limit
+        if (numOfDrawnPixels > 14) // small drawings will bring unexpected results so we put this limit
         {
             if (marker == LeftItemMarker || marker == RightItemMarker)
             {

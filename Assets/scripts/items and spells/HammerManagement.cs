@@ -51,17 +51,18 @@ public class HammerManagement : ObjectManagement
     private Texture2D drawHammer(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
     {
         int drawingLength = (lowestCoord.x - highestCoord.x);
-        int HeadWidth = drawingLength / 3;
-        int HeadLength = drawingLength / 3;
+        int HeadWidth = (int)(drawingLength / 2.2f);
+        int HeadLength = (int)(drawingLength / 2.5f);
         int handleThickness = HeadWidth / 8;
         int headThickness = HeadLength / 4;
+        int startPoint = highestCoord.x + 30;
         bool[] importantPoints = { false, false, false, false };
 
         Texture2D hammer = new Texture2D(textureSize, textureSize);
 
-        for (int x = highestCoord.x; x < lowestCoord.x && x < textureSize; x += 15)
+        for (int x = startPoint; x < lowestCoord.x && x < textureSize; x += 15)
         {
-            if (x <= highestCoord.x + HeadLength && (x <= highestCoord.x + headThickness || x >= highestCoord.x + HeadLength - headThickness))
+            if (x <= startPoint + HeadLength && (x <= startPoint + headThickness || x >= startPoint + HeadLength - headThickness))
             {
                 for (int y = highestCoord.y - HeadWidth; y < textureSize && y <= highestCoord.y + HeadWidth; y += 15)
                 {
@@ -72,7 +73,7 @@ public class HammerManagement : ObjectManagement
                     }
                 }
             }
-            else if (x <= highestCoord.x + HeadLength && (x > highestCoord.x + headThickness || x < highestCoord.x + HeadLength - headThickness))
+            else if (x <= startPoint + HeadLength && (x > startPoint + headThickness || x < startPoint + HeadLength - headThickness))
             {
                 for (int y = highestCoord.y - HeadWidth; y < textureSize && y <= highestCoord.y - HeadWidth + headThickness; y += 15)
                 {
@@ -91,7 +92,7 @@ public class HammerManagement : ObjectManagement
                     }
                 }
             }
-            for (int y = highestCoord.y - handleThickness; y < textureSize && y <= highestCoord.y + handleThickness && x >= highestCoord.x + HeadLength && x <= lowestCoord.x; y += 15)
+            for (int y = highestCoord.y - handleThickness; y < textureSize && y <= highestCoord.y + handleThickness && x >= startPoint + HeadLength && x <= lowestCoord.x; y += 15)
             {
                 hammer.SetPixels(x, y, 30, 30, colors);
                 if (isPixelSet(x, y,ref pixelHits, drawCanvas) == true)
