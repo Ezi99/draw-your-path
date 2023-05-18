@@ -12,6 +12,7 @@ public class ObjectManagement : MonoBehaviour
     public Transform SpawnLocation;
     protected int textureSize = 1024;
     protected List<GameObject> ObjectList = new List<GameObject>();
+    protected int totalPixelHitAttempt;
 
     protected void checkNumOfItems(int limit = 2)
     {
@@ -41,5 +42,14 @@ public class ObjectManagement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    protected void checkIfEnoughPixelHits(ref int pixelHits, int totalPixelHitAttempt, float limit)
+    {
+        //pixelHits *= 15;
+        if (pixelHits < totalPixelHitAttempt * limit)
+        {
+            pixelHits = 0;
+        }
     }
 }

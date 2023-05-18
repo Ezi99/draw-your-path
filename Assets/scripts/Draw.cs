@@ -9,7 +9,7 @@ using UnityEngine;
 public class Draw : MonoBehaviour
 {
     [SerializeField] private Transform tip;
-    [SerializeField] private int penSize = 30;
+    [SerializeField] private int penSize;
     private Color[] colors;
     private RaycastHit touchedSurface;
     private DrawCanvas canvas = null;
