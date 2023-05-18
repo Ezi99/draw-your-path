@@ -63,7 +63,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         {
             if (Drew == true)
             {
-                //numOfDrawnPixels /= 4;
+                numOfDrawnPixels /= 4;
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
                 analyseDrawing(playersDrawingName, drawCanvas, marker);
                 resetStats(marker);
@@ -98,8 +98,8 @@ public class SaveAndCompareDrawing : MonoBehaviour
         accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
         int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
-        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestXCoord, lowestXCoord, colors);
-        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        int bridgePixelHits = BridgeManage.CheckIfBridge(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
 
 
         comparePixelHits(FireBallPixelHits, "FireBall", ref result);
@@ -137,7 +137,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         string result = "nothing";
         int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, colors);
-        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
         comparePixelHits(swordPixelHits, "sword", ref result);
@@ -161,7 +161,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void comparePixelHits(int itemPixelHits, string itemName, ref string result)
     {
-        if (itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
+        if (itemPixelHits != 0 && itemPixelHits >= maxItemPixelHits)//itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
         {
             maxItemPixelHits = itemPixelHits;
             result = itemName;

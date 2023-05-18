@@ -47,6 +47,7 @@ public class SwordManagement : ObjectManagement
         Sword = drawSword(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " SWORD HITS");
         encodeDrawing2PNG("Sword.png", ref Sword);
+        totalPixelHitAttempt = 0;
         return pixelHits;
     }
 
@@ -64,6 +65,7 @@ public class SwordManagement : ObjectManagement
             {
                 for (int y = highestCoord.y - handleSize; y < textureSize && y <= highestCoord.y - handleSize + handleSize / 2; y += 15)
                 {
+                    totalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -72,6 +74,7 @@ public class SwordManagement : ObjectManagement
                 }
                 for (int y = highestCoord.y + handleSize - handleSize / 2; y < textureSize && y <= highestCoord.y + handleSize; y += 15)
                 {
+                    totalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -83,6 +86,7 @@ public class SwordManagement : ObjectManagement
             {
                 for (int y = highestCoord.y - swordWidth; y < textureSize && y <= highestCoord.y + swordWidth; y += 15)
                 {
+                    totalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -94,6 +98,7 @@ public class SwordManagement : ObjectManagement
             {
                 for (int y = highestCoord.y - swordWidth; y < textureSize && y <= highestCoord.y - swordWidth + swordWidth / 2; y += 15)
                 {
+                    totalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -102,6 +107,7 @@ public class SwordManagement : ObjectManagement
                 }
                 for (int y = highestCoord.y + swordWidth - swordWidth / 2; y < textureSize && y <= highestCoord.y + swordWidth; y += 15)
                 {
+                    totalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -112,6 +118,7 @@ public class SwordManagement : ObjectManagement
 
         }
 
+        Debug.Log($"DA TOTAL HIT SWORD ATTEMPTS IS {totalPixelHitAttempt} HITS IS {pixelHits}");
         for (int i = 0; i < importantPoints.Length; i++)
         {
             if (importantPoints[i] == false)
@@ -120,7 +127,7 @@ public class SwordManagement : ObjectManagement
                 Debug.Log("can't finesse us with sword");
             }
         }
-
+        checkIfEnoughPixelHits(ref pixelHits, totalPixelHitAttempt, 0.4f);
         Sword.Apply();
         return Sword;
     }

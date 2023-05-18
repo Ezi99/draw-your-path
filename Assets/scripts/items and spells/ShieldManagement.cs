@@ -38,9 +38,10 @@ public class ShieldManagement : ObjectManagement
     {
         Texture2D Shield;
         int pixelHits = 0;
-        Shield = drawShield(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord,  highestYCoord,  lowestYCoord, colors);
+        Shield = drawShield(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " SHIELD HITS");
         encodeDrawing2PNG("Circle.png", ref Shield);
+        totalPixelHitAttempt = 0;
         return pixelHits;
     }
 
@@ -51,7 +52,7 @@ public class ShieldManagement : ObjectManagement
         float xRadius = (lowestXCoord.x - highestXCoord.x) / 2f;
         float centerY = lowestYCoord.y + yRadius;
         float centerX = highestXCoord.x + xRadius + 30;// added 30 to improve player's chances
-        int circleThickess = (lowestXCoord.x - highestXCoord.x) / 14;
+        int circleThickess = (lowestXCoord.x - highestXCoord.x) / 12;
 
         for (int x = highestXCoord.x; x <= lowestXCoord.x + 30 && x < textureSize - 30; x += 15)
         {
@@ -60,12 +61,15 @@ public class ShieldManagement : ObjectManagement
                 float distanceToCenter = Mathf.Sqrt(Mathf.Pow(y - centerY, 2) + Mathf.Pow(x - centerX, 2));
                 if (distanceToCenter <= xRadius && distanceToCenter >= xRadius - circleThickess)//putting distanceToCenter == radius brings more accurate pixel hits but low pixel hits overall
                 {
+                    totalPixelHitAttempt++;
                     shield.SetPixels(x, y, 30, 30, colors);
                     isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
+                
             }
         }
-
+        Debug.Log($"DA TOTAL HIT SHIELD ATTEMPTS IS {totalPixelHitAttempt} HITS IS {pixelHits}");
+        checkIfEnoughPixelHits(ref pixelHits, totalPixelHitAttempt, 0.4f);
         shield.Apply();
         return shield;
     }
