@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private int m_Damage;
-    private int m_Durability;
+    private int damage=20;
+    private int durability;
 
     void Update()
     {
 
     }
 
-    public void SetStats(int damage, int Durability)
+    public void SetStats(int dmg, int Durability)
     {
-        m_Damage = damage;
-        m_Durability = Durability;
+        damage = dmg;
+        durability = Durability;
     }
 
-    private void OnTriggerEnter(Collider other)
+     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") == true)
+        // Check if the collided object has an Erika script component
+        ErikaScript erika = other.GetComponent<ErikaScript>();
+        
+        if (erika != null)
         {
-            //other.getObje
+            // Deal damage to Erika
+            Debug.Log("stabbed");
+            erika.takeDamage(damage);
+            return; // Exit the method to avoid calling other TakeDamage methods
+        }
+
+        // Check if the collided object has a Paladin script component
+        PaladinScript paladin = other.GetComponent<PaladinScript>();
+
+        if (paladin != null)
+        {
+            // Deal damage to Paladin
+            paladin.takeDamage(damage);
         }
     }
 }

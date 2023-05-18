@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Erika : MonoBehaviour
+public class ErikaScript : MonoBehaviour
 {
 
     public GameObject arrowObj;
@@ -33,7 +33,11 @@ public class Erika : MonoBehaviour
         health-=dmg;
         if(health<=0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
