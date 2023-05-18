@@ -63,7 +63,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         {
             if (Drew == true)
             {
-                numOfDrawnPixels /= 4;
+                //numOfDrawnPixels /= 4;
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
                 analyseDrawing(playersDrawingName, drawCanvas, marker);
                 resetStats(marker);
