@@ -23,15 +23,17 @@ public class ErikaScript : MonoBehaviour
     public void shoot()
     {
         GameObject arrow = Instantiate(arrowObj, arrowPoint.position, Quaternion.identity);
-        Vector3 direction = playerTransform.position - arrowPoint.position;
+        Vector3 direction = playerTransform.position+new Vector3(0,1.7f,0) - arrowPoint.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         arrow.transform.rotation = rotation;
         arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * 25, ForceMode.Impulse);
     }
     public void takeDamage(int dmg)
     {
-        health-=dmg;
-        if(health<=0)
+        Debug.Log($"Erika Health -{dmg}");
+        health -= dmg;
+        Debug.Log($"current health {health}");
+        if (health<=0)
         {
             Die();
         }

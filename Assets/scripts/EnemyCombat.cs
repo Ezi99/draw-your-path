@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-  public Animator animator;
-  private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    int count=0;
+    public Animator animator;
+    private UnityEngine.AI.NavMeshAgent navMeshAgent;
+    int count = 0;
     // Set stopping range to 1.5
     public float stoppingRange = 1.5f;
     public float attackCooldown = 2f;
-    private bool isAttacking = false; 
-    private float lastAttackTime; 
+    private bool isAttacking = false;
+    private float lastAttackTime;
     Transform target;
     void Start()
     {
-        target=PlayerManager.instance.player.transform;
+        target = PlayerManager.instance.player.transform;
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
@@ -28,39 +28,39 @@ public class EnemyCombat : MonoBehaviour
             Attack();
             // Add your code here
         }
-        
+
     }
     void Attack()
     {
         // Set the flag to prevent multiple attacks in quick succession.
         isAttacking = true;
-        
+
         // Check if enough time has passed since the last attack.
         if (Time.time - lastAttackTime > attackCooldown)
         {
-            
+
             // Apply damage to the player.
             //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-            
-            if(count<=2)
+
+            if (count <= 2)
             {
-            animator.SetTrigger("Attack");
+                animator.SetTrigger("Attack");
             }
             else
             {
-            animator.SetTrigger("Kick");
-            count=0;
+                animator.SetTrigger("Kick");
+                count = 0;
             }
 
             count++;
             // Update the time of the last attack.
             lastAttackTime = Time.time;
         }
-        
+
         // Reset the flag after a short delay.
         Invoke("ResetAttackFlag", 0.5f);
     }
-    
+
     void ResetAttackFlag()
     {
         isAttacking = false;

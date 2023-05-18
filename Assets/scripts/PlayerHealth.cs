@@ -14,15 +14,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-    }
     public void TakeDamage(int dmg)
     {
+        Debug.Log($"Plyer HP -{dmg}");
         currentHealth-=dmg;
         healthbar.SetHealth(currentHealth);
     }

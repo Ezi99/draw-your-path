@@ -490,9 +490,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6578645886040238308}
+  - component: {fileID: 2355499652989531914}
   m_Layer: 0
   m_Name: mixamorig:LeftLeg
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,6 +514,19 @@ Transform:
   m_Father: {fileID: 2015011156833857594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2355499652989531914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310301380003187769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.43818834, z: 0.14922406}
+  m_Center: {x: 2.3790411e-14, y: 0.15218423, z: -0.0066702757}
 --- !u!1 &1312950962112330699
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +600,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015011156833857594}
+  - component: {fileID: 2610186211176302422}
   m_Layer: 0
   m_Name: mixamorig:LeftUpLeg
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,6 +624,19 @@ Transform:
   m_Father: {fileID: 8333984368795109702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2610186211176302422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438810945002652692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.34103385, z: 0.14230722}
+  m_Center: {x: 2.0900609e-14, y: 0.25907695, z: -0.0009772887}
 --- !u!1 &1641543020526087103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,9 +1224,10 @@ GameObject:
   - component: {fileID: 4067499305323374107}
   - component: {fileID: 4067499305323374105}
   - component: {fileID: 608618829962603702}
+  - component: {fileID: 6738342166896046363}
   m_Layer: 0
   m_Name: Paladin
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1211,7 +1240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3797590845575590760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 0, z: 0}
+  m_LocalPosition: {x: 235.95769, y: 25.011374, z: 242.38347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1275,7 +1304,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.7
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1301,11 +1330,24 @@ MeshCollider:
   m_GameObject: {fileID: 3797590845575590760}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 39941934548707793, guid: 7864536377fae4b2db1d8e76aeb55190, type: 3}
+--- !u!114 &6738342166896046363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797590845575590760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6260539e34ebfa845957d22d0c179f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 1564787350}
 --- !u!1 &3899211179439679308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,11 +1389,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2605523943112171031}
   - component: {fileID: 1402346458240423828}
-  - component: {fileID: 1564787349}
   - component: {fileID: 1564787350}
+  - component: {fileID: 6026136719407559134}
   m_Layer: 0
   m_Name: Paladin_sword
-  m_TagString: Untagged
+  m_TagString: Paladin_Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,14 +1405,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3955646887438925821}
-  m_LocalRotation: {x: -5.070907e-14, y: -0.00000006180133, z: 0.0000008205174, w: 1}
-  m_LocalPosition: {x: 0.00034436167, y: -0.95579463, z: -0.0046594837}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7304194, y: 0.6719114, z: 0.109993435, w: -0.054074902}
+  m_LocalPosition: {x: 0.018, y: 0.001, z: 0.084}
+  m_LocalScale: {x: 1, y: 0.62500685, z: 0.84177}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8333984368795109702}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 5127031034072018399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -3.946, y: 193.527, z: -95.246}
 --- !u!137 &1402346458240423828
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -1488,24 +1530,11 @@ SkinnedMeshRenderer:
   - {fileID: 1156040468722669713}
   - {fileID: 6329458566064289843}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 8333984368795109702}
+  m_RootBone: {fileID: 5127031034072018399}
   m_AABB:
-    m_Center: {x: 0.7914039, y: 0.45545724, z: 0.24666308}
+    m_Center: {x: 0.03, y: -0.02, z: 0.32}
     m_Extent: {x: 0.15900928, y: 0.04583761, z: 0.509635}
   m_DirtyAABB: 0
---- !u!65 &1564787349
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3955646887438925821}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.33, z: 1.35}
-  m_Center: {x: 0.7910619, y: 1.4112506, z: 0.25132245}
 --- !u!114 &1564787350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1547,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7533dae8e83c4fea9eac8d3ccbf805d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &6026136719407559134
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955646887438925821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: dd0682cd55d7f8342b8026ebb1cfc4a5, type: 3}
 --- !u!1 &3996849620401459251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,9 +1570,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8333984368795109702}
+  - component: {fileID: 2744090214521321334}
   m_Layer: 0
   m_Name: mixamorig:Hips
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1549,10 +1593,22 @@ Transform:
   - {fileID: 2015011156833857594}
   - {fileID: 5273103279487942265}
   - {fileID: 8629103009310882517}
-  - {fileID: 2605523943112171031}
   m_Father: {fileID: 4609452276577118674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2744090214521321334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996849620401459251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4065354, y: 0.19544959, z: 0.23493719}
+  m_Center: {x: -0.005409807, y: -0.10227521, z: -0.007531401}
 --- !u!1 &4058372185752469696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,9 +1650,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725665532911948092}
+  - component: {fileID: 8020450002861406647}
   m_Layer: 0
   m_Name: mixamorig:RightArm
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1617,6 +1674,19 @@ Transform:
   m_Father: {fileID: 6507144901771196324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8020450002861406647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210174516935691391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.24096647, z: 0.110544145}
+  m_Center: {x: -0.04, y: 0.1, z: -0.005272074}
 --- !u!1 &4339768831600812291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,9 +1696,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176734661154510303}
+  - component: {fileID: 8995632979387495349}
   m_Layer: 0
   m_Name: mixamorig:Shield_joint
-  m_TagString: Untagged
+  m_TagString: Paladin_Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1648,6 +1719,19 @@ Transform:
   m_Father: {fileID: 6820113928377462976}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8995632979387495349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339768831600812291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.07, z: 0.6278469}
+  m_Center: {x: -0.000000008477358, y: -8.7681773e-10, z: -0.0464022}
 --- !u!1 &4453379102275560985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,9 +1805,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7507221203118365953}
+  - component: {fileID: 4017512825524116223}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1744,6 +1829,19 @@ Transform:
   m_Father: {fileID: 1865862741029965517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4017512825524116223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768697657008536506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14644682, y: 0.35067025, z: 0.11535505}
+  m_Center: {x: -0.0061172843, y: 0.20649898, z: 0.015754329}
 --- !u!1 &4865476476388094406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,9 +1851,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009159555419978641}
+  - component: {fileID: 6843604870114933166}
   m_Layer: 0
   m_Name: mixamorig:RightForeArm
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1776,6 +1875,19 @@ Transform:
   m_Father: {fileID: 7725665532911948092}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6843604870114933166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4865476476388094406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12246433, y: 0.3506703, z: 0.11535496}
+  m_Center: {x: 0.004632455, y: 0.13999997, z: 0.015754377}
 --- !u!1 &4913514971222167741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,9 +1961,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2944517446786559549}
+  - component: {fileID: 4301157328026161286}
   m_Layer: 0
   m_Name: mixamorig:Spine1
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1872,6 +1985,19 @@ Transform:
   m_Father: {fileID: 8629103009310882517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4301157328026161286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997140142548656702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.34246418, y: 0.6007806, z: 0.24218783}
+  m_Center: {x: -0.013452545, y: 0.042702228, z: 0.006525457}
 --- !u!1 &5080805721404820869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2496,8 @@ Transform:
   m_LocalPosition: {x: 0.007702401, y: 0.07959965, z: 0.02820829}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2605523943112171031}
   m_Father: {fileID: 2433920562941669873}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2415,9 +2542,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7607849274402650961}
+  - component: {fileID: 2532474104602169467}
   m_Layer: 0
   m_Name: mixamorig:Head
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2440,6 +2568,19 @@ Transform:
   m_Father: {fileID: 7070331074454950443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2532474104602169467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860654096463727965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &7067755891806588021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,9 +2654,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5273103279487942265}
+  - component: {fileID: 4944848162979457462}
   m_Layer: 0
   m_Name: mixamorig:RightUpLeg
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2536,6 +2678,19 @@ Transform:
   m_Father: {fileID: 8333984368795109702}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4944848162979457462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879170492069640882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.34103385, z: 0.14230722}
+  m_Center: {x: 2.0900609e-14, y: 0.25907695, z: -0.0009772887}
 --- !u!1 &7991955078118747240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,9 +3045,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8390332388779344099}
+  - component: {fileID: 7761876310420644383}
   m_Layer: 0
   m_Name: mixamorig:RightLeg
-  m_TagString: Untagged
+  m_TagString: Paladin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2913,6 +3069,19 @@ Transform:
   m_Father: {fileID: 5273103279487942265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7761876310420644383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911932141792895857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.4307982, z: 0.14922406}
+  m_Center: {x: 2.8956292e-14, y: 0.1558793, z: -0.0066702752}
 --- !u!1 &8994804194005325157
 GameObject:
   m_ObjectHideFlags: 0

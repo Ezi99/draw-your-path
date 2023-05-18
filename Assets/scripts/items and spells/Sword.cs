@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private int damage=20;
+    private int damage=34;
     private int durability;
 
     void Update()
@@ -21,23 +21,32 @@ public class Sword : MonoBehaviour
      private void OnTriggerEnter(Collider other)
     {
         // Check if the collided object has an Erika script component
-        ErikaScript erika = other.GetComponent<ErikaScript>();
+        if (other.CompareTag("Erika"))
+        {
+            ErikaScript erika = other.GetComponent<ErikaScript>();
+            if (erika != null)
+            {
+                // Deal damage to Erika
+                Debug.Log("stabbed");
+                erika.takeDamage(damage);
+                return; 
+            }
+        }
+        else if (other.CompareTag("Paladin"))
+        {
+            // Check if the collided object has a Paladin script component
+            PaladinScript paladin = other.GetComponent<PaladinScript>();
+
+            if (paladin != null)
+            {
+                // Deal damage to Paladin
+                Debug.Log("stabbed");
+                paladin.takeDamage(damage);
+            }
+        }
         
-        if (erika != null)
-        {
-            // Deal damage to Erika
-            Debug.Log("stabbed");
-            erika.takeDamage(damage);
-            return; // Exit the method to avoid calling other TakeDamage methods
-        }
+        
 
-        // Check if the collided object has a Paladin script component
-        PaladinScript paladin = other.GetComponent<PaladinScript>();
-
-        if (paladin != null)
-        {
-            // Deal damage to Paladin
-            paladin.takeDamage(damage);
-        }
+        
     }
 }
