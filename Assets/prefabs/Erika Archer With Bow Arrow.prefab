@@ -356,6 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6127009795373108261}
+  - component: {fileID: 6617269733031439790}
   m_Layer: 0
   m_Name: mixamorig:Spine
   m_TagString: Untagged
@@ -379,6 +380,19 @@ Transform:
   m_Father: {fileID: 5868044239623421878}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6617269733031439790
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084522511525483634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36444092, y: 0.5417609, z: 0.21929212}
+  m_Center: {x: -0.004425049, y: 0.08948616, z: -0.06421581}
 --- !u!1 &1503074645334348220
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,10 +504,9 @@ GameObject:
   - component: {fileID: 1924603383483010193}
   - component: {fileID: 1924603383483010192}
   - component: {fileID: 1924603383483010195}
-  - component: {fileID: 4491570047393538248}
   m_Layer: 0
   m_Name: Erika Archer With Bow Arrow
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,20 +618,6 @@ MonoBehaviour:
   arrowPoint: {fileID: 4650516659849030922}
   playerTransform: {fileID: 8680483321145252580, guid: 180524c41c5297244962a3c7c0034450, type: 3}
   health: 100
---- !u!64 &4491570047393538248
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618192242700830104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -173100611939123233, guid: 10327034098d1449ba2b98e50148f3ed, type: 3}
 --- !u!1 &1759973391463674626
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,9 +782,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5327804930214668236}
+  - component: {fileID: 3812445676333698952}
   m_Layer: 0
   m_Name: mixamorig:RightArm
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,6 +806,19 @@ Transform:
   m_Father: {fileID: 8685539646239129940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3812445676333698952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777429743204678287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.3706899, z: 0.1}
+  m_Center: {x: -0.000000012148565, y: 0.13534494, z: -0.000000009325188}
 --- !u!1 &1915443288369608240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,9 +1142,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650516659849030922}
+  - component: {fileID: 703037190700724887}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1157,6 +1171,19 @@ Transform:
   m_Father: {fileID: 8962955998701995568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &703037190700724887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653976571224682757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.26885906, z: 0.1}
+  m_Center: {x: 0.000000009053432, y: -0.08442946, z: -0.000000008234799}
 --- !u!1 &2707826329206073108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,9 +1665,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8758148951098809876}
+  - component: {fileID: 6898183044473993196}
   m_Layer: 0
   m_Name: mixamorig:LeftLeg
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1661,6 +1689,19 @@ Transform:
   m_Father: {fileID: 4121348350197941962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6898183044473993196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524094935672060617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12670892, y: 0.433145, z: 0.1}
+  m_Center: {x: -0.00024867064, y: 0.23012266, z: 0.000000011337911}
 --- !u!1 &3530734645622689083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4121348350197941962}
+  - component: {fileID: 6118331210567667039}
   m_Layer: 0
   m_Name: mixamorig:LeftUpLeg
   m_TagString: Untagged
@@ -1725,6 +1767,19 @@ Transform:
   m_Father: {fileID: 5868044239623421878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6118331210567667039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544499396574245604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16143799, y: 0.5713727, z: 0.1}
+  m_Center: {x: 0.013976954, y: 0.23568383, z: 2.524627e-10}
 --- !u!1 &3550885081920034701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,9 +2042,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 216239159778412289}
+  - component: {fileID: 8891135522669982522}
   m_Layer: 0
   m_Name: mixamorig:RightHand
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2014,6 +2070,19 @@ Transform:
   m_Father: {fileID: 4118205949726199137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8891135522669982522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547001565822768584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10000014, y: 0.31017745, z: 0.1}
+  m_Center: {x: 0.00000000907074, y: -0.0637706, z: -0.000000007529353}
 --- !u!1 &4670953049516767877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7776286070792276105}
+  - component: {fileID: 617906934159529752}
   m_Layer: 0
   m_Name: mixamorig:RightUpLeg
   m_TagString: Untagged
@@ -2141,6 +2211,19 @@ Transform:
   m_Father: {fileID: 5868044239623421878}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &617906934159529752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737399371825925186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16143799, y: 0.5713727, z: 0.1}
+  m_Center: {x: 0.013976954, y: 0.23568383, z: 2.524627e-10}
 --- !u!1 &5904295160915421791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,9 +2362,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6248545879529289235}
+  - component: {fileID: 6780787815825090859}
   m_Layer: 0
   m_Name: mixamorig:RightLeg
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2302,6 +2386,19 @@ Transform:
   m_Father: {fileID: 7776286070792276105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6780787815825090859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443158571021800833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12670892, y: 0.433145, z: 0.1}
+  m_Center: {x: -0.00024867064, y: 0.23012266, z: 0.000000011337911}
 --- !u!1 &6552165608806930104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,9 +2533,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5397626195322973169}
+  - component: {fileID: 6279838732018933599}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2459,6 +2557,19 @@ Transform:
   m_Father: {fileID: 4261489105877956669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6279838732018933599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983650106533481802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.3706899, z: 0.1}
+  m_Center: {x: -0.000000012148565, y: 0.13534494, z: -0.000000009325188}
 --- !u!1 &7008336138915448630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5427887717290380705}
+  - component: {fileID: 8877146082617342531}
   m_Layer: 0
   m_Name: mixamorig:Head
   m_TagString: Untagged
@@ -3157,3 +3269,16 @@ Transform:
   m_Father: {fileID: 4673018028705457371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8877146082617342531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075537238225042349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19094849, y: 0.23912343, z: 0.20774613}
+  m_Center: {x: 0.00016786903, y: 0.034580417, z: 0.0038730649}

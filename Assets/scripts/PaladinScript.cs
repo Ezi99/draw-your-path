@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class PaladinScript : MonoBehaviour
 {
+    public EnemySwordAttack attack;
     int health = 100;
-    // Start is called before the first frame update
-    void Start()
+    public void enableDmg()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        attack.dealDmg();
     }
     public void takeDamage(int dmg)
     {
+        Debug.Log($"Paladin Health -{dmg}");
         health -= dmg;
+        Debug.Log($"current health {health}");
         if (health <= 0)
         {
             Die();

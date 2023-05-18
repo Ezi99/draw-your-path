@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class EnemySwordAttack : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    bool dealDamage;
+    public void dealDmg()
     {
-        if (collision.collider.gameObject.tag=="Player")
+        Debug.Log("dmg enabled");
+        dealDamage = true;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("ayyyy");
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
+            if (dealDamage)
+            {
+                Debug.Log("ayyyy");
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
+                dealDamage = false;
+            }
+            
         }
     }
 }

@@ -11,6 +11,10 @@ TagManager:
   - sword
   - shield
   - Gate
+  - Erika
+  - Paladin
+  - Paladin_Sword
+  - Paladin_Shield
   layers:
   - Default
   - TransparentFX
