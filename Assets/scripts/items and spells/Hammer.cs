@@ -5,8 +5,10 @@ using UnityEngine.Rendering.Universal;
 
 public class Hammer : MonoBehaviour
 {
-    private int m_Damage;
-    private int m_Durability;
+    private int damage=50;
+    private int durability;
+    private bool canDamage = true;
+    private float damageCooldown = 1f; // Adjust the cooldown duration as needed
     private Vector3 prevPosition;
     private Vector3 velocity;
     private float prevTime;
@@ -25,15 +27,49 @@ public class Hammer : MonoBehaviour
         prevTime = Time.time;
     }
 
-    public void SetStats(int damage, int Durability)
+    public void SetStats(int dmg, int Durability)
     {
-        m_Damage = damage;
-        m_Durability = Durability;
+        damage = dmg;
+        durability = Durability;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("destructible wall") == true)
+        if (canDamage && other.CompareTag("Erika"))
+        {
+            Debug.Log("Erika");
+            ErikaScript erika = other.GetComponentInParent<ErikaScript>();
+            if (erika != null)
+            {
+                // Deal damage to Erika
+                Debug.Log("hammered");
+                erika.takeDamage(damage);
+                canDamage = false;
+                Invoke("ResetDamageCooldown", damageCooldown);
+            }
+        }
+        else if (canDamage && other.CompareTag("Paladin"))
+        {
+            Debug.Log("Paladin");
+            // Check if the collided object has a Paladin script component
+            PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
+
+            if (paladin != null)
+            {
+                // Deal damage to Paladin
+                Debug.Log("hammered");
+                paladin.takeDamage(damage);
+                canDamage = false;
+                Invoke("ResetDamageCooldown", damageCooldown);
+            }
+        }
+        else if (canDamage && other.CompareTag("Paladin_Shield"))
+        {
+            Debug.Log("Blocked");
+            canDamage = false;
+            Invoke("ResetDamageCooldown", damageCooldown);
+        }
+        else if (other.CompareTag("destructible wall") == true)
         {
             DestructibleWall wall = other.GetComponent<DestructibleWall>();
             if (wall != null)
@@ -50,5 +86,9 @@ public class Hammer : MonoBehaviour
             }
         }
 
+    }
+    private void ResetDamageCooldown()
+    {
+        canDamage = true;
     }
 }

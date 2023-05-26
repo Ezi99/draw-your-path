@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 6617269733031439790}
   m_Layer: 0
   m_Name: mixamorig:Spine
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 6118331210567667039}
   m_Layer: 0
   m_Name: mixamorig:LeftUpLeg
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 617906934159529752}
   m_Layer: 0
   m_Name: mixamorig:RightUpLeg
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3246,7 +3246,7 @@ GameObject:
   - component: {fileID: 8877146082617342531}
   m_Layer: 0
   m_Name: mixamorig:Head
-  m_TagString: Untagged
+  m_TagString: Erika
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

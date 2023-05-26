@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ErikaScript : MonoBehaviour
 {
-
+    private Animator animator;
     public GameObject arrowObj;
     public Transform arrowPoint;
     public Transform playerTransform;
@@ -12,13 +12,7 @@ public class ErikaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        animator = GetComponent<Animator>();
     }
     public void shoot()
     {
@@ -30,15 +24,20 @@ public class ErikaScript : MonoBehaviour
     }
     public void takeDamage(int dmg)
     {
-        Debug.Log($"Erika Health -{dmg}");
+        
         health -= dmg;
-        Debug.Log($"current health {health}");
+        Debug.Log($"Erika Health -{dmg} current health {health}");
         if (health<=0)
         {
             Die();
         }
     }
     private void Die()
+    {
+        Debug.Log("Death animation triggered");
+        animator.SetBool("Death", true);
+    }
+    public void destroy()
     {
         Destroy(gameObject);
     }
