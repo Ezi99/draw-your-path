@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HammerManagement : ObjectManagement
 {
-    public void SpawnHammer(int pixelHits, int numOfDrawnPixels)
+    public void SpawnHammer(int pixelHits)
     {
         int damage;
         int Durability;
-        float accuracy = (float)pixelHits / (float)numOfDrawnPixels;
+        float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
         GameObject cloneHammer;
 
         checkNumOfItems();
@@ -45,7 +45,7 @@ public class HammerManagement : ObjectManagement
         hammer = drawHammer(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HAMMER HITS");
         encodeDrawing2PNG("Hammer.png", ref hammer);
-        totalPixelHitAttempt = 0;
+       
         return pixelHits;
     }
 
@@ -68,7 +68,7 @@ public class HammerManagement : ObjectManagement
             {
                 for (int y = lowestYCoord.y; y < textureSize && y <= highestYCoord.y; y += 15)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     hammer.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -80,7 +80,7 @@ public class HammerManagement : ObjectManagement
             {
                 for (int y = lowestYCoord.y; y < textureSize && y <= lowestYCoord.y + headThickness; y += 15)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     hammer.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -89,7 +89,7 @@ public class HammerManagement : ObjectManagement
                 }
                 for (int y = highestYCoord.y - headThickness; y < textureSize && y <= highestYCoord.y; y += 15)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     hammer.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -99,7 +99,7 @@ public class HammerManagement : ObjectManagement
             }
             for (int y = middlePoint - handleThickness; y < textureSize && y <= middlePoint + handleThickness && x >= startPoint + HeadLength && x <= lowestXCoord.x; y += 15)
             {
-                totalPixelHitAttempt++;
+                m_TotalPixelHitAttempt++;
                 hammer.SetPixels(x, y, 30, 30, colors);
                 if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                 {
@@ -108,9 +108,10 @@ public class HammerManagement : ObjectManagement
             }
         }
 
-        Debug.Log($"DA TOTAL HIT HAMMER ATTEMPTS IS {totalPixelHitAttempt} HITS IS {pixelHits}");
-        totalPixelHitAttempt /= 2;
-        checkIfEnoughPixelHits(ref pixelHits, totalPixelHitAttempt, 0.4f);
+        float FloattotalPixelHitAttempt = m_TotalPixelHitAttempt / 1.5f;
+        m_TotalPixelHitAttempt = (int)FloattotalPixelHitAttempt;
+        Debug.Log($"DA TOTAL HIT HAMMER ATTEMPTS IS {m_TotalPixelHitAttempt} HITS IS {pixelHits}");
+        checkIfEnoughPixelHits(ref pixelHits, m_TotalPixelHitAttempt, 0.4f);
         for (int i = 0; i < importantPoints.Length; i++)
         {
             if (importantPoints[i] == false)

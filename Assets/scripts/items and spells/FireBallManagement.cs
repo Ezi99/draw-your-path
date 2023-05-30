@@ -8,10 +8,10 @@ public class FireBallManagement : ObjectManagement
     public GameObject rightFireBallLauncher;
     public ShieldManagement circle;
 
-    public void SpawnFireBall(int pixelHits, int numOfDrawnPixels, Draw marker, bool didRightDraw)
+    public void SpawnFireBall(int pixelHits, Draw marker, bool didRightDraw)
     {
         int damage;
-        float accuracy = (float)pixelHits / (float)numOfDrawnPixels;
+        float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
         GameObject cloneFireBall;
         Transform markerPos = marker.gameObject.transform;
         Rigidbody rigidBody;
@@ -57,6 +57,9 @@ public class FireBallManagement : ObjectManagement
     {
         int pixelHits;
         pixelHits = circle.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
+        m_TotalPixelHitAttempt = circle.TotalPixelHitAttempt;
+        m_HitPercentage = circle.HitPercentage;
+        circle.ResetTotalPixelHitAttempt();
         Debug.Log($"THERE WAS {pixelHits} FIREBALL HITS");
         return pixelHits;
     }

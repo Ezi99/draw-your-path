@@ -19,6 +19,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public Draw LeftItemMarker;
     public Draw LeftSpellMarker;
 
+    private const int k_NumOfPixelsThreshold = 70;
+    private const int k_DrawingLengthThreshold = 200;
+    private const int k_DrawingWidthThreshold = 200;
     private string playersDrawingName = "PlayersDrawing.png";
     private bool leftItemDrew = false;
     private bool leftSpellDrew = false;
@@ -63,7 +66,6 @@ public class SaveAndCompareDrawing : MonoBehaviour
         {
             if (Drew == true)
             {
-                numOfDrawnPixels /= 4;
                 Debug.Log($"number of total pixels - {numOfDrawnPixels}");
                 analyseDrawing(playersDrawingName, drawCanvas, marker);
                 resetStats(marker);
@@ -75,7 +77,9 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void analyseDrawing(string fileName, DrawCanvas drawCanvas, Draw marker)
     {
-        if (numOfDrawnPixels > 14) // small drawings will bring unexpected results so we put this limit
+        int drawingLength = lowestXCoord.x - highestXCoord.x;
+        int drawingWidth = highestYCoord.y - lowestYCoord.y;
+        if (numOfDrawnPixels > k_NumOfPixelsThreshold && drawingLength > k_DrawingLengthThreshold && drawingWidth > k_DrawingWidthThreshold) // small drawings will bring unexpected results so we put this limit
         {
             if (marker == LeftItemMarker || marker == RightItemMarker)
             {
@@ -108,15 +112,21 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
         if (result == "FireBall")
         {
-            FireBallManage.SpawnFireBall(FireBallPixelHits, numOfDrawnPixels, marker, rightSpellDrew);
+            if (BridgeManage.HitPercentage < FireBallManage.HitPercentage)
+            {
+                FireBallManage.SpawnFireBall(FireBallPixelHits, marker, rightSpellDrew);
+            }
         }
         else if (result == "Health")
         {
-            HealthManage.SpawnHealth(HealthPixelHits, numOfDrawnPixels);
+            HealthManage.SpawnHealth(HealthPixelHits);
         }
         else if (result == "bridge")
         {
-            BridgeManage.SpawnBridge(bridgePixelHits, numOfDrawnPixels);
+            if (BridgeManage.HitPercentage > FireBallManage.HitPercentage)
+            {
+                BridgeManage.SpawnBridge(bridgePixelHits);
+            }
         }
 
 
@@ -128,6 +138,12 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         marker.ResetCoords(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
         marker.ResetNumOfPixels();
+        FireBallManage.ResetTotalPixelHitAttempt();
+        ShieldManage.ResetTotalPixelHitAttempt();
+        SwordManage.ResetTotalPixelHitAttempt();
+        BridgeManage.ResetTotalPixelHitAttempt();
+        HammerManage.ResetTotalPixelHitAttempt();
+        HealthManage.ResetTotalPixelHitAttempt();
         maxItemPixelHits = 0;
     }
 
@@ -145,25 +161,25 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
         if (result == "sword")
         {
-            SwordManage.SpawnSword(swordPixelHits, numOfDrawnPixels);
+            SwordManage.SpawnSword(swordPixelHits);
         }
         else if (result == "shield")
         {
-            ShieldManage.SpawnShield(shieldPixelHits, numOfDrawnPixels);
+            ShieldManage.SpawnShield(shieldPixelHits);
         }
         else if (result == "hammer")
         {
-            HammerManage.SpawnHammer(HammerPixelHits, numOfDrawnPixels);
+            HammerManage.SpawnHammer(HammerPixelHits);
         }
 
         Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
     }
 
-    private void comparePixelHits(int itemPixelHits, string itemName, ref string result)
+    private void comparePixelHits(int ObjectPixelHits, string itemName, ref string result)
     {
-        if (itemPixelHits != 0 && itemPixelHits >= maxItemPixelHits)//itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
+        if (ObjectPixelHits > 10 && ObjectPixelHits >= maxItemPixelHits)//itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
         {
-            maxItemPixelHits = itemPixelHits;
+            maxItemPixelHits = ObjectPixelHits;
             result = itemName;
         }
     }

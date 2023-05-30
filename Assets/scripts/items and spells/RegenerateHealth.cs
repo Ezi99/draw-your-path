@@ -8,15 +8,10 @@ public class RegenerateHealth : ObjectManagement
 {
     public PlayerHealth m_PlayerHealth;
 
-    private void Start()
-    {
-        totalPixelHitAttempt = 0;
-    }
-
-    public void SpawnHealth(int pixelHits, int numOfDrawnPixels)
+    public void SpawnHealth(int pixelHits)
     {
         int gain;
-        float accuracy = (float)pixelHits / (float)numOfDrawnPixels;
+        float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
 
         if (accuracy < 1)
         {
@@ -44,7 +39,6 @@ public class RegenerateHealth : ObjectManagement
         Health = drawHealth(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HEALTH HITS");
         encodeDrawing2PNG("Health.png", ref Health);
-        totalPixelHitAttempt = 0;
         return pixelHits;
     }
 
@@ -70,7 +64,7 @@ public class RegenerateHealth : ObjectManagement
             enteredFirstLoop = false;
             for (int y = lowestYCoord.y; y < textureSize && x <= highestXCoord.x + healthLength / 2 + healthThickness * 2 && x >= highestXCoord.x + healthLength / 2 - healthThickness * 2 && y <= highestYCoord.y; y += 15)
             {
-                totalPixelHitAttempt++;
+                m_TotalPixelHitAttempt++;
                 if (y >= topY - healthLength / 8 && y <= topY + healthLength / 8)
                 {
                     Health.SetPixels(x, y, 30, 30, yellow);
@@ -93,7 +87,7 @@ public class RegenerateHealth : ObjectManagement
             }
             for (int y = topY - healthThickness; enteredFirstLoop == false && y < textureSize && y <= topY + healthThickness; y += 15)
             {
-                totalPixelHitAttempt++;
+                m_TotalPixelHitAttempt++;
                 Health.SetPixels(x, y, 30, 30, colors);
                 if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                 {
@@ -102,9 +96,11 @@ public class RegenerateHealth : ObjectManagement
             }
         }
 
+        float FloattotalPixelHitAttempt = m_TotalPixelHitAttempt / 1.5f;
+        m_TotalPixelHitAttempt = (int)FloattotalPixelHitAttempt;
         int absDifference = Mathf.Abs(firstLine - secondLine);
-        Debug.Log($"DA TOTAL HIT HEALTH ATTEMPTS IS {totalPixelHitAttempt} HITS IS {pixelHits}");
-        checkIfEnoughPixelHits(ref pixelHits, totalPixelHitAttempt, 0.4f);
+        Debug.Log($"DA TOTAL HIT HEALTH ATTEMPTS IS {m_TotalPixelHitAttempt} HITS IS {pixelHits}");
+        checkIfEnoughPixelHits(ref pixelHits, m_TotalPixelHitAttempt, 0.4f);
         if (absDifference > firstLine || absDifference > secondLine || middlePoint == false)//make sure player drew a decent plus and not just 1 straight line
         {
             pixelHits = 0;

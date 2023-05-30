@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BridgeManagement : ObjectManagement // no need for Bridge class
+public class BridgeManagement : ObjectManagement
 {
     private int lifeSpan;
 
-    public void SpawnBridge(int pixelHits, int numOfDrawnPixels)
+    public void SpawnBridge(int pixelHits)
     {
-        float accuracy = (float)pixelHits / (float)numOfDrawnPixels;
+        float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
         GameObject bridgeClone;
 
         checkNumOfItems(1);
@@ -42,12 +42,18 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
         Bridge = drawBridge(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " BRIDGE HITS");
         encodeDrawing2PNG("Bridge.png", ref Bridge);
-        totalPixelHitAttempt = 0;
         return pixelHits;
     }
 
     private Texture2D drawBridge(Texture2D drawCanvas, ref int pixelHits, Coordinates highestXCoord, Coordinates lowestXCoord, Coordinates highestYCoord, Coordinates lowestYCoord, Color[] colors)
     {
+        int drawingLength = lowestXCoord.x - highestXCoord.x;
+        Debug.Log("da bridge length is " + drawingLength);
+        int bridgeThickness = drawingLength / 10;
+        Texture2D Bridge = new Texture2D(textureSize, textureSize);
+        bool[] importantPoints = { false, false, false, false };
+
+        /*
         int drawingLength = lowestXCoord.x - highestXCoord.x;
         int bottomY = lowestYCoord.y;
         int topY = (int)(highestXCoord.y + (highestXCoord.y - bottomY) * 1.1f);
@@ -57,18 +63,19 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
         int endPoint = lowestXCoord.x - 30;
         Texture2D Bridge = new Texture2D(textureSize, textureSize);
         bool[] importantPoints = { false, false, false, false };
+        */
 
-        for (int x = startPoint; x < endPoint && x < textureSize; x += 15)
+        for (int x = highestXCoord.x; x < lowestXCoord.x && x < textureSize; x += 15)
         {
-            if (x <= startPoint + bridgeThickness || x >= endPoint - bridgeThickness)
+            if (x <= highestXCoord.x + bridgeThickness || x >= lowestXCoord.x - bridgeThickness)
             {
-                for (int y = bottomY; y < textureSize && y <= topY; y += 15)
+                for (int y = lowestYCoord.y; y < textureSize && y <= highestYCoord.y; y += 20)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     Bridge.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
-                        if (x >= startPoint && x <= startPoint + bridgeThickness)
+                        if (x >= highestXCoord.x && x <= highestXCoord.x + bridgeThickness)
                         {
                             importantPoints[0] = true;
                         }
@@ -82,18 +89,18 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
             }
             else
             {
-                for (int y = bottomY; y < textureSize && y <= bottomY + bridgeThickness; y += 15)
+                for (int y = lowestYCoord.y; y < textureSize && y <= lowestYCoord.y + bridgeThickness; y += 15)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     Bridge.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
                         importantPoints[2] = true;
                     }
                 }
-                for (int y = topY - bridgeThickness; y < textureSize && y <= topY; y += 15)
+                for (int y = highestYCoord.y - bridgeThickness; y < textureSize && y <= highestYCoord.y; y += 15)
                 {
-                    totalPixelHitAttempt++;
+                    m_TotalPixelHitAttempt++;
                     Bridge.SetPixels(x, y, 30, 30, colors);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)
                     {
@@ -112,8 +119,11 @@ public class BridgeManagement : ObjectManagement // no need for Bridge class
             }
         }
 
-        Debug.Log($"DA TOTAL HIT BRIDGE ATTEMPTS IS {totalPixelHitAttempt} HITS IS {pixelHits}");
-        checkIfEnoughPixelHits(ref pixelHits, totalPixelHitAttempt, 0.4f);
+        float FloatTotalPixelHitAttempt = m_TotalPixelHitAttempt / 1.5f;
+        m_TotalPixelHitAttempt = (int)FloatTotalPixelHitAttempt;
+        Debug.Log($"DA TOTAL HIT BRIDGE ATTEMPTS IS {m_TotalPixelHitAttempt} HITS IS {pixelHits}");
+        checkIfEnoughPixelHits(ref pixelHits, m_TotalPixelHitAttempt, 0.4f);
+        m_HitPercentage = (float)pixelHits / (float)m_TotalPixelHitAttempt;
         Bridge.Apply();
         return Bridge;
     }
