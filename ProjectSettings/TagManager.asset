@@ -15,6 +15,7 @@ TagManager:
   - Paladin
   - Paladin_Sword
   - Paladin_Shield
+  - Shield
   layers:
   - Default
   - TransparentFX
