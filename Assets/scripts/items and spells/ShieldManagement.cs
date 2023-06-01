@@ -12,21 +12,20 @@ public class ShieldManagement : ObjectManagement
         GameObject cloneShield;
 
         checkNumOfItems();
-        if (accuracy < 1)
+
+        if (accuracy <= 0.75)
         {
-            Durability = (int)accuracy * 100;
-            if (accuracy <= 0.75)
-            {
-                cloneShield = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
-            }
-            else
-            {
-                cloneShield = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
-            }
+            Durability = 100;
+            cloneShield = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
+        }
+        else if (accuracy < 1)
+        {
+            Durability = 150;
+            cloneShield = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
         }
         else
         {
-            Durability = 100;
+            Durability = 200;
             cloneShield = Instantiate(Strong, SpawnLocation.position, SpawnLocation.rotation);
         }
 
@@ -52,6 +51,7 @@ public class ShieldManagement : ObjectManagement
         float centerY = lowestYCoord.y + yRadius;
         float centerX = highestXCoord.x + xRadius;// added 30 to improve player's chances
         int circleThickess = (lowestXCoord.x - highestXCoord.x) / 9;
+        m_TotalPixelHitAttempt = 0;
 
         for (int x = highestXCoord.x; x <= lowestXCoord.x + 30 && x < textureSize - 30; x += 10)
         {
@@ -64,7 +64,7 @@ public class ShieldManagement : ObjectManagement
                     shield.SetPixels(x, y, 30, 30, colors);
                     isPixelSet(x, y, ref pixelHits, drawCanvas);
                 }
-                
+
             }
         }
 

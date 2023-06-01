@@ -12,23 +12,21 @@ public class BridgeManagement : ObjectManagement
         GameObject bridgeClone;
 
         checkNumOfItems(1);
-        if (accuracy < 1)
+
+        if (accuracy <= 0.75)
         {
-            if (accuracy <= 0.75)
-            {
-                bridgeClone = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-                lifeSpan = 20;
-            }
-            else
-            {
-                bridgeClone = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-                lifeSpan = 30;
-            }
+            bridgeClone = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
+            lifeSpan = 30;
+        }
+        else if (accuracy < 1)
+        {
+            bridgeClone = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
+            lifeSpan = 60;
         }
         else
         {
             bridgeClone = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-            lifeSpan = 40;
+            lifeSpan = 90;
         }
 
         bridgeClone.GetComponent<Bridge>().DespawnCountDown(lifeSpan);
@@ -52,18 +50,7 @@ public class BridgeManagement : ObjectManagement
         int bridgeThickness = drawingLength / 10;
         Texture2D Bridge = new Texture2D(textureSize, textureSize);
         bool[] importantPoints = { false, false, false, false };
-
-        /*
-        int drawingLength = lowestXCoord.x - highestXCoord.x;
-        int bottomY = lowestYCoord.y;
-        int topY = (int)(highestXCoord.y + (highestXCoord.y - bottomY) * 1.1f);
-        int bridgeWidth = (int)(drawingLength / 1.5);
-        int bridgeThickness = drawingLength / 12;
-        int startPoint = highestXCoord.x + 30;
-        int endPoint = lowestXCoord.x - 30;
-        Texture2D Bridge = new Texture2D(textureSize, textureSize);
-        bool[] importantPoints = { false, false, false, false };
-        */
+        m_TotalPixelHitAttempt = 0;
 
         for (int x = highestXCoord.x; x < lowestXCoord.x && x < textureSize; x += 15)
         {

@@ -12,20 +12,18 @@ public class HammerManagement : ObjectManagement
         GameObject cloneHammer;
 
         checkNumOfItems();
-        if (accuracy < 1)
+
+        if (accuracy <= 0.65)
         {
-            if (accuracy <= 0.75)
-            {
-                Durability = 30;
-                damage = 30;
-                cloneHammer = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
-            }
-            else
-            {
-                Durability = 50;
-                damage = 50;
-                cloneHammer = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
-            }
+            Durability = 50;
+            damage = 35;
+            cloneHammer = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
+        }
+        else if (accuracy < 1)
+        {
+            Durability = 70;
+            damage = 50;
+            cloneHammer = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
         }
         else
         {
@@ -45,7 +43,7 @@ public class HammerManagement : ObjectManagement
         hammer = drawHammer(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " HAMMER HITS");
         encodeDrawing2PNG("Hammer.png", ref hammer);
-       
+
         return pixelHits;
     }
 
@@ -59,8 +57,8 @@ public class HammerManagement : ObjectManagement
         int headThickness = HeadLength / 4;
         int startPoint = highestXCoord.x;// + 30;
         bool[] importantPoints = { false, false, false, false };
-
         Texture2D hammer = new Texture2D(textureSize, textureSize);
+        m_TotalPixelHitAttempt = 0;
 
         for (int x = startPoint; x < lowestXCoord.x && x < textureSize; x += 15)
         {

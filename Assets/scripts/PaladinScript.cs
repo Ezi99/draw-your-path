@@ -15,22 +15,25 @@ public class PaladinScript : MonoBehaviour
 
     public void enableDmg()
     {
-        attack.dealDmg();
+        attack.DealDamage();
     }
+
     public void takeDamage(int dmg)
     {
         health -= dmg;
-        Debug.Log($"Paladin Health -{dmg} current health {health}");
+        Debug.Log($"Paladin Health - {dmg} current health {health}");
         if (health <= 0)
         {
-            die();
+            Die();
         }
     }
-    private void die()
+
+    private void Die()
     {
         Debug.Log("Death animation triggered");
         animator.SetBool("Death", true);
     }
+
     public void destroy()
     {
         Destroy(gameObject);

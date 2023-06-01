@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip m_BreakingWallSound;
+    public AudioSource m_DesertAudio;
+    public AudioClip m_PotionTakenAudioClip;
 
     private AudioSource m_AudioSource;
     
 
     void Start()
     {
-        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();    
     }
 
-    public void PlayWallBreakingSound()
+    public void PauseDesertAudio()
     {
-        m_AudioSource.clip = m_BreakingWallSound;
+        m_DesertAudio.Pause();
+    }
+
+    public void PlayPotionTakenSound()
+    {
+        m_AudioSource.clip = m_PotionTakenAudioClip;
         m_AudioSource.Play();
     }
 }

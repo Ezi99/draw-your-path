@@ -34,7 +34,6 @@ public class SaveAndCompareDrawing : MonoBehaviour
     private Coordinates lowestYCoord = new Coordinates();
     private int numOfDrawnPixels;
     private int maxItemPixelHits = 0;
-    private int accuracyLimit;
 
     void Start()
     {
@@ -99,7 +98,6 @@ public class SaveAndCompareDrawing : MonoBehaviour
 
     private void compareSpellDrawing(DrawCanvas drawCanvas, Draw marker)
     {
-        accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
         int FireBallPixelHits = FireBallManage.CheckIfFireBall(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         int HealthPixelHits = HealthManage.CheckIfHealth(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
@@ -130,7 +128,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
         }
 
 
-        Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
+        Debug.Log($"CONGRATS YOU GOT {result}");
 
     }
 
@@ -138,18 +136,11 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         marker.ResetCoords(highestXCoord, lowestXCoord, highestYCoord, lowestYCoord);
         marker.ResetNumOfPixels();
-        FireBallManage.ResetTotalPixelHitAttempt();
-        ShieldManage.ResetTotalPixelHitAttempt();
-        SwordManage.ResetTotalPixelHitAttempt();
-        BridgeManage.ResetTotalPixelHitAttempt();
-        HammerManage.ResetTotalPixelHitAttempt();
-        HealthManage.ResetTotalPixelHitAttempt();
         maxItemPixelHits = 0;
     }
 
     private void compareItemDrawing(DrawCanvas drawCanvas)
     {
-        accuracyLimit = (int)(numOfDrawnPixels * 0.5);
         string result = "nothing";
         int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, colors);
@@ -172,12 +163,12 @@ public class SaveAndCompareDrawing : MonoBehaviour
             HammerManage.SpawnHammer(HammerPixelHits);
         }
 
-        Debug.Log($"CONGRATS YOU GOT {result} with accuracy above {accuracyLimit} pixels !!!");
+        Debug.Log($"CONGRATS YOU GOT {result}");
     }
 
     private void comparePixelHits(int ObjectPixelHits, string itemName, ref string result)
     {
-        if (ObjectPixelHits > 10 && ObjectPixelHits >= maxItemPixelHits)//itemPixelHits > accuracyLimit && itemPixelHits >= maxItemPixelHits)
+        if (ObjectPixelHits > 10 && ObjectPixelHits >= maxItemPixelHits)
         {
             maxItemPixelHits = ObjectPixelHits;
             result = itemName;

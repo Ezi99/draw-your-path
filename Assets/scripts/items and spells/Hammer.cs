@@ -5,88 +5,109 @@ using UnityEngine.Rendering.Universal;
 
 public class Hammer : MonoBehaviour
 {
-    private int damage=50;
-    private int durability;
-    private bool canDamage = true;
-    private float damageCooldown = 1f; // Adjust the cooldown duration as needed
-    private Vector3 prevPosition;
-    private Vector3 velocity;
-    private float prevTime;
+    public float m_VelocityLimitToDamage;
+    public float m_DamageCooldown; // Adjust the cooldown duration as needed
 
+    private int m_Damage;
+    private int m_Durability;
+    private readonly int m_HitDamageToDurability = 10;
+    private bool canDamage = true;
+    private Vector3 m_PrevPosition;
+    private Vector3 m_Velocity;
+    private float m_PrevTime;
+    private AudioSource m_HammerHitSound;
 
     private void Start()
     {
-        prevPosition = transform.position;
-        prevTime = Time.time;
+        m_HammerHitSound = GetComponent<AudioSource>();
+        m_PrevPosition = transform.position;
+        m_PrevTime = Time.time;
     }
 
     private void Update()
     {
-        velocity = (transform.position - prevPosition) / (Time.time - prevTime);
-        prevPosition = transform.position;
-        prevTime = Time.time;
+        m_Velocity = (transform.position - m_PrevPosition) / (Time.time - m_PrevTime);
+        m_PrevPosition = transform.position;
+        m_PrevTime = Time.time;
     }
 
     public void SetStats(int dmg, int Durability)
     {
-        damage = dmg;
-        durability = Durability;
+        m_Damage = dmg;
+        m_Durability = Durability;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (canDamage && other.CompareTag("Erika"))
+        if (m_Velocity.magnitude > m_VelocityLimitToDamage)
         {
-            Debug.Log("Erika");
-            ErikaScript erika = other.GetComponentInParent<ErikaScript>();
-            if (erika != null)
+            if (canDamage && other.CompareTag("Erika"))
             {
-                // Deal damage to Erika
-                Debug.Log("hammered");
-                erika.takeDamage(damage);
-                canDamage = false;
-                Invoke("ResetDamageCooldown", damageCooldown);
-            }
-        }
-        else if (canDamage && other.CompareTag("Paladin"))
-        {
-            Debug.Log("Paladin");
-            // Check if the collided object has a Paladin script component
-            PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
+                Debug.Log("Erika");
+                ErikaScript erika = other.GetComponentInParent<ErikaScript>();
 
-            if (paladin != null)
+                m_HammerHitSound.Play();
+                if (erika != null)
+                {
+                    Debug.Log("hammered");
+                    m_Durability -= m_HitDamageToDurability;
+                    erika.takeDamage(m_Damage);
+                    canDamage = false;
+                    Invoke("ResetDamageCooldown", m_DamageCooldown);
+                }
+            }
+            else if (canDamage && other.CompareTag("Paladin"))
             {
-                // Deal damage to Paladin
-                Debug.Log("hammered");
-                paladin.takeDamage(damage);
+                Debug.Log("Paladin");
+                PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
+
+                m_HammerHitSound.Play();
+                if (paladin != null)
+                {
+                    Debug.Log("hammered");
+                    m_Durability -= m_HitDamageToDurability;
+                    paladin.takeDamage(m_Damage);
+                    canDamage = false;
+                    Invoke("ResetDamageCooldown", m_DamageCooldown);
+                }
+            }
+            else if (canDamage && other.CompareTag("Paladin_Shield"))
+            {
+                Debug.Log("Blocked");
+                m_HammerHitSound.Play();
+                m_Durability -= m_HitDamageToDurability;
                 canDamage = false;
-                Invoke("ResetDamageCooldown", damageCooldown);
+                Invoke("ResetDamageCooldown", m_DamageCooldown);
             }
-        }
-        else if (canDamage && other.CompareTag("Paladin_Shield"))
-        {
-            Debug.Log("Blocked");
-            canDamage = false;
-            Invoke("ResetDamageCooldown", damageCooldown);
-        }
-        else if (other.CompareTag("destructible wall") == true)
-        {
-            DestructibleWall wall = other.GetComponent<DestructibleWall>();
-            if (wall != null)
+            else if (other.CompareTag("destructible wall") == true)
             {
-                wall.TakeDamage(25, (int)velocity.magnitude);
+                DestructibleWall wall = other.GetComponent<DestructibleWall>();
+
+                m_HammerHitSound.Play();
+                if (wall != null)
+                {
+                    wall.TakeDamage(m_Damage, (int)m_Velocity.magnitude);
+                }
             }
-        }
-        else if (other.CompareTag("Gate") == true)
-        {
-            VillageGate gate = other.GetComponent<VillageGate>();
-            if (gate != null)
+            else if (other.CompareTag("Gate") == true)
             {
-                gate.TakeDamage((int)velocity.magnitude);
+                VillageGate gate = other.GetComponent<VillageGate>();
+
+                m_HammerHitSound.Play();
+                if (gate != null)
+                {
+                    gate.TakeDamage((int)m_Velocity.magnitude);
+                }
+            }
+
+            if (m_Durability < 0)
+            {
+                Destroy(gameObject);
             }
         }
 
     }
+
     private void ResetDamageCooldown()
     {
         canDamage = true;

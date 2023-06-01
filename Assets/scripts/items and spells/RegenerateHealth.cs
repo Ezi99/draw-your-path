@@ -53,6 +53,7 @@ public class RegenerateHealth : ObjectManagement
         int firstLine = 0, secondLine = 0;
         bool middlePoint = false;
         bool enteredFirstLoop;
+        m_TotalPixelHitAttempt = 0;
 
         if (healthLength % 2 == 1)
         {

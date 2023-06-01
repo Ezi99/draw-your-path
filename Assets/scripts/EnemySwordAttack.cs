@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class EnemySwordAttack : MonoBehaviour
 {
-    bool dealDamage;
-    private bool canDamage = true;
-    private float damageCooldown = 1f; // Adjust the cooldown duration as needed
-    public void dealDmg()
+    public float m_DamageCooldown = 1f; // Adjust the cooldown duration as needed
+
+    private bool m_DealDamage;
+    private bool m_CanDamage = true;
+    private AudioSource m_SwordHitSound;
+    private int m_AmountOfDamageToDeal = 10;
+
+    private void Start()
+    {
+        m_SwordHitSound = GetComponent<AudioSource>();
+    }
+
+    public void DealDamage()
     {
         Debug.Log("dmg enabled");
-        dealDamage = true;
+        m_DealDamage = true;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (canDamage && other.CompareTag("Player"))
+        if (m_CanDamage && other.CompareTag("Player"))
         {
-            if (dealDamage)
+            if (m_DealDamage)
             {
                 Debug.Log("ayyyy");
-                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
-                dealDamage = false;
+                m_SwordHitSound.Play();
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(m_AmountOfDamageToDeal);
+                m_DealDamage = false;
             }
         }
         else if (other.CompareTag("Shield"))
         {
             Debug.Log("Easy Block");
-            canDamage = false;
-            Invoke("ResetDamageCooldown", damageCooldown);
+            m_CanDamage = false;
+            Invoke("ResetDamageCooldown", m_DamageCooldown);
         }
     }
 }

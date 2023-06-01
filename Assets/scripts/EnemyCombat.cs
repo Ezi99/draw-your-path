@@ -6,8 +6,8 @@ public class EnemyCombat : MonoBehaviour
 {
     public Animator animator;
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    int count = 0;
-    // Set stopping range to 1.5
+    private int count = 0;
+    
     public float stoppingRange = 1.5f;
     public float attackCooldown = 2f;
     private bool isAttacking = false;

@@ -8,7 +8,7 @@ public class FireBallManagement : ObjectManagement
     public GameObject rightFireBallLauncher;
     public ShieldManagement circle;
 
-    public void SpawnFireBall(int pixelHits, Draw marker, bool didRightDraw)
+    public void SpawnFireBall(int pixelHits, Draw marker, bool didHandRightDraw)
     {
         int damage;
         float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
@@ -16,7 +16,7 @@ public class FireBallManagement : ObjectManagement
         Transform markerPos = marker.gameObject.transform;
         Rigidbody rigidBody;
 
-        if (didRightDraw == false)
+        if (didHandRightDraw == false)
         {
             SpawnLocation = leftFireBallLauncher.transform;
 
@@ -28,22 +28,19 @@ public class FireBallManagement : ObjectManagement
         }
 
         checkNumOfItems();
-        if (accuracy < 1)
+        if (accuracy <= 0.75)
         {
-            if (accuracy <= 0.75)
-            {
-                damage = 30;
-                cloneFireBall = Instantiate(Weak, markerPos.position, markerPos.rotation);
-            }
-            else
-            {
-                damage = 40;
-                cloneFireBall = Instantiate(Regular, markerPos.position, markerPos.rotation);
-            }
+            damage = 30;
+            cloneFireBall = Instantiate(Weak, markerPos.position, markerPos.rotation);
+        }
+        else if (accuracy < 1)
+        {
+            damage = 50;
+            cloneFireBall = Instantiate(Regular, markerPos.position, markerPos.rotation);
         }
         else
         {
-            damage = 60;
+            damage = 100;
             cloneFireBall = Instantiate(Strong, markerPos.position, markerPos.rotation);
         }
 
@@ -59,7 +56,6 @@ public class FireBallManagement : ObjectManagement
         pixelHits = circle.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         m_TotalPixelHitAttempt = circle.TotalPixelHitAttempt;
         m_HitPercentage = circle.HitPercentage;
-        circle.ResetTotalPixelHitAttempt();
         Debug.Log($"THERE WAS {pixelHits} FIREBALL HITS");
         return pixelHits;
     }

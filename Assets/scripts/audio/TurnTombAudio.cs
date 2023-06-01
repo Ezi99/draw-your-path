@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnTombAudio : MonoBehaviour
 {
     public List<AudioSource> m_torches;
+    public AudioManager m_AudioManager;
 
     private AudioSource m_CaveSound;
     private bool m_IsPlaying;
@@ -21,6 +22,7 @@ public class TurnTombAudio : MonoBehaviour
         {
             if (m_IsPlaying == false)
             {
+                m_AudioManager.PauseDesertAudio();
                 m_CaveSound.Play();
                 foreach (AudioSource torch in m_torches)
                 {

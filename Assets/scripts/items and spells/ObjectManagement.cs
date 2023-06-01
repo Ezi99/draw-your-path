@@ -57,15 +57,9 @@ public class ObjectManagement : MonoBehaviour
 
     protected void checkIfEnoughPixelHits(ref int pixelHits, int totalPixelHitAttempt, float limit)
     {
-
         if (pixelHits < totalPixelHitAttempt * limit)
         {
             pixelHits = 0;
         }
-    }
-
-    public void ResetTotalPixelHitAttempt()
-    {
-        m_TotalPixelHitAttempt = 0;
     }
 }

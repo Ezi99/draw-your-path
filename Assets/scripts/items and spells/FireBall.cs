@@ -4,46 +4,66 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    private int damage=100;
+    public GameObject m_ExplosionVisualEffect;
+    public GameObject m_TrailingFireVisualEffect;
+    public AudioClip m_ExplosionSound;
+
+    private int m_Damage = 100;
+    private AudioSource m_AudioSource;
+    private MeshRenderer m_FireBallRenderer;
+    private Rigidbody m_FireBallRigidbody;
+    private bool m_Exploded = false;
+   
 
     private void Start()
     {
-        Destroy(gameObject, 5);
+        m_AudioSource = GetComponent<AudioSource>();
+        m_FireBallRenderer = GetComponent<MeshRenderer>();
+        m_FireBallRigidbody = GetComponent<Rigidbody>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object has an Erika script component
-        if (other.CompareTag("Erika"))
+        if (m_Exploded == false)
         {
-            Debug.Log("Erika");
-            ErikaScript erika = other.GetComponentInParent<ErikaScript>();
-            if (erika != null)
+            m_TrailingFireVisualEffect.SetActive(false);
+            m_FireBallRigidbody.useGravity = false;
+            m_FireBallRigidbody.isKinematic = true;
+            m_AudioSource.clip = m_ExplosionSound;
+            m_ExplosionVisualEffect.SetActive(true);
+            m_FireBallRenderer.enabled = false;
+            m_AudioSource.Play();
+
+            if (other.CompareTag("Erika"))
             {
-                // Deal damage to Erika
-                Debug.Log("NUKED");
-                erika.takeDamage(damage);
+                Debug.Log("Erika");
+                ErikaScript erika = other.GetComponentInParent<ErikaScript>();
+
+                if (erika != null)
+                {
+                    Debug.Log("NUKED");
+                    erika.takeDamage(m_Damage);
+                }
             }
             else if (other.CompareTag("Paladin"))
             {
                 Debug.Log("Paladin");
-                // Check if the collided object has a Paladin script component
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
 
                 if (paladin != null)
                 {
-                    // Deal damage to Paladin
                     Debug.Log("NUKED");
-                    paladin.takeDamage(damage);
+                    paladin.takeDamage(m_Damage);
                 }
             }
 
-
-
-
+            m_Exploded = true;
+            Destroy(gameObject, 1);
         }
     }
+
     public void SetStats(int dmg)
     {
-        damage = dmg;
+        m_Damage = dmg;
     }
 }

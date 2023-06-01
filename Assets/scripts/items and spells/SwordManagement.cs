@@ -15,19 +15,17 @@ public class SwordManagement : ObjectManagement
         GameObject cloneSword;
 
         checkNumOfItems();
-        if (accuracy < 1)
+        if (accuracy <= 0.65)
         {
-            Durability = (int)accuracy * 100;
-            if (accuracy <= 0.75)
-            {
-                damage = 25;
-                cloneSword = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
-            }
-            else
-            {
-                damage = 35;
-                cloneSword = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
-            }
+            damage = 25;
+            Durability = 60;
+            cloneSword = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
+        }
+        else if (accuracy < 1)
+        {
+            damage = 35;
+            Durability = 80;
+            cloneSword = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
         }
         else
         {
@@ -47,7 +45,7 @@ public class SwordManagement : ObjectManagement
         Sword = drawSword(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " SWORD HITS");
         encodeDrawing2PNG("Sword.png", ref Sword);
-        
+
         return pixelHits;
     }
 
@@ -58,6 +56,7 @@ public class SwordManagement : ObjectManagement
         int handleLocation = (lowestCoord.x - highestCoord.x) / 8;
         int handleSize = (lowestCoord.x - highestCoord.x) / 3;
         bool[] importantPoints = { false, false, false, false, false };
+        m_TotalPixelHitAttempt = 0;
 
         for (int x = highestCoord.x; x <= lowestCoord.x && x < textureSize - 30; x += 15)
         {

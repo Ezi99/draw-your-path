@@ -2,68 +2,94 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Sword : MonoBehaviour
 {
-    private int damage=34;
-    private int durability;
-    private bool canDamage = true;
-    private float damageCooldown = 1f; // Adjust the cooldown duration as needed
+    public float VelocityLimitToDamage;
+    public float m_DamageCooldown; // Adjust the cooldown duration as needed
 
-    void Update()
+    private AudioSource m_SwordHitSound;
+    private int m_Damage;
+    private int m_Durability;
+    private bool m_CanDamage = true;
+    private Vector3 m_PrevPosition;
+    private Vector3 m_Velocity;
+    private float m_PrevTime;
+
+
+    private void Start()
     {
-
+        m_PrevPosition = transform.position;
+        m_PrevTime = Time.time;
+        m_SwordHitSound = GetComponent<AudioSource>();
     }
 
-    public void SetStats(int dmg, int Durability)
+    private void Update()
     {
-        damage = dmg;
-        durability = Durability;
+        m_Velocity = (transform.position - m_PrevPosition) / (Time.time - m_PrevTime);
+        m_PrevPosition = transform.position;
+        m_PrevTime = Time.time;
     }
 
-     private void OnTriggerEnter(Collider other)
+    public void SetStats(int i_Damage, int i_Durability)
     {
-        // Check if the collided object has an Erika script component
-        if (canDamage && other.CompareTag("Erika"))
+        m_Damage = i_Damage;
+        m_Durability = i_Durability;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("velocity.magnitude " + m_Velocity.magnitude);
+        if (m_Velocity.magnitude > VelocityLimitToDamage)
         {
-            Debug.Log("Erika");
-            ErikaScript erika = other.GetComponentInParent<ErikaScript>();
-            if (erika != null)
+            if (m_CanDamage && other.CompareTag("Erika"))
             {
-                // Deal damage to Erika
-                Debug.Log("stabbed");
-                erika.takeDamage(damage);
-                canDamage = false;
-                Invoke("ResetDamageCooldown", damageCooldown);
+                Debug.Log("Erika");
+                ErikaScript erika = other.GetComponentInParent<ErikaScript>();
+                m_SwordHitSound.Play();
+                if (erika != null)
+                {
+                    Debug.Log("stabbed");
+                    m_Durability -= 10;
+                    erika.takeDamage(m_Damage);
+                    m_CanDamage = false;
+                    Invoke("ResetDamageCooldown", m_DamageCooldown);
+
+                }
+            }
+            else if (m_CanDamage && other.CompareTag("Paladin"))
+            {
+                Debug.Log("Paladin");
+                PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
+                m_SwordHitSound.Play();
+                if (paladin != null)
+                {
+                    Debug.Log("stabbed");
+                    m_Durability -= 10;
+                    paladin.takeDamage(m_Damage);
+                    m_CanDamage = false;
+                    Invoke("ResetDamageCooldown", m_DamageCooldown);
+                }
+            }
+            else if (m_CanDamage && other.CompareTag("Paladin_Shield"))
+            {
+                Debug.Log("Blocked");
+                m_SwordHitSound.Play();
+                m_Durability -= 10;
+                m_CanDamage = false;
+                Invoke("ResetDamageCooldown", m_DamageCooldown);
+            }
+
+            if (m_Durability < 0)
+            {
+                Destroy(gameObject);
             }
         }
-        else if (canDamage && other.CompareTag("Paladin"))
-        {
-            Debug.Log("Paladin");
-            // Check if the collided object has a Paladin script component
-            PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
-
-            if (paladin != null)
-            {
-                // Deal damage to Paladin
-                Debug.Log("stabbed");
-                paladin.takeDamage(damage);
-                canDamage = false;
-                Invoke("ResetDamageCooldown", damageCooldown);
-            }
-        }
-        else if (canDamage && other.CompareTag("Paladin_Shield"))
-        {
-            Debug.Log("Blocked");
-            canDamage = false;
-            Invoke("ResetDamageCooldown", damageCooldown);
-        }
-
-
-        
-
     }
+
     private void ResetDamageCooldown()
     {
-        canDamage = true;
+        m_CanDamage = true;
     }
 }
