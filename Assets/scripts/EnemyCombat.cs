@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyCombat : MonoBehaviour
 {
     public Animator animator;
@@ -13,6 +12,7 @@ public class EnemyCombat : MonoBehaviour
     private bool isAttacking = false;
     private float lastAttackTime;
     Transform target;
+    System.Random random = new System.Random();
     void Start()
     {
         target = PlayerManager.instance.player.transform;
@@ -32,24 +32,28 @@ public class EnemyCombat : MonoBehaviour
     }
     void Attack()
     {
-        // Set the flag to prevent multiple attacks in quick succession.
+        
         isAttacking = true;
 
-        // Check if enough time has passed since the last attack.
+        
         if (Time.time - lastAttackTime > attackCooldown)
         {
-
+            int TypeOfAttack = random.Next(1, 4);
             // Apply damage to the player.
             //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
 
-            if (count <= 2)
+            if (TypeOfAttack == 1)
             {
                 animator.SetTrigger("Attack");
             }
-            else
+            else if(TypeOfAttack == 2)
             {
                 animator.SetTrigger("Kick");
                 count = 0;
+            }
+            else if(TypeOfAttack ==3)
+            {
+                animator.SetTrigger("Block");
             }
 
             count++;
