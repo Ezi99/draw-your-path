@@ -17,7 +17,7 @@ public class MarkerSpawn : MonoBehaviour
     public GameObject RightHandDrawCanvas;
     public GameObject RightHand;
     public GameObject LeftHand;
-    public eraser Eraser;
+    public Eraser Eraser;
 
     private InputDevice RtargetDevice, LtargetDevice;
     private bool drewItem = false;

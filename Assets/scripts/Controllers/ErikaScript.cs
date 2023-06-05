@@ -29,7 +29,6 @@ public class ErikaScript : MonoBehaviour
 
     public void takeDamage(int dmg)
     {
-
         health -= dmg;
         Debug.Log($"Erika Health - {dmg} current health {health}");
         if (health <= 0)

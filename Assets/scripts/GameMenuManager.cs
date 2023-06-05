@@ -54,7 +54,7 @@ public class GameMenuManager : MonoBehaviour
             m_CheckIfMenuButtonPressed = false;
             Invoke("MenuButtonCooldown", 0.5f);
         }
-
+        
         m_Menu.transform.LookAt(new Vector3(m_PlayersHead.position.x, m_Menu.transform.position.y, m_PlayersHead.position.z));
         m_Menu.transform.forward *= -1;
 

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class eraser : MonoBehaviour
+public class Eraser : MonoBehaviour
 {
-    public Vector3 startPosition;
-    public Vector3 endPosition;
+    public Transform m_EndPosition;
+    public Transform m_StartPosition;
     public float moveSpeed = 10.0f;
 
     public void erase()
@@ -15,11 +15,12 @@ public class eraser : MonoBehaviour
 
     IEnumerator GoToTarget()
     {
-        while (transform.position != endPosition)
+        while (transform.position != m_EndPosition.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, m_EndPosition.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
-        transform.position = startPosition;
+
+        transform.position = m_StartPosition.position;
     }
 }
