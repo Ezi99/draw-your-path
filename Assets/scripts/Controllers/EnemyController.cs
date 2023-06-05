@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     bool isMoving;
     private Animator animator;
+    private bool isAttacking;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +22,33 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position,transform.position);
-
-        if (distance<= lookRadius)
+        if (target != null && !isAttacking)
         {
-            agent.SetDestination(target.position);
+            float distance = Vector3.Distance(target.position, transform.position);
 
-            if (distance<= agent.stoppingDistance)
+            if (distance <= lookRadius)
             {
-                FaceTarget();
-            }
+                agent.SetDestination(target.position);
 
-            // Set isMoving to true if the agent is currently moving
-            if (agent.velocity.magnitude > 0f) {
-                SetIsMoving(true);
+                if (distance <= agent.stoppingDistance)
+                {
+                    FaceTarget();
+                }
+
+                // Set isMoving to true if the agent is currently moving
+                if (agent.velocity.magnitude > 0f)
+                {
+                    SetIsMoving(true);
+                }
+                else
+                {
+                    SetIsMoving(false);
+                }
             }
-            else {
-                SetIsMoving(false);
-            }
+        }
+        else
+        {
+
         }
     }
 
@@ -59,5 +69,20 @@ public class EnemyController : MonoBehaviour
     void SetIsMoving(bool value) {
         isMoving = value;
         animator.SetBool("IsMoving",isMoving);
+    }
+    public void StartAttack()
+    {
+        // Disable movement and following during the attack
+        Debug.Log("kaka waka");
+        isAttacking = true;
+        agent.isStopped = true;
+    }
+
+    public void EndAttack()
+    {
+        // Enable movement and following after the attack
+        Debug.Log("zozo lozo");
+        isAttacking = false;
+        agent.isStopped = false;
     }
 }

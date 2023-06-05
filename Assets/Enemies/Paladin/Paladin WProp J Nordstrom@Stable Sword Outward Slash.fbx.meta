@@ -57,10 +57,24 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.07983191
+        functionName: StartAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 44579f6b2446c45b98a31a226d0a2dfd, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.3835125
         functionName: enableDmg
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6260539e34ebfa845957d22d0c179f01, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.94117653
+        functionName: EndAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 44579f6b2446c45b98a31a226d0a2dfd, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
