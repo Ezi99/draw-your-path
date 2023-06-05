@@ -47,9 +47,23 @@ public class ErikaScript : MonoBehaviour
     private void Die()
     {
         Debug.Log("Death animation triggered");
-        m_Animator.SetBool("Death", true);
+        m_Animator.SetTrigger("Death");
+        //PlayAnimation("Death");  
     }
+    public void PlayAnimation(string animationName)
+    {
+        m_Animator.Play(animationName);
+        StartCoroutine(WaitForAnimationToEnd());
+    }
+    private IEnumerator WaitForAnimationToEnd()
+    {
+        while (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            yield return null;
+        }
 
+        // Animation has completed, perform any desired actions here
+    }
     public void destroy()
     {
         Destroy(gameObject);

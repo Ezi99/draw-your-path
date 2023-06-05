@@ -31,7 +31,7 @@ public class PaladinScript : MonoBehaviour
     private void Die()
     {
         Debug.Log("Death animation triggered");
-        animator.SetBool("Death", true);
+        animator.SetTrigger("Death");
     }
 
     public void destroy()
