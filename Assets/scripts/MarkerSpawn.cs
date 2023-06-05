@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class MarkerSpawn : MonoBehaviour
 {
     public InputDeviceCharacteristics RinputDeviceCharacteristics, LinputDeviceCharacteristics;
-    public UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousMoveProvider playerMovement;
+    public ActionBasedContinuousMoveProvider playerMovement;
     private float saveSpeed;
     public GameObject RightItemMarker;
     public GameObject RightSpellMarker;
@@ -36,8 +37,8 @@ public class MarkerSpawn : MonoBehaviour
         {
             RtargetDevice = Rdevices[0];
             LtargetDevice = Ldevices[0];
-            Debug.Log($"target device connected {Rdevices.Count}");
-            Debug.Log($"target device connected {Ldevices.Count}");
+            Debug.Log($"target device connected in MarkerSpawn {Rdevices.Count}");
+            Debug.Log($"target device connected in MarkerSpawn {Ldevices.Count}");
         }
     }
     void Update()
