@@ -46,7 +46,7 @@ public class GameMenuManager : MonoBehaviour
     private void CheckIfMenuButtonPressed()
     {
         m_LeftTargetDevice.TryGetFeatureValue(CommonUsages.menuButton, out bool IsMenuButton);
-        Debug.Log("IsMenuButton " + IsMenuButton);
+
         if (IsMenuButton == true && m_CheckIfMenuButtonPressed == true)
         {
             m_Menu.SetActive(!m_Menu.activeSelf);

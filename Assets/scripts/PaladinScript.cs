@@ -6,7 +6,7 @@ public class PaladinScript : MonoBehaviour
 {
     private Animator animator;
     public EnemySwordAttack attack;
-    int health = 100;
+    private int health = 100;
 
     private void Start()
     {
