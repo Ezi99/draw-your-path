@@ -501,9 +501,9 @@ GameObject:
   - component: {fileID: 2107449235477208866}
   - component: {fileID: 1924603383483010199}
   - component: {fileID: 1924603383483010198}
-  - component: {fileID: 1924603383483010193}
   - component: {fileID: 1924603383483010192}
   - component: {fileID: 1924603383483010195}
+  - component: {fileID: 3171793461901206016}
   m_Layer: 0
   m_Name: Erika Archer With Bow Arrow
   m_TagString: Erika
@@ -565,21 +565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 70
---- !u!114 &1924603383483010193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618192242700830104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ef4f21da52c2453e93bbc44adae02f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1924603383483010199}
-  stoppingRange: 7
-  attackCooldown: 2
 --- !u!195 &1924603383483010192
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -614,10 +599,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf9423f1e53e4b2a8fd5e216c4d33a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RigidBodies: []
   arrowObj: {fileID: 7576036458672748436, guid: 2c8dcc43b00f8447799cb0a50526d777, type: 3}
   arrowPoint: {fileID: 4650516659849030922}
   playerTransform: {fileID: 8680483321145252580, guid: 180524c41c5297244962a3c7c0034450, type: 3}
   health: 100
+--- !u!114 &3171793461901206016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618192242700830104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc91d0b7847d99a43864f5a3cc923d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1924603383483010199}
+  stoppingRange: 7
+  attackCooldown: 2
 --- !u!1 &1759973391463674626
 GameObject:
   m_ObjectHideFlags: 0
