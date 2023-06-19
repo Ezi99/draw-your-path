@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyCombat : MonoBehaviour
+public class PaladinCombat : MonoBehaviour
 {
     public Animator animator;
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
@@ -69,4 +69,5 @@ public class EnemyCombat : MonoBehaviour
     {
         isAttacking = false;
     }
+
 }
