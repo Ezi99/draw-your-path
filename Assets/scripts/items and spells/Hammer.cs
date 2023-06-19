@@ -8,8 +8,8 @@ public class Hammer : MonoBehaviour
     public float m_VelocityLimitToDamage;
     public float m_DamageCooldown; // Adjust the cooldown duration as needed
 
-    private int m_Damage;
-    private int m_Durability;
+    private int m_Damage = 50;
+    private int m_Durability = 1000;
     private readonly int m_HitDamageToDurability = 10;
     private bool canDamage = true;
     private Vector3 m_PrevPosition;
@@ -56,7 +56,7 @@ public class Hammer : MonoBehaviour
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
             }
-            else if (canDamage && other.CompareTag("Paladin"))
+            else if (canDamage && other.tag.Contains("Paladin"))
             {
                 Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
@@ -66,7 +66,12 @@ public class Hammer : MonoBehaviour
                 {
                     Debug.Log("hammered");
                     m_Durability -= m_HitDamageToDurability;
-                    paladin.takeDamage(m_Damage);
+                    if (other.tag.Contains("Head"))
+                    {
+                        paladin.takeDamage(m_Damage, true);
+                    }
+                    else
+                        paladin.takeDamage(m_Damage, false);
                     canDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
