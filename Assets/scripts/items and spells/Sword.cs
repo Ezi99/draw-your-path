@@ -10,8 +10,8 @@ public class Sword : MonoBehaviour
     public float m_DamageCooldown; // Adjust the cooldown duration as needed
 
     private AudioSource m_SwordHitSound;
-    private int m_Damage;
-    private int m_Durability;
+    private int m_Damage = 100;
+    private int m_Durability = 1000;
     private bool m_CanDamage = true;
     private Vector3 m_PrevPosition;
     private Vector3 m_Velocity;
