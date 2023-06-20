@@ -20,8 +20,8 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public Draw LeftSpellMarker;
 
     private const int k_NumOfPixelsThreshold = 70;
-    private const int k_DrawingLengthThreshold = 200;
-    private const int k_DrawingWidthThreshold = 200;
+    private const int k_DrawingLengthThreshold = 150;
+    private const int k_DrawingWidthThreshold = 150;
     private string playersDrawingName = "PlayersDrawing.png";
     private bool leftItemDrew = false;
     private bool leftSpellDrew = false;
