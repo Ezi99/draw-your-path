@@ -7,17 +7,9 @@ public class AreaNavigator : MonoBehaviour
     public GameObject m_Area1;
     public GameObject m_Area2;
     public GameObject m_Area3;
+    public GameObject m_Area4;
+    public GameObject m_Area5;
     int m_AreaIndex = 1;
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
 
     public void ActivateArea()
     {
@@ -34,6 +26,17 @@ public class AreaNavigator : MonoBehaviour
         {
             m_Area2.SetActive(false);
             m_Area3.GetComponent<Area3Ui>().ActivateArea();
+        }
+        else if( m_AreaIndex == 4) 
+        {
+            m_Area3.SetActive(false);
+            m_Area4.GetComponent<Area4Ui>().ActivateArea();
+        }
+        else if ( m_AreaIndex == 5)
+        {
+            m_Area4.SetActive(false);
+            m_Area5.GetComponent<Area5Ui>().ActivateArea();
+
         }
 
         m_AreaIndex++;
