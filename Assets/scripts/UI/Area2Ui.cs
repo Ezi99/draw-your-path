@@ -9,15 +9,14 @@ public class Area2Ui : MonoBehaviour
     public GameObject m_PuzzleMessage;
     public GameObject m_FirstEnemyWave;
     public GameObject m_SecondEnemyWave;
-    public AreaUiNavigator m_AreaUiNavigator;
     private bool m_IsDone = false;
 
-    private void OnTriggerEnter(Collider other)
+    public void ActivateArea()
     {
-        m_AreaUiNavigator.ActivateArea2();
         m_FirstEnemyWave.SetActive(true);
         m_SecondEnemyWave.SetActive(true);
     }
+
     void Update()
     {
         if (m_FirstEnemyWave.transform.childCount == 0 && m_IsDone == false)
@@ -25,8 +24,6 @@ public class Area2Ui : MonoBehaviour
             Invoke("showHintMessage", 10);
             m_IsDone = true;
         }
-        m_PuzzleMessage.transform.LookAt(new Vector3(m_PlayersHead.position.x, m_PuzzleMessage.transform.position.y, m_PlayersHead.position.z));
-        m_PuzzleMessage.transform.forward *= -1;
     }
     private void showHintMessage()
     {

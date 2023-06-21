@@ -8,22 +8,12 @@ public class Area1Ui : MonoBehaviour
     public GameObject m_BlockingEnemyMessage;
     public GameObject m_MovingEnemyMessage;
     public GameObject m_HintsMessage;
-    public AreaUiNavigator m_UiNavigator;
-    private bool m_DidCollide = false;
     private int m_MessageCounter = 0;
 
-    private void OnTriggerEnter(Collider other)
+    public void ActivateArea()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            if (m_DidCollide == false)
-            {
-                m_UiNavigator.ActivateArea1();
-                m_StaticEnemyMessage.SetActive(true);
-                Destroy(m_StaticEnemyMessage, 10);
-                m_DidCollide = true;
-            }
-        }
+        m_StaticEnemyMessage.SetActive(true);
+        Destroy(m_StaticEnemyMessage, 10);
     }
 
     public void ShowMessage()
@@ -40,6 +30,7 @@ public class Area1Ui : MonoBehaviour
         {
             showHintMessage();
         }
+
         m_MessageCounter++;
     }
     private void showBlockingEnemyMessage()
