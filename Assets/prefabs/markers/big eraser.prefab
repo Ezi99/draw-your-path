@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5023594173745499700}
   - component: {fileID: 8889388905666750924}
   - component: {fileID: 9031400717933824284}
-  - component: {fileID: 3547670979347036029}
   m_Layer: 9
   m_Name: big eraser
   m_TagString: Untagged
@@ -98,18 +97,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.40287793
   m_Center: {x: -0.15521882, y: 0, z: -0.026178246}
---- !u!114 &3547670979347036029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389820501026320769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f44383aa194fc34fbe5297095632810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPosition: {x: 1.762, y: 1.413, z: -3.5}
-  endPosition: {x: 3.024, y: 1.413, z: -3.5}
-  moveSpeed: 10

@@ -13,6 +13,7 @@ public class PaladinCombat : MonoBehaviour
     private float lastAttackTime;
     Transform target;
     System.Random random = new System.Random();
+
     void Start()
     {
         target = PlayerManager.instance.player.transform;
