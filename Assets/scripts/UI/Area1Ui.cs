@@ -8,6 +8,8 @@ public class Area1Ui : MonoBehaviour
     public GameObject m_BlockingEnemyMessage;
     public GameObject m_MovingEnemyMessage;
     public GameObject m_HintsMessage;
+    public GameObject[] m_SpawnPoints;
+    public GameObject m_Player;
     private int m_MessageCounter = 0;
 
     public void ActivateArea()
@@ -54,5 +56,17 @@ public class Area1Ui : MonoBehaviour
     private void hideHintMessage()
     {
         m_HintsMessage.SetActive(false);
+    }
+
+    public void SpawnPlayer()
+    {
+        foreach(GameObject point in m_SpawnPoints)
+        {
+            if(point.activeSelf)
+            {
+                m_Player.transform.position = point.transform.position;
+                break;
+            }
+        }
     }
 }

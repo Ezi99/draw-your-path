@@ -27,12 +27,12 @@ public class AreaNavigator : MonoBehaviour
             m_Area2.SetActive(false);
             m_Area3.GetComponent<Area3Ui>().ActivateArea();
         }
-        else if( m_AreaIndex == 4) 
+        else if (m_AreaIndex == 4)
         {
             m_Area3.SetActive(false);
             m_Area4.GetComponent<Area4Ui>().ActivateArea();
         }
-        else if ( m_AreaIndex == 5)
+        else if (m_AreaIndex == 5)
         {
             m_Area4.SetActive(false);
             m_Area5.GetComponent<Area5Ui>().ActivateArea();
@@ -40,5 +40,31 @@ public class AreaNavigator : MonoBehaviour
         }
 
         m_AreaIndex++;
+    }
+
+    public void ReSpawnPlayer()
+    {
+        if (m_AreaIndex == 1)
+        {
+            m_Area1.GetComponent<Area1Ui>().SpawnPlayer();
+        }
+        if (m_AreaIndex == 2)
+        {
+            m_Area2.GetComponent<Area2Ui>().SpawnPlayer();
+        }
+        if (m_AreaIndex == 3)
+        {
+            m_Area3.GetComponent<Area3Ui>().SpawnPlayer();
+        }
+        if (m_AreaIndex == 4)
+        {
+            m_Area4.GetComponent<Area4Ui>().SpawnPlayer();
+        }
+        else
+        {
+            m_Area5.GetComponent<Area5Ui>().SpawnPlayer();
+        }
+
+
     }
 }
