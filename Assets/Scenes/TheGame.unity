@@ -88121,7 +88121,7 @@ PrefabInstance:
     - target: {fileID: 9051170951814460634, guid: f51023ea1d5261742af08cc838b1a39a, type: 3}
       propertyPath: Eraser
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1462224436}
     - target: {fileID: 9051170951814460634, guid: f51023ea1d5261742af08cc838b1a39a, type: 3}
       propertyPath: LeftHand
       value: 

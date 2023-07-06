@@ -8,7 +8,6 @@ public class MarkerSpawn : MonoBehaviour
 {
     public InputDeviceCharacteristics RinputDeviceCharacteristics, LinputDeviceCharacteristics;
     public ActionBasedContinuousMoveProvider playerMovement;
-    private float saveSpeed;
     public GameObject RightItemMarker;
     public GameObject RightSpellMarker;
     public GameObject LeftItemMarker;
@@ -18,10 +17,11 @@ public class MarkerSpawn : MonoBehaviour
     public GameObject RightHand;
     public GameObject LeftHand;
     public Eraser Eraser;
-
+    private float saveSpeed;
     private InputDevice RtargetDevice, LtargetDevice;
     private bool drewItem = false;
     private bool drewSpell = false;
+
     void Start()
     {
         InitializeHand();
@@ -123,6 +123,7 @@ public class MarkerSpawn : MonoBehaviour
         {
             drewSpell = true;
         }
+
         Eraser.erase();
         RightHand.SetActive(false);
         LeftHand.SetActive(false);
