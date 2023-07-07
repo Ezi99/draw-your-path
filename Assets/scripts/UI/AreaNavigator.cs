@@ -9,7 +9,7 @@ public class AreaNavigator : MonoBehaviour
     public GameObject m_Area3;
     public GameObject m_Area4;
     public GameObject m_Area5;
-    int m_AreaIndex = 1;
+    private int m_AreaIndex = 1;
 
     public void ActivateArea()
     {
@@ -64,7 +64,5 @@ public class AreaNavigator : MonoBehaviour
         {
             m_Area5.GetComponent<Area5Ui>().SpawnPlayer();
         }
-
-
     }
 }

@@ -8,7 +8,7 @@ public class Hammer : MonoBehaviour
     public float m_VelocityLimitToDamage;
     public float m_DamageCooldown; // Adjust the cooldown duration as needed
 
-    private int m_Damage;
+    private int m_Damage = 100;
     private int m_Durability;
     private readonly int m_HitDamageToDurability = 10;
     private bool canDamage = true;
