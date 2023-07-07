@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class Hammer : MonoBehaviour
 {
     public float m_VelocityLimitToDamage;
-    public float m_DamageCooldown; // Adjust the cooldown duration as needed
+    public float m_DamageCooldown; 
 
     private int m_Damage = 100;
     private int m_Durability;

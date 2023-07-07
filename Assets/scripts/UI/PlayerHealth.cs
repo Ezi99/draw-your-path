@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
             healthbar.SetHealth(currentHealth);
             m_HealthBarPic.SetActive(true);
-            Invoke("hideHealthBarPic", 5);
+            Invoke("HideHealthBarPic", 5);
         }
 
     }
@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         {
             m_beenHit = true;
             m_HealthBarPic.SetActive(true);
-            Invoke("hideHealthBarPic", 5);
+            Invoke("HideHealthBarPic", 5);
         }
     }
 

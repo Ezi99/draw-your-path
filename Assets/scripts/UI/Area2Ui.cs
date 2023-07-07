@@ -41,6 +41,7 @@ public class Area2Ui : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        Debug.Log("in spawn ui2");
         foreach (GameObject point in m_SpawnPoints)
         {
             if (point.activeSelf)

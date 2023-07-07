@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     bool isMoving;
     private Animator animator;
     private bool isAttacking;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator= GetComponent<Animator>();
@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
         agent= GetComponent<NavMeshAgent>();    
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target != null && !isAttacking)
@@ -70,10 +69,11 @@ public class EnemyController : MonoBehaviour
         isMoving = value;
         animator.SetBool("IsMoving",isMoving);
     }
+
     public void StartAttack()
     {
         // Disable movement and following during the attack
-        Debug.Log("kaka waka");
+        //Debug.Log("kaka waka");
         isAttacking = true;
         agent.isStopped = true;
     }
@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
     public void EndAttack()
     {
         // Enable movement and following after the attack
-        Debug.Log("zozo lozo");
+        //Debug.Log("zozo lozo");
         isAttacking = false;
         agent.isStopped = false;
     }
