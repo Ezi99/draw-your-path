@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     public void StartButton()
     {
         clickSound.Play();
-        SceneManager.LoadScene("TheGame");
+        SceneManager.LoadScene("OpeningCutscene");
     }
 
     public void AboutButton()
