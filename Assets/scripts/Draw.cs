@@ -20,6 +20,7 @@ public class Draw : MonoBehaviour
     private Coordinates highestYCoord = new Coordinates();
     private Coordinates lowestYCoord = new Coordinates();
     private int numOfPixels = 0;
+
     void Start()
     {
         colors = Enumerable.Repeat(Color.red, penSize * penSize).ToArray();

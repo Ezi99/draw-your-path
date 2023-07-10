@@ -9,6 +9,9 @@ public class Area2Ui : MonoBehaviour
     public GameObject m_PuzzleMessage;
     public GameObject m_FirstEnemyWave;
     public GameObject m_SecondEnemyWave;
+    public GameObject[] m_SpawnPoints;
+    public GameObject m_Player;
+
     private bool m_IsDone = false;
 
     public void ActivateArea()
@@ -35,4 +38,18 @@ public class Area2Ui : MonoBehaviour
     {
         m_PuzzleMessage.SetActive(false);
     }
+
+    public void SpawnPlayer()
+    {
+        Debug.Log("in spawn ui2");
+        foreach (GameObject point in m_SpawnPoints)
+        {
+            if (point.activeSelf)
+            {
+                m_Player.transform.position = point.transform.position;
+                break;
+            }
+        }
+    }
+
 }
