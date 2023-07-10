@@ -8,7 +8,7 @@ public class PaladinScript : MonoBehaviour
     public GameObject enemyCanvas;
     private Animator animator;
     public EnemySwordAttack attack;
-    int health = 100;
+    private int health = 100;
     public Slider healthBar;
     private bool died=false;
 

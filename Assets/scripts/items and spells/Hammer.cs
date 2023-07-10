@@ -66,7 +66,7 @@ public class Hammer : MonoBehaviour
                 {
                     Debug.Log("hammered");
                     m_Durability -= m_HitDamageToDurability;
-                    paladin.takeDamage(m_Damage);
+                    paladin.takeDamage(m_Damage,true);
                     canDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
