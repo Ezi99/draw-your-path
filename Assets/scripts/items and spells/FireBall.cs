@@ -53,7 +53,7 @@ public class FireBall : MonoBehaviour
                 if (paladin != null)
                 {
                     Debug.Log("NUKED");
-                    paladin.takeDamage(m_Damage);
+                    paladin.takeDamage(m_Damage,false);
                 }
             }
 

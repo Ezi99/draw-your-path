@@ -44,7 +44,7 @@ public class Sword : MonoBehaviour
         Debug.Log("velocity.magnitude " + m_Velocity.magnitude);
         if (m_Velocity.magnitude > VelocityLimitToDamage)
         {
-            if (m_CanDamage && other.CompareTag("Erika"))
+            if (m_CanDamage && other.tag.Contains("Erika"))
             {
                 Debug.Log("Erika");
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
@@ -60,7 +60,7 @@ public class Sword : MonoBehaviour
 
                 }
             }
-            else if (m_CanDamage && other.CompareTag("Paladin"))
+            else if (m_CanDamage && other.tag.Contains("Paladin"))
             {
                 Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
@@ -69,7 +69,12 @@ public class Sword : MonoBehaviour
                 {
                     Debug.Log("stabbed");
                     m_Durability -= 10;
-                    paladin.takeDamage(m_Damage);
+                    if (other.tag.Contains("Head"))
+                    {
+                        paladin.takeDamage(m_Damage, true);
+                    }
+                    else
+                        paladin.takeDamage(m_Damage, false);
                     m_CanDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }

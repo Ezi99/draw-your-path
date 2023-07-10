@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ErikaScript : MonoBehaviour
 {
@@ -10,8 +11,15 @@ public class ErikaScript : MonoBehaviour
     public GameObject arrowObj;
     public Transform arrowPoint;
     public Transform playerTransform;
+    public GameObject enemyCanvas;
+    public Slider healthBar;
     public int health = 100;
-   
+    private bool died=false;
+
+    private void Update()
+    {
+        healthBar.value = health;
+    }
     void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -31,8 +39,9 @@ public class ErikaScript : MonoBehaviour
     {
         health -= dmg;
         Debug.Log($"Erika Health - {dmg} current health {health}");
-        if (health <= 0)
+        if (!died && health <= 0)
         {
+            Debug.Log("shiiiiiikakaka");
             //m_Animator.enabled = false;
             Die();
             /*foreach (var item in rigidbodies)
@@ -45,9 +54,12 @@ public class ErikaScript : MonoBehaviour
 
     private void Die()
     {
+        Debug.Log("boakakaka");
+        died = true;
+        enemyCanvas.SetActive(false);
         Debug.Log("Death animation triggered");
         m_Animator.SetTrigger("Death");
-        //PlayAnimation("Death");  
+
     }
     public void PlayAnimation(string animationName)
     {

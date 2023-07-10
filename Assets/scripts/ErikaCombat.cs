@@ -5,7 +5,6 @@ public class ErikaCombat : MonoBehaviour
 {
     public Animator animator;
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    private int count = 0;
     public float stoppingRange = 1.5f;
     public float attackCooldown = 2f;
     private bool isAttacking = false;
