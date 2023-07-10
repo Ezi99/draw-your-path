@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public class Sword : MonoBehaviour
 {
     public float VelocityLimitToDamage;
     public float m_DamageCooldown; // Adjust the cooldown duration as needed
-
+    public Slider Durability;
     private AudioSource m_SwordHitSound;
-    private int m_Damage = 100;
-    private int m_Durability = 1000;
+    private int m_Damage = 34;
+    public int m_Durability = 100;
     private bool m_CanDamage = true;
     private Vector3 m_PrevPosition;
     private Vector3 m_Velocity;
@@ -23,6 +22,7 @@ public class Sword : MonoBehaviour
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
         m_SwordHitSound = GetComponent<AudioSource>();
+        Durability.maxValue = m_Durability;
     }
 
     private void Update()
@@ -30,6 +30,7 @@ public class Sword : MonoBehaviour
         m_Velocity = (transform.position - m_PrevPosition) / (Time.time - m_PrevTime);
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
+        Durability.value = m_Durability;
     }
 
     public void SetStats(int i_Damage, int i_Durability)
@@ -52,6 +53,7 @@ public class Sword : MonoBehaviour
                 {
                     Debug.Log("stabbed");
                     m_Durability -= 10;
+                    Durability.value = m_Durability;
                     erika.takeDamage(m_Damage);
                     m_CanDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);

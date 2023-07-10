@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 
 public class Hammer : MonoBehaviour
 {
     public float m_VelocityLimitToDamage;
-    public float m_DamageCooldown; 
-
+    public float m_DamageCooldown;
+    public Slider Durability;
     private int m_Damage = 100;
     private int m_Durability;
     private readonly int m_HitDamageToDurability = 10;
@@ -22,6 +23,7 @@ public class Hammer : MonoBehaviour
         m_HammerHitSound = GetComponent<AudioSource>();
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
+        Durability.maxValue = m_Durability;
     }
 
     private void Update()
@@ -29,6 +31,7 @@ public class Hammer : MonoBehaviour
         m_Velocity = (transform.position - m_PrevPosition) / (Time.time - m_PrevTime);
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
+        Durability.value = m_Durability;
     }
 
     public void SetStats(int dmg, int Durability)
