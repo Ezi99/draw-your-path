@@ -30,21 +30,23 @@ public class PaladinScript : MonoBehaviour
     {
         health -= dmg;
         Debug.Log($"Paladin Health - {dmg} current health {health}");
-        if (!died && health <= 0)
+        if (!died)
         {
-            Die();
+            if (health <= 0)
+            {
+                Die();
+            }
+            else if (head)
+            {
+                Debug.Log("HEAAAAAADDDDD");
+                animator.SetTrigger("HeadShot");
+            }
+            else
+            {
+                Debug.Log("BOOOOODDDDDYYY");
+                animator.SetTrigger("BodyShot");
+            }
         }
-        if (!died && head)
-        {
-            Debug.Log("HEAAAAAADDDDD");
-            animator.SetTrigger("HeadShot");
-        }
-        else
-        {
-            Debug.Log("BOOOOODDDDDYYY");
-            animator.SetTrigger("BodyShot");
-        }
-     
     }
 
     private void Die()

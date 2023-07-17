@@ -9,8 +9,8 @@ public class Hammer : MonoBehaviour
     public float m_VelocityLimitToDamage;
     public float m_DamageCooldown;
     public Slider Durability;
-    private int m_Damage = 100;
-    private int m_Durability;
+    private int m_Damage = 33;
+    private int m_Durability=100;
     private readonly int m_HitDamageToDurability = 10;
     private bool canDamage = true;
     private Vector3 m_PrevPosition;
