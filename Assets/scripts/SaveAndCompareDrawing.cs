@@ -143,7 +143,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
     {
         string result = "nothing";
         int shieldPixelHits = ShieldManage.CheckIfShield(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
-        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, colors);
+        int swordPixelHits = SwordManage.CheckIfSword(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         int HammerPixelHits = HammerManage.CheckIfHammer(drawCanvas, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
 
         comparePixelHits(shieldPixelHits, "shield", ref result);
