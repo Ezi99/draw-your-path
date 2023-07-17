@@ -17,6 +17,7 @@ public class Hammer : MonoBehaviour
     private Vector3 m_Velocity;
     private float m_PrevTime;
     private AudioSource m_HammerHitSound;
+    public float deleteText=5;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Hammer : MonoBehaviour
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
         Durability.maxValue = m_Durability;
+        Invoke("DeleteText", deleteText);
     }
 
     private void Update()
@@ -114,5 +116,10 @@ public class Hammer : MonoBehaviour
     private void ResetDamageCooldown()
     {
         canDamage = true;
+    }
+    private void DeleteText()
+    {
+        Transform kak = transform.Find("Canvas");
+        kak.gameObject.SetActive(false);
     }
 }

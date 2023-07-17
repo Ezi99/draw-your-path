@@ -21,5 +21,9 @@ public class Arrow : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(20);
             Destroy(gameObject); // Destroy the arrow game object
         }
+        else if (collision.gameObject.CompareTag("Shield"))
+        {
+            collision.gameObject.GetComponent<Shield>().TakeDamage(20);
+        }
     }
 }
