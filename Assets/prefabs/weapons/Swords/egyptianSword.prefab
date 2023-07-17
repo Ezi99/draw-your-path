@@ -25,17 +25,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311633217523650281}
-  m_LocalRotation: {x: -1, y: 0.00000058114523, z: 0.00000035762787, w: -2.0861749e-13}
+  m_LocalRotation: {x: 0, y: 0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 895797669444501331}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -180}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29, y: -57}
+  m_AnchoredPosition: {x: -29, y: 38.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1148720939568006730
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Normal
+  m_text: Regular
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8139815515237673790}
   - component: {fileID: 6519896146260613435}
   - component: {fileID: 648546523619802661}
+  - component: {fileID: 8140381333889837290}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
@@ -236,6 +237,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8140381333889837290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847462783189754607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e996b3f29d81ce94c98b8d069ca9ed19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayersHead: {fileID: 0}
 --- !u!1 &2366892145089141459
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +642,7 @@ MonoBehaviour:
   m_DamageCooldown: 0.5
   Durability: {fileID: 6567123115812118907}
   m_Durability: 100
-  deleteText: 5
+  deleteText: 3
 --- !u!82 &2937808426482624958
 AudioSource:
   m_ObjectHideFlags: 0

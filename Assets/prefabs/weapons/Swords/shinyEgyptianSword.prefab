@@ -123,17 +123,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2426300637171766636}
-  m_LocalRotation: {x: -1, y: 0.00000058114523, z: -0.0000005811453, w: 3.4017984e-13}
+  m_LocalRotation: {x: 0, y: 0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3835746515779014361}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -180}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.8, y: -70.2}
+  m_AnchoredPosition: {x: -62.8, y: 35.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4738404276783700724
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 5082861622833556688}
   - component: {fileID: 5789577723687878423}
   - component: {fileID: 7670611578205654564}
+  - component: {fileID: 3093811330700839643}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
@@ -365,6 +366,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3093811330700839643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123826032355762932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e996b3f29d81ce94c98b8d069ca9ed19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayersHead: {fileID: 0}
 --- !u!1 &4442675805946571520
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +642,7 @@ MonoBehaviour:
   m_DamageCooldown: 0.5
   Durability: {fileID: 3557274520579658347}
   m_Durability: 100
-  deleteText: 5
+  deleteText: 3
 --- !u!82 &5153715412967778049
 AudioSource:
   m_ObjectHideFlags: 0

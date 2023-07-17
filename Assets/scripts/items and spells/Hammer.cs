@@ -10,14 +10,14 @@ public class Hammer : MonoBehaviour
     public float m_DamageCooldown;
     public Slider Durability;
     private int m_Damage = 33;
-    private int m_Durability=100;
+    private int m_Durability = 100;
     private readonly int m_HitDamageToDurability = 10;
     private bool canDamage = true;
     private Vector3 m_PrevPosition;
     private Vector3 m_Velocity;
     private float m_PrevTime;
     private AudioSource m_HammerHitSound;
-    public float deleteText=5;
+    public float deleteText = 5;
 
     private void Start()
     {
@@ -71,7 +71,7 @@ public class Hammer : MonoBehaviour
                 {
                     Debug.Log("hammered");
                     m_Durability -= m_HitDamageToDurability;
-                    paladin.takeDamage(m_Damage,true);
+                    paladin.takeDamage(m_Damage, true);
                     canDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
