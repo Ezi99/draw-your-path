@@ -15,7 +15,7 @@ public class Sword : MonoBehaviour
     private Vector3 m_PrevPosition;
     private Vector3 m_Velocity;
     private float m_PrevTime;
-
+    public float deleteText=5;
 
     private void Start()
     {
@@ -23,6 +23,7 @@ public class Sword : MonoBehaviour
         m_PrevTime = Time.time;
         m_SwordHitSound = GetComponent<AudioSource>();
         Durability.maxValue = m_Durability;
+        Invoke("DeleteText", deleteText);
     }
 
     private void Update()
@@ -98,5 +99,11 @@ public class Sword : MonoBehaviour
     private void ResetDamageCooldown()
     {
         m_CanDamage = true;
+    }
+    
+    private void DeleteText()
+    {
+       Transform kak= transform.Find("Canvas");
+        kak.gameObject.SetActive(false);
     }
 }
