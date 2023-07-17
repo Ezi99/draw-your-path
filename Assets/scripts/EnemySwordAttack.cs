@@ -24,7 +24,14 @@ public class EnemySwordAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_CanDamage && other.CompareTag("Player"))
+        if (other.CompareTag("Shield"))
+        {
+            Debug.Log("Easy Block");
+            other.gameObject.GetComponent<Shield>().TakeDamage(10);
+            m_CanDamage = false;
+            Invoke("ResetDamageCooldown", m_DamageCooldown);
+        }
+        else if (m_CanDamage && other.CompareTag("Player"))
         {
             if (m_DealDamage)
             {
@@ -34,12 +41,7 @@ public class EnemySwordAttack : MonoBehaviour
                 m_DealDamage = false;
             }
         }
-        else if (other.CompareTag("Shield"))
-        {
-            Debug.Log("Easy Block");
-            m_CanDamage = false;
-            Invoke("ResetDamageCooldown", m_DamageCooldown);
-        }
+        
     }
 }
 

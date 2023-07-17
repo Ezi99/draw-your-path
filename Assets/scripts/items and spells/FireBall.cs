@@ -34,7 +34,7 @@ public class FireBall : MonoBehaviour
             m_FireBallRenderer.enabled = false;
             m_AudioSource.Play();
 
-            if (other.CompareTag("Erika"))
+            if (other.tag.Contains("Erika"))
             {
                 Debug.Log("Erika");
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
@@ -45,7 +45,7 @@ public class FireBall : MonoBehaviour
                     erika.takeDamage(m_Damage);
                 }
             }
-            else if (other.CompareTag("Paladin"))
+            else if (other.tag.Contains("Paladin"))
             {
                 Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
