@@ -7,6 +7,7 @@ public class Area1Ui : MonoBehaviour
     public GameObject m_StaticEnemyMessage;
     public GameObject m_BlockingEnemyMessage;
     public GameObject m_MovingEnemyMessage;
+    public GameObject m_FireBallMessage;
     public GameObject m_HintsMessage;
     public GameObject[] m_SpawnPoints;
     public GameObject m_Player;
@@ -44,11 +45,13 @@ public class Area1Ui : MonoBehaviour
     {
         m_BlockingEnemyMessage.SetActive(false);
         m_MovingEnemyMessage.SetActive(true);
+        m_FireBallMessage.SetActive(true);
     }
 
     private void showHintMessage()
     {
         m_MovingEnemyMessage.SetActive(false);
+        m_FireBallMessage.SetActive(false);
         m_HintsMessage.SetActive(true);
         Invoke("hideHintMessage", 15);
     }
@@ -60,9 +63,9 @@ public class Area1Ui : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        foreach(GameObject point in m_SpawnPoints)
+        foreach (GameObject point in m_SpawnPoints)
         {
-            if(point.activeSelf)
+            if (point.activeSelf)
             {
                 m_Player.transform.position = point.transform.position;
                 break;

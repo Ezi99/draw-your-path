@@ -37,32 +37,33 @@ public class SwordManagement : ObjectManagement
         cloneSword.GetComponent<Sword>().SetStats(damage, Durability);
         ObjectList.Add(cloneSword);
     }
-
-    public int CheckIfSword(DrawCanvas drawCanvas, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
+    public int CheckIfSword(DrawCanvas drawCanvas, Coordinates highestXCoord, Coordinates lowestXCoord, Coordinates highestYCoord, Coordinates lowestYCoord, Color[] colors)
     {
         Texture2D Sword;
         int pixelHits = 0;
-        Sword = drawSword(drawCanvas.texture, ref pixelHits, highestCoord, lowestCoord, colors);
+        Sword = drawSword(drawCanvas.texture, ref pixelHits, highestXCoord, lowestXCoord, highestYCoord, lowestYCoord, colors);
         Debug.Log("THERE WAS " + pixelHits + " SWORD HITS");
         encodeDrawing2PNG("Sword.png", ref Sword);
 
         return pixelHits;
     }
 
-    private Texture2D drawSword(Texture2D drawCanvas, ref int pixelHits, Coordinates highestCoord, Coordinates lowestCoord, Color[] colors)
+    private Texture2D drawSword(Texture2D drawCanvas, ref int pixelHits, Coordinates highestXCoord, Coordinates lowestXCoord, Coordinates highestYCoord, Coordinates lowestYCoord, Color[] colors)
+
     {
         Texture2D Sword = new Texture2D(textureSize, textureSize);
-        int swordWidth = (lowestCoord.x - highestCoord.x) / 9;
-        int handleLocation = (lowestCoord.x - highestCoord.x) / 8;
-        int handleSize = (lowestCoord.x - highestCoord.x) / 3;
+        int swordWidth = (lowestXCoord.x - highestXCoord.x) / 9;
+        int handleLocation = (lowestXCoord.x - highestXCoord.x) / 8;
+        int handleSize = (lowestXCoord.x - highestXCoord.x) / 3;
+        int swordEnd = ((highestYCoord.y - lowestYCoord.y) / 2) + lowestYCoord.y;
         bool[] importantPoints = { false, false, false, false, false };
         m_TotalPixelHitAttempt = 0;
 
-        for (int x = highestCoord.x; x <= lowestCoord.x && x < textureSize - 30; x += 15)
+        for (int x = highestXCoord.x; x <= lowestXCoord.x && x < textureSize - 30; x += 15)
         {
-            if (x <= lowestCoord.x - handleLocation && x >= lowestCoord.x - 2 * handleLocation)// check if it's time to draw handle
+            if (x <= lowestXCoord.x - handleLocation && x >= lowestXCoord.x - 2 * handleLocation)// check if it's time to draw handle
             {
-                for (int y = highestCoord.y - handleSize; y < textureSize && y <= highestCoord.y - handleSize + handleSize / 2; y += 15)
+                for (int y = swordEnd - handleSize; y < textureSize && y <= swordEnd - handleSize + handleSize / 2; y += 15)
                 {
                     m_TotalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
@@ -71,7 +72,7 @@ public class SwordManagement : ObjectManagement
                         importantPoints[0] = true;
                     }
                 }
-                for (int y = highestCoord.y + handleSize - handleSize / 2; y < textureSize && y <= highestCoord.y + handleSize; y += 15)
+                for (int y = swordEnd + handleSize - handleSize / 2; y < textureSize && y <= swordEnd + handleSize; y += 15)
                 {
                     m_TotalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
@@ -81,9 +82,9 @@ public class SwordManagement : ObjectManagement
                     }
                 }
             }
-            else if (x >= highestCoord.x && x <= highestCoord.x + 30 || x >= lowestCoord.x - 30)// check if it's time to ends of the sword
+            else if (x >= highestXCoord.x && x <= highestXCoord.x + 30 || x >= lowestXCoord.x - 30)// check if it's time to ends of the sword
             {
-                for (int y = highestCoord.y - swordWidth; y < textureSize && y <= highestCoord.y + swordWidth; y += 15)
+                for (int y = swordEnd - swordWidth; y < textureSize && y <= swordEnd + swordWidth; y += 15)
                 {
                     m_TotalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
@@ -95,7 +96,7 @@ public class SwordManagement : ObjectManagement
             }
             else
             {
-                for (int y = highestCoord.y - swordWidth; y < textureSize && y <= highestCoord.y - swordWidth + swordWidth / 2; y += 15)
+                for (int y = swordEnd - swordWidth; y < textureSize && y <= swordEnd - swordWidth + swordWidth / 2; y += 15)
                 {
                     m_TotalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
@@ -104,7 +105,7 @@ public class SwordManagement : ObjectManagement
                         importantPoints[3] = true;
                     }
                 }
-                for (int y = highestCoord.y + swordWidth - swordWidth / 2; y < textureSize && y <= highestCoord.y + swordWidth; y += 15)
+                for (int y = swordEnd + swordWidth - swordWidth / 2; y < textureSize && y <= swordEnd + swordWidth; y += 15)
                 {
                     m_TotalPixelHitAttempt++;
                     Sword.SetPixels(x, y, 30, 30, colors);
