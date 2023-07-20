@@ -61,7 +61,7 @@ public class Hammer : MonoBehaviour
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
             }
-            else if (canDamage && other.CompareTag("Paladin"))
+            else if (canDamage && other.tag.Contains("Paladin"))
             {
                 Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
@@ -69,9 +69,15 @@ public class Hammer : MonoBehaviour
                 m_HammerHitSound.Play();
                 if (paladin != null)
                 {
+
                     Debug.Log("hammered");
                     m_Durability -= m_HitDamageToDurability;
-                    paladin.takeDamage(m_Damage, true);
+                    if (other.tag.Contains("Head"))
+                    {
+                        paladin.takeDamage(m_Damage, true);
+                    }
+                    else
+                        paladin.takeDamage(m_Damage, false);
                     canDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
