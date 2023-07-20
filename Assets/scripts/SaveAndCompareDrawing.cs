@@ -19,7 +19,7 @@ public class SaveAndCompareDrawing : MonoBehaviour
     public Draw LeftItemMarker;
     public Draw LeftSpellMarker;
 
-    private const int k_NumOfPixelsThreshold = 45;
+    private const int k_NumOfPixelsThreshold = 30;
     private const int k_DrawingLengthThreshold = 120;
     private const int k_DrawingWidthThreshold = 120;
     private string playersDrawingName = "PlayersDrawing.png";

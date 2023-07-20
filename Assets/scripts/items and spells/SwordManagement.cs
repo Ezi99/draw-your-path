@@ -115,7 +115,6 @@ public class SwordManagement : ObjectManagement
                     }
                 }
             }
-
         }
 
         float FloattotalPixelHitAttempt = m_TotalPixelHitAttempt / 1.5f;
@@ -129,6 +128,7 @@ public class SwordManagement : ObjectManagement
                 Debug.Log("can't finesse us with sword");
             }
         }
+
         checkIfEnoughPixelHits(ref pixelHits, m_TotalPixelHitAttempt, 0.4f);
         Sword.Apply();
         return Sword;

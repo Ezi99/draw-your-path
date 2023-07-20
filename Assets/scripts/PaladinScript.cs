@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI; 
 
 public class PaladinScript : MonoBehaviour
@@ -53,6 +54,7 @@ public class PaladinScript : MonoBehaviour
     {
         died = true;
         enemyCanvas.SetActive(false);
+        this.GetComponent<NavMeshAgent>().speed=0;
         Debug.Log("Death animation triggered");
         animator.SetTrigger("Death");
     }

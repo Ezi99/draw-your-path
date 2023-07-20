@@ -3132,9 +3132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8390332388779344099}
   - component: {fileID: 7761876310420644383}
+  - component: {fileID: 4559316291451428331}
   m_Layer: 0
   m_Name: mixamorig:RightLeg
-  m_TagString: Paladin
+  m_TagString: Paladin_Leg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3168,6 +3169,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.4307982, z: 0.14922406}
   m_Center: {x: 2.8956292e-14, y: 0.1558793, z: -0.0066702752}
+--- !u!114 &4559316291451428331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911932141792895857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb52721b87f78994f97649292d2357a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8994804194005325157
 GameObject:
   m_ObjectHideFlags: 0

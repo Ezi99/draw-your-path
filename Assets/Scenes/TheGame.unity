@@ -3520,8 +3520,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87411640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.9}
-  m_LocalScale: {x: 0.56347, y: 0.56105, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7}
+  m_LocalScale: {x: 0.6132808, y: 0.61064684, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 734436579}
@@ -3529,7 +3529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66, y: -17}
+  m_AnchoredPosition: {x: 66.4, y: -18.723}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87411642
@@ -11293,7 +11293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -3.092, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.005999806, y: -0.172}
+  m_AnchoredPosition: {x: 0.005999806, y: 0.002}
   m_SizeDelta: {x: 684, y: 290.66666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231455308
@@ -13954,7 +13954,7 @@ RectTransform:
   m_GameObject: {fileID: 331195380}
   m_LocalRotation: {x: -0, y: 0.0019129573, z: -0, w: 0.9999982}
   m_LocalPosition: {x: 0, y: 0, z: 2.7}
-  m_LocalScale: {x: 0.56347, y: 0.56105, z: 1}
+  m_LocalScale: {x: 0.6132808, y: 0.61064684, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 734436579}
@@ -13962,7 +13962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0.219, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.1, y: 20.000029}
+  m_AnchoredPosition: {x: -41.5, y: 21.547}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331195382
@@ -41120,6 +41120,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1222474774}
     m_Modifications:
+    - target: {fileID: 284422495, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284422495, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865862741029965517, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.46663234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865862741029965517, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5322725
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865862741029965517, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.4656443
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865862741029965517, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5311455
+      objectReference: {fileID: 0}
     - target: {fileID: 3797590845575590760, guid: c226e9d1cda15470facd2adb762378f4, type: 3}
       propertyPath: m_Name
       value: Paladin (6)
@@ -54898,8 +54922,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317826531}
-  m_LocalRotation: {x: -0, y: -0.7675426, z: -0, w: -0.64099807}
-  m_LocalPosition: {x: 345.92, y: 22.72, z: 304.33}
+  m_LocalRotation: {x: -0, y: 0.691355, z: -0, w: -0.7225152}
+  m_LocalPosition: {x: 201.76, y: 25.98, z: 229.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54908,7 +54932,7 @@ Transform:
   - {fileID: 1206272777}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: -259.733, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -447.475, z: 0}
 --- !u!114 &1317826535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54954,8 +54978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e257222dd05e34006a0872c0087a5422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 1000
+  maxHealth: 100
+  currentHealth: 100
   healthbar: {fileID: 1289791204}
   m_AreaNavigator: {fileID: 1827610272}
   m_HealthBarPic: {fileID: 1019312241}
@@ -57857,8 +57881,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427781558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.3}
-  m_LocalScale: {x: 0.56347, y: 0.56105, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1}
+  m_LocalScale: {x: 0.6132808, y: 0.61064684, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 734436579}
@@ -57866,7 +57890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: 22}
+  m_AnchoredPosition: {x: 61, y: 23.724}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427781560
@@ -66340,8 +66364,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739446587}
   m_LocalRotation: {x: -0, y: 0.012777016, z: -0, w: 0.9999184}
-  m_LocalPosition: {x: 0, y: 0, z: 1.3003645}
-  m_LocalScale: {x: 0.56347, y: 0.56105, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1}
+  m_LocalScale: {x: 0.6132808, y: 0.61064684, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 734436579}
@@ -66349,7 +66373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 1.464, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.69886, y: -17.000116}
+  m_AnchoredPosition: {x: -46.5, y: -18.724}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739446589
@@ -79826,7 +79850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c19c1fae19bfd7428379aa9197d72fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionCounter: 5
+  potionCounter: 6
 --- !u!82 &64288527996264071
 AudioSource:
   m_ObjectHideFlags: 0
@@ -79965,7 +79989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c19c1fae19bfd7428379aa9197d72fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionCounter: 5
+  potionCounter: 6
 --- !u!82 &64315823996867753
 AudioSource:
   m_ObjectHideFlags: 0
