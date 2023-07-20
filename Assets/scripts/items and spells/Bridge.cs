@@ -10,4 +10,14 @@ public class Bridge : MonoBehaviour
     {
         Destroy(gameObject, lifeSpan);
     }
+
+    public void WhenSelected()
+    {
+        gameObject.layer = LayerMask.NameToLayer("grabbed bridge");
+    }
+
+    public void WhenExited()
+    {
+        gameObject.layer = LayerMask.NameToLayer("bridge");
+    }
 }

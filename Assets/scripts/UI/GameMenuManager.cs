@@ -50,7 +50,7 @@ public class GameMenuManager : MonoBehaviour
         if (IsMenuButton == true && m_CheckIfMenuButtonPressed == true)
         {
             m_Menu.SetActive(!m_Menu.activeSelf);
-            m_Menu.transform.position = m_PlayersHead.position + new Vector3(m_PlayersHead.forward.x, 0, m_PlayersHead.forward.z).normalized * m_SpawnDistance;
+            m_Menu.transform.position = m_PlayersHead.position + new Vector3(m_PlayersHead.forward.x, 0.2f, m_PlayersHead.forward.z).normalized * m_SpawnDistance;
             m_CheckIfMenuButtonPressed = false;
             Invoke("MenuButtonCooldown", 0.5f);
         }

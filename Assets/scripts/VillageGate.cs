@@ -17,7 +17,7 @@ public class VillageGate : MonoBehaviour
 
     public void TakeDamage(int velocity)
     {
-        if(potionCounter == 0 && velocity > 4)
+        if(potionCounter <= 0 && velocity > 4)
         {
             rigidBody.isKinematic = false;
             rigidBody.useGravity = true;

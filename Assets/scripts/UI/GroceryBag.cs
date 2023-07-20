@@ -16,7 +16,10 @@ public class GroceryBag : MonoBehaviour
         }
         else
         {
+            Debug.Log("WE LOADING SOON !");
             SceneManager.LoadScene("MainMenu");
         }
+
+        Destroy(gameObject, 2);
     }
 }
