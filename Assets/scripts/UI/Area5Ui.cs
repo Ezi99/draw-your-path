@@ -8,6 +8,7 @@ public class Area5Ui : MonoBehaviour
     public GameObject m_ShoppingBag;
     public GameObject m_FlatShoppingBag;
     public GameObject m_FireTorches;
+    public GameObject m_Enemies;
     public GameObject[] m_SpawnPoints;
     public GameObject m_Player;
 
@@ -17,6 +18,7 @@ public class Area5Ui : MonoBehaviour
         m_ShoppingBag.SetActive(true);
         m_FlatShoppingBag.SetActive(true);
         m_FireTorches.SetActive(true);
+        m_Enemies.SetActive(true);
     }
 
     public void SpawnPlayer()
