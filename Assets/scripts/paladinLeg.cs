@@ -5,42 +5,36 @@ using UnityEngine;
 public class paladinLeg : MonoBehaviour
 {
     public float m_DamageCooldown = 1f; // Adjust the cooldown duration as needed
-
-    private bool m_DealDamage;
-    private bool m_CanDamage = true;
-    private AudioSource m_SwordHitSound;
+    private bool m_CanDamage = false;
     private int m_AmountOfDamageToDeal = 10;
 
-    private void Start()
-    {
-        m_SwordHitSound = GetComponent<AudioSource>();
-    }
 
-    public void DealDamage()
+    public void enableDmg()
     {
-        Debug.Log("dmg enabled");
-        m_DealDamage = true;
+        m_CanDamage = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Shield"))
-        {
-            Debug.Log("Easy Block");
-            other.gameObject.GetComponent<Shield>().TakeDamage(10);
-            m_CanDamage = false;
-            Invoke("ResetDamageCooldown", m_DamageCooldown);
-        }
-        else if (m_CanDamage && other.CompareTag("Player"))
-        {
-            if (m_DealDamage)
+      
+        if (m_CanDamage)
+        
+            
+            if (other.CompareTag("Shield"))
+            {
+                Debug.Log("Easy Block");
+                other.gameObject.GetComponent<Shield>().TakeDamage(10);
+                m_CanDamage = false;
+                //Invoke("ResetDamageCooldown", m_DamageCooldown);
+            }
+            else if (other.CompareTag("Player"))
             {
                 Debug.Log("ayyyy");
-                m_SwordHitSound.Play();
                 other.gameObject.GetComponent<PlayerHealth>().TakeDamage(m_AmountOfDamageToDeal);
-                m_DealDamage = false;
+                m_CanDamage = false;
             }
         }
-        
+
     }
-}
+
+

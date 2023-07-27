@@ -18,18 +18,18 @@ public class SwordManagement : ObjectManagement
         if (accuracy <= 0.65)
         {
             damage = 25;
-            Durability = 60;
+            Durability = 70;
             cloneSword = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
         }
         else if (accuracy < 1)
         {
             damage = 35;
-            Durability = 80;
+            Durability = 100;
             cloneSword = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
         }
         else
         {
-            Durability = 100;
+            Durability = 120;
             damage = 50;
             cloneSword = Instantiate(Strong, SpawnLocation.position, SpawnLocation.rotation);
         }
@@ -37,6 +37,7 @@ public class SwordManagement : ObjectManagement
         cloneSword.GetComponent<Sword>().SetStats(damage, Durability);
         ObjectList.Add(cloneSword);
     }
+
     public int CheckIfSword(DrawCanvas drawCanvas, Coordinates highestXCoord, Coordinates lowestXCoord, Coordinates highestYCoord, Coordinates lowestYCoord, Color[] colors)
     {
         Texture2D Sword;

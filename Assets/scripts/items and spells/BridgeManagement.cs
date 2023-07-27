@@ -11,22 +11,22 @@ public class BridgeManagement : ObjectManagement
         float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
         GameObject bridgeClone;
 
-        checkNumOfItems(1);
+        checkNumOfItems();
 
         if (accuracy <= 0.75)
         {
             bridgeClone = Instantiate(Weak, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-            lifeSpan = 30;
+            lifeSpan = 60;
         }
         else if (accuracy < 1)
         {
             bridgeClone = Instantiate(Regular, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-            lifeSpan = 60;
+            lifeSpan = 90;
         }
         else
         {
             bridgeClone = Instantiate(Strong, SpawnLocation.position, Quaternion.Euler(90, 90, 90));
-            lifeSpan = 90;
+            lifeSpan = 120;
         }
 
         bridgeClone.GetComponent<Bridge>().DespawnCountDown(lifeSpan);

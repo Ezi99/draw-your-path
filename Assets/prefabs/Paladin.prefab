@@ -823,7 +823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2299721271139224628}
-  m_LocalRotation: {x: 0.5322726, y: -0.46564436, z: 0.5311456, w: 0.4666324}
+  m_LocalRotation: {x: 0.5322726, y: -0.46564433, z: 0.5311456, w: 0.46663237}
   m_LocalPosition: {x: -0.059349764, y: 0.13670222, z: -0.0166261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4067499305323374109}
-  stoppingRange: 1.5
+  stoppingRange: 1.7
   attackCooldown: 2
 --- !u!195 &4067499305323374107
 NavMeshAgent:
@@ -1300,7 +1300,7 @@ NavMeshAgent:
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.69
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCanvas: {fileID: 1921622297}
   attack: {fileID: 1564787350}
+  kick: {fileID: 4559316291451428331}
   healthBar: {fileID: 793578289}
 --- !u!1 &3899211179439679308
 GameObject:
@@ -3167,8 +3168,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.4307982, z: 0.14922406}
-  m_Center: {x: 2.8956292e-14, y: 0.1558793, z: -0.0066702752}
+  m_Size: {x: 0.17585747, y: 0.6397421, z: 0.1646669}
+  m_Center: {x: 0.0010675939, y: 0.2603484, z: 0.0010511387}
 --- !u!114 &4559316291451428331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3181,6 +3182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb52721b87f78994f97649292d2357a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DamageCooldown: 1
 --- !u!1 &8994804194005325157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4609452276577118674}
     m_Modifications:
+    - target: {fileID: 4399889194592561993, guid: fa0865110d60eb54385a56b54ff04374, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4399889194592561996, guid: fa0865110d60eb54385a56b54ff04374, type: 3}
       propertyPath: m_Name
       value: EnemyCanves

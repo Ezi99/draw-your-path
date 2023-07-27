@@ -72,16 +72,12 @@ public class EnemyController : MonoBehaviour
 
     public void StartAttack()
     {
-        // Disable movement and following during the attack
-        //Debug.Log("kaka waka");
         isAttacking = true;
         agent.isStopped = true;
     }
 
     public void EndAttack()
     {
-        // Enable movement and following after the attack
-        //Debug.Log("zozo lozo");
         isAttacking = false;
         agent.isStopped = false;
     }
