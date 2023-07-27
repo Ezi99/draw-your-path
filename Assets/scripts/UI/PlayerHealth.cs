@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthbar;
     public AreaNavigator m_AreaNavigator;
     public GameObject m_HealthBarPic;
-    private bool m_beenHit = false;
+    private bool m_ShowingHealth = false;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        Debug.Log($"Plyer HP -{dmg}");
+        Debug.Log($"Player HP -{dmg}");
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);
         ShowHealthBarPic();
@@ -38,13 +38,14 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += amountOfHeal;
         healthbar.SetHealth(currentHealth);
+        ShowHealthBarPic();
     }
 
     private void ShowHealthBarPic()
     {
-        if (m_beenHit == false)
+        if (m_ShowingHealth == false)
         {
-            m_beenHit = true;
+            m_ShowingHealth = true;
             m_HealthBarPic.SetActive(true);
             Invoke("HideHealthBarPic", 5);
         }
@@ -53,6 +54,6 @@ public class PlayerHealth : MonoBehaviour
     private void HideHealthBarPic()
     {
         m_HealthBarPic.SetActive(false);
-        m_beenHit = false;
+        m_ShowingHealth = false;
     }
 }

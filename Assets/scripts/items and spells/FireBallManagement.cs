@@ -8,7 +8,7 @@ public class FireBallManagement : ObjectManagement
     public GameObject rightFireBallLauncher;
     public ShieldManagement circle;
 
-    public void SpawnFireBall(int pixelHits, Draw marker, bool didHandRightDraw)
+    public void SpawnFireBall(int pixelHits, Draw marker, bool didRightHandDraw)
     {
         int damage;
         float accuracy = (float)pixelHits / (float)m_TotalPixelHitAttempt;
@@ -16,15 +16,13 @@ public class FireBallManagement : ObjectManagement
         Transform markerPos = marker.gameObject.transform;
         Rigidbody rigidBody;
 
-        if (didHandRightDraw == false)
+        if (didRightHandDraw == false)
         {
             SpawnLocation = leftFireBallLauncher.transform;
-
         }
         else
         {
             SpawnLocation = rightFireBallLauncher.transform;
-
         }
 
         checkNumOfItems();
@@ -46,7 +44,7 @@ public class FireBallManagement : ObjectManagement
 
         rigidBody = cloneFireBall.GetComponent<Rigidbody>();
         cloneFireBall.GetComponent<FireBall>().SetStats(damage);
-        rigidBody.AddForce(SpawnLocation.forward * 3000);
+        rigidBody.AddForce(SpawnLocation.forward * 4000);
         ObjectList.Add(cloneFireBall);
     }
 
