@@ -114,6 +114,7 @@ public class MarkerSpawn : MonoBehaviour
 
     private void PullMarkerAndCanvas(GameObject marker, GameObject canvas)
     {
+        Eraser.erase();
         playerMovement.moveSpeed = 0;
         if (marker == LeftItemMarker || marker == RightItemMarker)
         {
@@ -124,10 +125,10 @@ public class MarkerSpawn : MonoBehaviour
             drewSpell = true;
         }
 
-        Eraser.erase();
         RightHand.SetActive(false);
         LeftHand.SetActive(false);
         marker.SetActive(true);
         canvas.SetActive(true);
+        Eraser.erase();
     }
 }

@@ -18,15 +18,18 @@ public class RegenerateHealth : ObjectManagement
             if (accuracy <= 0.75)
             {
                 gain = 25;
+                Weak.SetActive(true);
             }
             else
             {
                 gain = 35;
+                Regular.SetActive(true);
             }
         }
         else
         {
             gain = 50;
+            Strong.SetActive(true);
         }
 
         m_PlayerHealth.GainHealth(gain);

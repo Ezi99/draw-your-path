@@ -9,7 +9,11 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthbar;
     public AreaNavigator m_AreaNavigator;
     public GameObject m_HealthBarPic;
+    public GameObject m_WeakRegainPic;
+    public GameObject m_RegularRegainPic;
+    public GameObject m_StrongRegainPic;
     private bool m_ShowingHealth = false;
+    private const int m_HideDuration = 2;
 
     void Start()
     {
@@ -29,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
             healthbar.SetHealth(currentHealth);
             m_HealthBarPic.SetActive(true);
-            Invoke("HideHealthBarPic", 5);
+            Invoke("HideHealthBarPic", m_HideDuration);
         }
 
     }
@@ -37,6 +41,10 @@ public class PlayerHealth : MonoBehaviour
     public void GainHealth(int amountOfHeal)
     {
         currentHealth += amountOfHeal;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         healthbar.SetHealth(currentHealth);
         ShowHealthBarPic();
     }
@@ -47,12 +55,15 @@ public class PlayerHealth : MonoBehaviour
         {
             m_ShowingHealth = true;
             m_HealthBarPic.SetActive(true);
-            Invoke("HideHealthBarPic", 5);
+            Invoke("HideHealthBarPic", m_HideDuration);
         }
     }
 
     private void HideHealthBarPic()
     {
+        m_WeakRegainPic.SetActive(false);
+        m_RegularRegainPic.SetActive(false);
+        m_StrongRegainPic.SetActive(false);
         m_HealthBarPic.SetActive(false);
         m_ShowingHealth = false;
     }
