@@ -49,7 +49,7 @@ public class RegenerateHealth : ObjectManagement
 
         int topY = lowestYCoord.y + (highestYCoord.y - lowestYCoord.y) / 2;
         int healthLength = lowestXCoord.x - highestXCoord.x;
-        int healthThickness = healthLength / 15;
+        int healthThickness = healthLength / 17;
         int firstLine = 0, secondLine = 0;
         bool middlePoint = false;
         bool enteredFirstLoop;
@@ -66,7 +66,7 @@ public class RegenerateHealth : ObjectManagement
             for (int y = lowestYCoord.y; y < textureSize && x <= highestXCoord.x + healthLength / 2 + healthThickness * 2 && x >= highestXCoord.x + healthLength / 2 - healthThickness * 2 && y <= highestYCoord.y; y += 15)
             {
                 m_TotalPixelHitAttempt++;
-                if (y >= topY - healthLength / 8 && y <= topY + healthLength / 8)
+                if (y >= topY - healthLength / 10 && y <= topY + healthLength / 10)
                 {
                     Health.SetPixels(x, y, 30, 30, yellow);
                     if (isPixelSet(x, y, ref pixelHits, drawCanvas) == true)

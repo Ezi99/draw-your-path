@@ -15,13 +15,13 @@ public class HammerManagement : ObjectManagement
 
         if (accuracy <= 0.65)
         {
-            Durability = 50;
+            Durability = 60;
             damage = 35;
             cloneHammer = Instantiate(Weak, SpawnLocation.position, SpawnLocation.rotation);
         }
         else if (accuracy < 1)
         {
-            Durability = 70;
+            Durability = 80;
             damage = 50;
             cloneHammer = Instantiate(Regular, SpawnLocation.position, SpawnLocation.rotation);
         }
