@@ -9,6 +9,7 @@ public class PaladinScript : MonoBehaviour
     public GameObject enemyCanvas;
     private Animator animator;
     public EnemySwordAttack attack;
+    public paladinLeg kick;
     private int health = 100;
     public Slider healthBar;
     private bool died=false;
@@ -25,6 +26,10 @@ public class PaladinScript : MonoBehaviour
     public void enableDmg()
     {
         attack.DealDamage();
+    }
+    public void enableKickDmg()
+    {
+        kick.enableDmg();
     }
 
     public void takeDamage(int dmg,bool head)
