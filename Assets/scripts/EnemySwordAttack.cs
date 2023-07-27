@@ -26,7 +26,7 @@ public class EnemySwordAttack : MonoBehaviour
     {
         if (other.CompareTag("Shield"))
         {
-            Debug.Log("Easy Block");
+            Debug.Log("Player Blocked");
             other.gameObject.GetComponent<Shield>().TakeDamage(10);
             m_CanDamage = false;
             Invoke("ResetDamageCooldown", m_DamageCooldown);
@@ -35,7 +35,7 @@ public class EnemySwordAttack : MonoBehaviour
         {
             if (m_DealDamage)
             {
-                Debug.Log("ayyyy");
+                Debug.Log("Palyer slashed");
                 m_SwordHitSound.Play();
                 other.gameObject.GetComponent<PlayerHealth>().TakeDamage(m_AmountOfDamageToDeal);
                 m_DealDamage = false;

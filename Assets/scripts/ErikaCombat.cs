@@ -22,9 +22,7 @@ public class ErikaCombat : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, target.position);
         if (distanceToPlayer <= stoppingRange && !isAttacking)
         {
-            // The enemy has reached the stopping point
             Attack();
-            // Add your code here
         }
 
     }
@@ -37,15 +35,9 @@ public class ErikaCombat : MonoBehaviour
         if (Time.time - lastAttackTime > attackCooldown)
         {
             int TypeOfAttack = random.Next(1, 4);
-            // Apply damage to the player.
-            //player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-
             animator.SetTrigger("Attack");
-            // Update the time of the last attack.
             lastAttackTime = Time.time;
         }
-
-        // Reset the flag after a short delay.
         Invoke("ResetAttackFlag", 0.5f);
     }
 
