@@ -44,12 +44,12 @@ public class PaladinScript : MonoBehaviour
             }
             else if (head)
             {
-                Debug.Log("HEAAAAAADDDDD");
+                Debug.Log("HeadShot");
                 animator.SetTrigger("HeadShot");
             }
             else
             {
-                Debug.Log("BOOOOODDDDDYYY");
+                Debug.Log("BodyShot");
                 animator.SetTrigger("BodyShot");
             }
         }

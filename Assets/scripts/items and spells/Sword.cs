@@ -8,7 +8,9 @@ public class Sword : MonoBehaviour
     public float VelocityLimitToDamage;
     public float m_DamageCooldown; // Adjust the cooldown duration as needed
     public Slider Durability;
-    private AudioSource m_SwordHitSound;
+    private AudioSource m_AudioSource;
+    public AudioClip m_ShieldHitSound;
+    public AudioClip m_SwordHitSound;
     private int m_Damage = 34;
     public int m_Durability = 100;
     private bool m_CanDamage = true;
@@ -17,11 +19,12 @@ public class Sword : MonoBehaviour
     private float m_PrevTime;
     public float deleteText=5;
 
+
     private void Start()
     {
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
-        m_SwordHitSound = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();
         Durability.maxValue = m_Durability;
         Invoke("DeleteText", deleteText);
     }
@@ -49,7 +52,8 @@ public class Sword : MonoBehaviour
             {
                 Debug.Log("Erika");
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
-                m_SwordHitSound.Play();
+                m_AudioSource.clip = m_SwordHitSound;
+                m_AudioSource.Play();
                 if (erika != null)
                 {
                     Debug.Log("stabbed");
@@ -65,7 +69,8 @@ public class Sword : MonoBehaviour
             {
                 Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
-                m_SwordHitSound.Play();
+                m_AudioSource.clip = m_SwordHitSound;
+                m_AudioSource.Play();
                 if (paladin != null)
                 {
                     Debug.Log("stabbed");
@@ -83,7 +88,8 @@ public class Sword : MonoBehaviour
             else if (m_CanDamage && other.CompareTag("Paladin_Shield"))
             {
                 Debug.Log("Blocked");
-                m_SwordHitSound.Play();
+                m_AudioSource.clip = m_ShieldHitSound;
+                m_AudioSource.Play();
                 m_Durability -= 10;
                 m_CanDamage = false;
                 Invoke("ResetDamageCooldown", m_DamageCooldown);

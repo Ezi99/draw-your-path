@@ -8,8 +8,10 @@ public class Shield : MonoBehaviour
     private int m_Durability=100;
     public Slider durability;
     public float deleteText = 5;
+    private AudioSource shieldBlock;
     private void Start()
     {
+        shieldBlock = GetComponent<AudioSource>();
         durability.maxValue = m_Durability;
         Invoke("DeleteText", deleteText);
     }
@@ -28,6 +30,7 @@ public class Shield : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
+        shieldBlock.Play();
         m_Durability -= dmg;
     }
     private void DeleteText()
