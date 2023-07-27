@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySwordAttack : MonoBehaviour
 {
-    public float m_DamageCooldown = 1f; // Adjust the cooldown duration as needed
+    public float m_DamageCooldown = 1f; // cooldown duration 
 
     private bool m_DealDamage;
     private bool m_CanDamage = true;

@@ -18,12 +18,12 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Arrow Hit");
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(20);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
             Destroy(gameObject); // Destroy the arrow game object
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
-            collision.gameObject.GetComponent<Shield>().TakeDamage(20);
+            collision.gameObject.GetComponent<Shield>().TakeDamage(10);
         }
     }
 }

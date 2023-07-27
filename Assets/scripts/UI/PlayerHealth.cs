@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);
         ShowHealthBarPic();
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             m_AreaNavigator.ReSpawnPlayer();
             currentHealth = maxHealth;

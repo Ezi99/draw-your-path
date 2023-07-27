@@ -7,7 +7,7 @@ public class BlockingDummy : MonoBehaviour
     public int timer = 10;
     public Animator animator;
     private bool block = false;
-    
+
     void Update()
     {
 
