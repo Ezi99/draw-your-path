@@ -17,8 +17,7 @@ public class Sword : MonoBehaviour
     private Vector3 m_PrevPosition;
     private Vector3 m_Velocity;
     private float m_PrevTime;
-    public float deleteTextTimer = 5;
-    private bool m_WasGrabbed = false;
+    public float deleteText = 5;
 
 
     private void Start()
@@ -27,7 +26,7 @@ public class Sword : MonoBehaviour
         m_PrevTime = Time.time;
         m_AudioSource = GetComponent<AudioSource>();
         Durability.maxValue = m_Durability;
-        Invoke("DeleteText", deleteTextTimer);
+        Invoke("DeleteText", deleteText);
     }
 
     private void Update()
@@ -51,45 +50,49 @@ public class Sword : MonoBehaviour
         {
             if (m_CanDamage && other.tag.Contains("Erika"))
             {
+                Debug.Log("Erika");
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
                 m_AudioSource.clip = m_SwordHitSound;
                 m_AudioSource.Play();
                 if (erika != null)
                 {
+                    Debug.Log("stabbed");
                     m_Durability -= 10;
                     Durability.value = m_Durability;
                     erika.takeDamage(m_Damage);
                     m_CanDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
+
                 }
             }
             else if (m_CanDamage && other.tag.Contains("Paladin"))
             {
+                Debug.Log("Paladin");
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
                 m_AudioSource.clip = m_SwordHitSound;
-                m_AudioSource.Play();
                 if (paladin != null)
                 {
+                    Debug.Log("stabbed");
                     m_Durability -= 10;
                     if (other.tag.Contains("Head"))
                     {
-                        Debug.Log("HEADSHOT");
+
                         paladin.takeDamage(m_Damage, true);
                     }
+                    else if (other.CompareTag("Paladin_Shield"))
+                    {
+                        Debug.Log("Paladin Blocked");
+                        m_AudioSource.clip = m_ShieldHitSound;
+                    }
                     else
+                    {
                         paladin.takeDamage(m_Damage, false);
+                    }
+
+                    m_AudioSource.Play();
                     m_CanDamage = false;
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
-            }
-            else if (m_CanDamage && other.CompareTag("Paladin_Shield"))
-            {
-                Debug.Log("PALADIN Block");
-                m_AudioSource.clip = m_ShieldHitSound;
-                m_AudioSource.Play();
-                m_Durability -= 10;
-                m_CanDamage = false;
-                Invoke("ResetDamageCooldown", m_DamageCooldown);
             }
 
             if (m_Durability < 0)
@@ -106,17 +109,7 @@ public class Sword : MonoBehaviour
 
     private void DeleteText()
     {
-        Transform text = transform.Find("Canvas");
-        text.gameObject.SetActive(false);
-    }
-
-    public void WhenSelected()
-    {
-        if (m_WasGrabbed == false)
-        {
-            gameObject.layer = LayerMask.NameToLayer("grabbable");
-            m_WasGrabbed = true;
-            DeleteText();
-        }
+        Transform kak = transform.Find("Canvas");
+        kak.gameObject.SetActive(false);
     }
 }

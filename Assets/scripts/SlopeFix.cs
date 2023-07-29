@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// here we fix the player bouncing problem when the player goes down a slope
 public class SlopeFix : MonoBehaviour 
 {
     [SerializeField] private string horizontalInputName;
