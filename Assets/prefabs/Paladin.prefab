@@ -1002,9 +1002,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4622426740905991682}
   - component: {fileID: 4445562121027321422}
+  - component: {fileID: 8421394579084168568}
   m_Layer: 0
   m_Name: Paladin_shield
-  m_TagString: Untagged
+  m_TagString: Paladin_Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1146,6 +1147,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.57393575, y: 0.50370365, z: -0.110271476}
     m_Extent: {x: 0.23005724, y: 0.061682895, z: 0.3417606}
   m_DirtyAABB: 0
+--- !u!64 &8421394579084168568
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192021409938248030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 203458371695166868, guid: 7864536377fae4b2db1d8e76aeb55190, type: 3}
 --- !u!1 &3299949954504794754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1830,7 @@ BoxCollider:
   m_GameObject: {fileID: 4339768831600812291}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.07, z: 0.6278469}
   m_Center: {x: -0.000000008477358, y: -8.7681773e-10, z: -0.0464022}

@@ -6,7 +6,7 @@ public class PaladinCombat : MonoBehaviour
     public Animator animator;
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
     private int count = 0;
-    
+
     public float stoppingRange = 1.5f;
     public float attackCooldown = 2f;
     private bool isAttacking = false;
@@ -31,10 +31,10 @@ public class PaladinCombat : MonoBehaviour
     }
     void Attack()
     {
-        
+
         isAttacking = true;
 
-        
+
         if (Time.time - lastAttackTime > attackCooldown)
         {
             int TypeOfAttack = random.Next(1, 4);
@@ -42,12 +42,12 @@ public class PaladinCombat : MonoBehaviour
             {
                 animator.SetTrigger("Attack");
             }
-            else if(TypeOfAttack == 2)
+            else if (TypeOfAttack == 2)
             {
                 animator.SetTrigger("Kick");
                 count = 0;
             }
-            else if(TypeOfAttack ==3)
+            else if (TypeOfAttack == 3)
             {
                 animator.SetTrigger("Block");
             }
