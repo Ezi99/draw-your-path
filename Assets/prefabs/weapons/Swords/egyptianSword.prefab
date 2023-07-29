@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4563922733265141822}
   - component: {fileID: 1148720939568006730}
   - component: {fileID: 3505538247023788780}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 6519896146260613435}
   - component: {fileID: 648546523619802661}
   - component: {fileID: 8140381333889837290}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 59045068281424323}
   - component: {fileID: 3953936540886125891}
   - component: {fileID: 8276927467228832159}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: HandleCrossguard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1168034579520973952}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: attach point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 8167340959820826941}
   - component: {fileID: -5221999512903412760}
   - component: {fileID: 2937808426482624958}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: egyptianSword
   m_TagString: sword
   m_Icon: {fileID: 0}
@@ -543,7 +543,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5221999512903412760}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: WhenSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -638,13 +650,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5bc76fd45870c4192eef08f06004c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocityLimitToDamage: 2.5
+  VelocityLimitToDamage: 3
   m_DamageCooldown: 0.5
   Durability: {fileID: 6567123115812118907}
-  m_ShieldHitSound: {fileID: 8300000, guid: 4e7a9f408abdba8459fdccbeaea95215, type: 3}
+  m_ShieldHitSound: {fileID: 8300000, guid: a84ef8b6f9780a34daaa5149f7374c22, type: 3}
   m_SwordHitSound: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
   m_Durability: 100
-  deleteText: 3
+  deleteTextTimer: 5
 --- !u!82 &2937808426482624958
 AudioSource:
   m_ObjectHideFlags: 0
@@ -752,6 +764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Durability
       objectReference: {fileID: 0}
+    - target: {fileID: 2549454560689890278, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3553561577170232978, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -759,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 3553561577170232978, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310454507287472940, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6022315341588467024, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
       propertyPath: m_Pivot.x
@@ -843,6 +863,22 @@ PrefabInstance:
     - target: {fileID: 6022315341588467024, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495551064600146502, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399499088755793471, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453389799566850180, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546627015883431051, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 896de2db00ba40a4aab57397f91a6a16, type: 3}

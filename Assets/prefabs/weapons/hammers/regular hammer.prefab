@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5654116450439348627}
   - component: {fileID: 4497489216420844}
   - component: {fileID: -2876066987323070164}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: regular hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497489216420844}
+        m_TargetAssemblyTypeName: Hammer, Assembly-CSharp
+        m_MethodName: WhenSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -194,10 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac74e5a76523e34bb3c5337d1d24fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VelocityLimitToDamage: 2.5
+  m_VelocityLimitToDamage: 3
   m_DamageCooldown: 0.5
   Durability: {fileID: 4015753436019500810}
-  deleteText: 20
+  deleteTextTimer: 5
 --- !u!82 &-2876066987323070164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -305,7 +317,7 @@ GameObject:
   - component: {fileID: 5725842237179605551}
   - component: {fileID: 5501039353201744544}
   - component: {fileID: 2502507444488502001}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +454,7 @@ GameObject:
   - component: {fileID: 4266793741501746577}
   - component: {fileID: 6184300927219515056}
   - component: {fileID: 7035693296917904038}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +567,7 @@ GameObject:
   - component: {fileID: 5654702209340729875}
   - component: {fileID: 5621094421035388591}
   - component: {fileID: 5631013458260303205}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Detail_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +651,7 @@ GameObject:
   - component: {fileID: 5620828802989233135}
   - component: {fileID: 5630352181402215047}
   - component: {fileID: 5654116449236600199}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Stick_S_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +748,7 @@ GameObject:
   - component: {fileID: 5649514950276883633}
   - component: {fileID: 5621285221602859183}
   - component: {fileID: 5630770262912022397}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Detail_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +832,7 @@ GameObject:
   - component: {fileID: 5621088036660710027}
   - component: {fileID: 5630474481224593313}
   - component: {fileID: 5654116448748493277}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Mace_Dual_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,9 +933,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 818629975270210907, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1435785452363052433, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
       propertyPath: m_Name
       value: HammerDurability
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435785452363052433, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050263427668462332, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214361787407779912, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332719276576599795, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7142176622411143975, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
       propertyPath: m_Pivot.x
@@ -1008,6 +1040,10 @@ PrefabInstance:
     - target: {fileID: 7142176622411143975, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685746180068254769, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62fc68cce50aa4540b75d3d2145c2cba, type: 3}

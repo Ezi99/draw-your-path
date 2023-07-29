@@ -17,7 +17,8 @@ public class Hammer : MonoBehaviour
     private Vector3 m_Velocity;
     private float m_PrevTime;
     private AudioSource m_HammerHitSound;
-    public float deleteText = 5;
+    public float deleteTextTimer = 5;
+    private bool m_WasGrabbed = false;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class Hammer : MonoBehaviour
         m_PrevPosition = transform.position;
         m_PrevTime = Time.time;
         Durability.maxValue = m_Durability;
-        Invoke("DeleteText", deleteText);
+        Invoke("DeleteText", deleteTextTimer);
     }
 
     private void Update()
@@ -74,6 +75,7 @@ public class Hammer : MonoBehaviour
                     m_Durability -= m_HitDamageToDurability;
                     if (other.tag.Contains("Head"))
                     {
+                        Debug.Log("HEADSHOT");
                         paladin.takeDamage(m_Damage, true);
                     }
                     else
@@ -123,9 +125,20 @@ public class Hammer : MonoBehaviour
     {
         canDamage = true;
     }
+
+    public void WhenSelected()
+    {
+        if (m_WasGrabbed == false)
+        {
+            gameObject.layer = LayerMask.NameToLayer("grabbable");
+            m_WasGrabbed = true;
+            DeleteText();
+        }
+    }
+
     private void DeleteText()
     {
-        Transform kak = transform.Find("Canvas");
-        kak.gameObject.SetActive(false);
+        Transform text = transform.Find("Canvas");
+        text.gameObject.SetActive(false);
     }
 }

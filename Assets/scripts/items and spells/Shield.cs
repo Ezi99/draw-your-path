@@ -7,14 +7,17 @@ public class Shield : MonoBehaviour
 {
     private int m_Durability=100;
     public Slider durability;
-    public float deleteText = 5;
+    public float deleteTextTimer = 5;
     private AudioSource shieldBlock;
+    private bool m_WasGrabbed = false;
+
     private void Start()
     {
         shieldBlock = GetComponent<AudioSource>();
         durability.maxValue = m_Durability;
-        Invoke("DeleteText", deleteText);
+        Invoke("DeleteText", deleteTextTimer);
     }
+
     void Update()
     {
         durability.value= m_Durability;
@@ -28,14 +31,26 @@ public class Shield : MonoBehaviour
     {
         m_Durability = Durability;
     }
+
     public void TakeDamage(int dmg)
     {
         shieldBlock.Play();
         m_Durability -= dmg;
     }
+
+    public void WhenSelected()
+    {
+        if (m_WasGrabbed == false)
+        {
+            gameObject.layer = LayerMask.NameToLayer("grabbable");
+            m_WasGrabbed = true;
+            DeleteText();
+        }
+    }
+
     private void DeleteText()
     {
-        Transform kak = transform.Find("Canvas");
-        kak.gameObject.SetActive(false);
+        Transform text = transform.Find("Canvas");
+        text.gameObject.SetActive(false);
     }
 }

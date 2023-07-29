@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Bridge : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class Bridge : MonoBehaviour
     public Text m_Timer2;
     public int m_TimeLeft = -1;
     public bool m_CountDown;
+    private bool m_WasGrabbed = false;
+    private XRGrabInteractable interactable;
+
+    private void Start()
+    {
+        interactable = GetComponent<XRGrabInteractable>();
+    }
 
     private void Update()
     {
@@ -18,6 +26,22 @@ public class Bridge : MonoBehaviour
             UpdateTimer(m_TimeLeft);
             m_CountDown = false;
         }
+        if (interactable != null && interactable.isSelected == true)
+        {
+            if (interactable.selectingInteractor.CompareTag("player hand") == true)
+            {
+                gameObject.layer = LayerMask.NameToLayer("grabbed bridge");
+            }
+            else
+            {
+                gameObject.layer = LayerMask.NameToLayer("bridge");
+            }
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("bridge");
+        }
+
 
     }
 
@@ -30,13 +54,13 @@ public class Bridge : MonoBehaviour
 
     public void WhenSelected()
     {
-        gameObject.layer = LayerMask.NameToLayer("grabbed bridge");
+        if(m_WasGrabbed == false)
+        {
+            gameObject.layer = LayerMask.NameToLayer("bridge");
+            m_WasGrabbed = true;
+        }
     }
 
-    public void WhenExited()
-    {
-        gameObject.layer = LayerMask.NameToLayer("bridge");
-    }
 
     private void decreaseTime()
     {

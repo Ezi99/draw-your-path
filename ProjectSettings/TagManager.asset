@@ -18,6 +18,7 @@ TagManager:
   - Shield
   - Paladin_Head
   - Paladin_Leg
+  - player hand
   layers:
   - Default
   - TransparentFX
@@ -35,8 +36,8 @@ TagManager:
   - Boundary
   - Detector
   - grabbed bridge
-  - 
-  - 
+  - spawned object
+  - Hands
   - 
   - 
   - 

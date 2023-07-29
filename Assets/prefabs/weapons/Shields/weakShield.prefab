@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6942026267583180107}
   - component: {fileID: 3052271661361553794}
   - component: {fileID: 6718683278377087873}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6352707582717637765}
   - component: {fileID: 6342394336899337700}
   - component: {fileID: 2607921298536549445}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: weakShield
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -298,7 +298,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4154426330098966421}
+        m_TargetAssemblyTypeName: Shield, Assembly-CSharp
+        m_MethodName: WhenSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -504,7 +516,7 @@ GameObject:
   - component: {fileID: 236663479797647502}
   - component: {fileID: 1180438324911041379}
   - component: {fileID: 6131165657031984989}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7035412653672648526}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Attach Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,6 +656,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1449575910320388930}
     m_Modifications:
+    - target: {fileID: 2795246978056868083, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3191839052550430029, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -655,6 +671,14 @@ PrefabInstance:
     - target: {fileID: 4501913741459331129, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
       propertyPath: m_Name
       value: ShieldDurability
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501913741459331129, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134011899329857945, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5659043673796359823, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
       propertyPath: m_Pivot.x
@@ -739,6 +763,18 @@ PrefabInstance:
     - target: {fileID: 5659043673796359823, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7746418019008816980, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823883522775843675, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911274492019615200, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f106d51b7ae00ee47b955c4a61cf7144, type: 3}
