@@ -11,6 +11,10 @@ public class EnemyController : MonoBehaviour
     bool isMoving;
     private Animator animator;
     private bool isAttacking;
+    private Vector3 m_PrevPosition;
+    private Vector3 m_Velocity;
+    private float m_PrevTime;
+
 
     void Start()
     {
@@ -21,6 +25,9 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        m_Velocity = (transform.position - m_PrevPosition) / (Time.time - m_PrevTime);
+        m_PrevPosition = transform.position;
+        m_PrevTime = Time.time;
         if (target != null && !isAttacking)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -44,6 +51,10 @@ public class EnemyController : MonoBehaviour
                     SetIsMoving(false);
                 }
             }
+        }
+        if (m_Velocity.magnitude == 0)
+        {
+            animator.SetBool("IsMoving", false);
         }
     }
 
