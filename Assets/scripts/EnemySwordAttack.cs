@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySwordAttack : MonoBehaviour
 {
     public float m_DamageCooldown = 1f; // cooldown duration 
-
     private bool m_DealDamage;
     private bool m_CanDamage = true;
     private AudioSource m_SwordHitSound;
@@ -24,24 +23,31 @@ public class EnemySwordAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Shield"))
+        if (m_CanDamage) // in order to not deal damage to both shield and player multiple times in single attack
         {
-            Debug.Log("Player Blocked");
-            other.gameObject.GetComponent<Shield>().TakeDamage(10);
-            m_CanDamage = false;
-            Invoke("ResetDamageCooldown", m_DamageCooldown);
-        }
-        else if (m_CanDamage && other.CompareTag("Player"))
-        {
-            if (m_DealDamage)
+            if (m_DealDamage && other.CompareTag("Shield"))
             {
+                Debug.Log("Player Blocked");
+                other.gameObject.GetComponent<Shield>().TakeDamage(m_AmountOfDamageToDeal);
+                m_CanDamage = false;
+                Invoke("ResetDamageCooldown", m_DamageCooldown);
+            }
+            else if (m_DealDamage && other.CompareTag("Player"))
+            {
+
                 Debug.Log("Palyer slashed");
                 m_SwordHitSound.Play();
                 other.gameObject.GetComponent<PlayerHealth>().TakeDamage(m_AmountOfDamageToDeal);
                 m_DealDamage = false;
+                m_CanDamage = false;
+                Invoke("ResetDamageCooldown", m_DamageCooldown);
             }
         }
-        
+
+    }
+    private void ResetDamageCooldown()
+    {
+        m_CanDamage = true;
     }
 }
 

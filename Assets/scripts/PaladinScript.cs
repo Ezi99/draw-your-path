@@ -60,7 +60,6 @@ public class PaladinScript : MonoBehaviour
         died = true;
         enemyCanvas.SetActive(false);
         this.GetComponent<NavMeshAgent>().speed=0;
-        Debug.Log("Death animation triggered");
         animator.SetTrigger("Death");
     }
 

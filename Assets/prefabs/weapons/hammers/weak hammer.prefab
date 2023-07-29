@@ -209,6 +209,8 @@ MonoBehaviour:
   m_VelocityLimitToDamage: 3
   m_DamageCooldown: 0.5
   Durability: {fileID: 4461032367532403856}
+  m_ShieldHitSound: {fileID: 8300000, guid: a84ef8b6f9780a34daaa5149f7374c22, type: 3}
+  m_HammerHitSound: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
   deleteTextTimer: 5
 --- !u!82 &8829020737069384590
 AudioSource:
