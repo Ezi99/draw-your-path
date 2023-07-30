@@ -34,7 +34,6 @@ public class ErikaCombat : MonoBehaviour
 
         if (Time.time - lastAttackTime > attackCooldown)
         {
-            int TypeOfAttack = random.Next(1, 4);
             animator.SetTrigger("Attack");
             lastAttackTime = Time.time;
         }

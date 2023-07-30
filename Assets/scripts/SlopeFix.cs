@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class SlopeFix : MonoBehaviour 
+public class SlopeFix : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
@@ -27,7 +27,10 @@ public class SlopeFix : MonoBehaviour
         float vertInput = Input.GetAxis(verticalInputName);
 
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
+        {
+            Debug.Log("on slope");
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
+        }
     }
 
     private bool OnSlope()

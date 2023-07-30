@@ -9,7 +9,7 @@ public class AreaNavigator : MonoBehaviour
     public GameObject m_Area3;
     public GameObject m_Area4;
     public GameObject m_Area5;
-    private int m_NextAreaToActivate = 1;
+    public int m_NextAreaToActivate;
 
     public void ActivateArea()
     {

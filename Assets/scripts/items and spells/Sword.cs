@@ -50,10 +50,10 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_Velocity.magnitude > VelocityLimitToDamage)
+        if (m_Velocity.magnitude > VelocityLimitToDamage && m_CanDamage)
         {
             m_AudioSource.clip = m_SwordHitSound;
-            if (m_CanDamage && other.tag.Contains("Erika"))
+            if (other.tag.Contains("Erika"))
             {
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
 
@@ -67,7 +67,7 @@ public class Sword : MonoBehaviour
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
             }
-            else if (m_CanDamage && other.tag.Contains("Paladin"))
+            else if (other.tag.Contains("Paladin"))
             {
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
 

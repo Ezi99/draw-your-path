@@ -23,6 +23,7 @@ public class VillageGate : MonoBehaviour
             rigidBody.useGravity = true;
             m_AudioSource.Play();
             rigidBody.AddForce(100 * velocity * transform.forward);
+            Destroy(gameObject, 20);
         }
     }
 

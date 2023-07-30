@@ -7,6 +7,7 @@ public class Area4Ui : MonoBehaviour
 {
     public GameObject m_BreakingWallHint;
     public GameObject m_FireTorches;
+    public GameObject m_Enemies;
     public GameObject[] m_SpawnPoints;
     public GameObject m_Player;
 
@@ -14,12 +15,13 @@ public class Area4Ui : MonoBehaviour
     public void ActivateArea()
     {
         m_FireTorches.SetActive(true);
+        m_Enemies.SetActive(true);
     }
 
     public void ShowBreakingWallHint()
     {
         m_BreakingWallHint.SetActive(true);
-        Invoke("hideBreakingWallHint", 30);
+        Invoke("hideBreakingWallHint", 60);
     }
 
     private void hideBreakingWallHint()

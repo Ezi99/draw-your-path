@@ -51,10 +51,10 @@ public class Hammer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_Velocity.magnitude > m_VelocityLimitToDamage)
+        if (m_Velocity.magnitude > m_VelocityLimitToDamage && m_CanDamage)
         {
             m_AudioSource.clip = m_HammerHitSound;
-            if (m_CanDamage && other.tag.Contains("Erika"))
+            if (other.tag.Contains("Erika"))
             {
                 ErikaScript erika = other.GetComponentInParent<ErikaScript>();
 
@@ -68,7 +68,7 @@ public class Hammer : MonoBehaviour
                     Invoke("ResetDamageCooldown", m_DamageCooldown);
                 }
             }
-            else if (m_CanDamage && other.tag.Contains("Paladin"))
+            else if (other.tag.Contains("Paladin"))
             {
                 PaladinScript paladin = other.GetComponentInParent<PaladinScript>();
 

@@ -38,6 +38,7 @@ public class GreenPotion : MonoBehaviour
         }
 
         s_NumOfPotionsTaken++;
+        Debug.Log("NUMBER OF POTIONS TAKEN IS - " + s_NumOfPotionsTaken);
         if(s_NumOfPotionsTaken == m_PotionTakenMessages.Length)
         {
             m_Area3Ui.PuzzleFinished();
